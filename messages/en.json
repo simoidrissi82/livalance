@@ -1,0 +1,216 @@
+{
+  "nav": {
+    "home": "Home",
+    "workshops": "Workshops",
+    "pillars": "Pillars",
+    "insights": "Insights",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "cta": {
+    "bookIntro": "Book a free intro call",
+    "viewWorkshops": "See workshop dates",
+    "downloadLeadMagnet": "Get the PDF",
+    "viewArticles": "Browse all articles",
+    "seePackages": "Compare packages",
+    "joinNewsletter": "Join the newsletter",
+    "submit": "Submit"
+  },
+  "hero": {
+    "title": "Livalance: Live vital. In balance.",
+    "subtitle": "Coaching & workshops across sleep, nutrition, activity (kettlebells) and mindfulness — science-based, personal, practical.",
+    "primaryCta": "Book a free intro call",
+    "secondaryCta": "See workshop dates"
+  },
+  "pillars": {
+    "title": "The four pillars of Livalance",
+    "description": "We combine sleep, nutrition, activity, and mindfulness to craft a rhythm that respects your real life.",
+    "items": {
+      "sleep": {
+        "title": "Sleep",
+        "body": "Circadian rhythms, evening rituals, and light hygiene to fuel deeper rest."
+      },
+      "nutrition": {
+        "title": "Nutrition",
+        "body": "Glucose-friendly plates, protein builders, and flexible prep templates."
+      },
+      "activity": {
+        "title": "Activity",
+        "body": "Kettlebell complexes, mobility, and micro-workouts that fit tight schedules."
+      },
+      "mindfulness": {
+        "title": "Mindfulness",
+        "body": "Tools to counter overload: breathwork, journaling, and nervous system care."
+      }
+    }
+  },
+  "workshopsSection": {
+    "badge": "Flagship Workshop",
+    "title": "Continuous Glucose Monitoring for Teams",
+    "description": "Consent to integration: we guide teams through a 4-week CGM experience with actionable behaviour change.",
+    "agenda": [
+      "Kick-off with medical clearance and GDPR-compliant data flow",
+      "Live workshops on nutrition, movement, and sleep — hybrid or onsite",
+      "Async check-ins, micro challenges, and concise summaries",
+      "Review & transfer: reading the data and locking habits in"
+    ],
+    "cta": "Request a workshop",
+    "disclaimer": "Note: Livalance does not replace medical care."
+  },
+  "programSection": {
+    "title": "Integrated workshops & programmes",
+    "description": "We blend sensor-led experiments, live sessions, habit design, and team communication into one seamless flow.",
+    "bundles": [
+      {
+        "name": "Focus Sprint",
+        "description": "Two-week intensive with CGM, daily micro nudges, and a synthesis workshop."
+      },
+      {
+        "name": "Team Journey",
+        "description": "Four to six week hybrid journey including leader enablement, async pulses, and reporting."
+      },
+      {
+        "name": "Season Reset",
+        "description": "Quarterly refresh workshops featuring pillar-specific experiments and follow-ups."
+      }
+    ],
+    "cta": "Request programme"
+  },
+  "socialProof": {
+    "title": "Trusted by founders & hybrid teams",
+    "logos": [
+      "SaaS Scale-ups",
+      "Remote-first teams",
+      "CrossFit & boutique gyms"
+    ]
+  },
+  "leadMagnet": {
+    "title": "7-Day Balance Reset",
+    "description": "PDF with morning, midday, and evening rituals plus a focused shopping list. Double opt-in, zero spam.",
+    "cta": "Send me the reset"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      {
+        "question": "How do workshops run?",
+        "answer": "We start with a clarity call, co-design the agenda, and plug Cal.com booking links where needed. All assets are bilingual."
+      },
+      {
+        "question": "Do I need CGM experience?",
+        "answer": "No. We cover safety checks, GDPR process, and sensor setup. Medical decisions remain with your physician."
+      },
+      {
+        "question": "Which languages do you support?",
+        "answer": "German and English — including internal comms templates."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Ready to rebalance?",
+    "subtitle": "Book a free intro call and we’ll outline your quickest next step.",
+    "primary": "Book a free intro call"
+  },
+  "articles": {
+    "title": "Insights",
+    "intro": "Articles, scripts, and data summaries to support team wellbeing and personal routines.",
+    "filters": {
+      "category": "Category",
+      "readingTime": "Reading time",
+      "all": "All",
+      "under5": "< 5 min",
+      "under10": "< 10 min"
+    },
+    "empty": "No articles published yet."
+  },
+  "visionSection": {
+    "title": "Our orientation",
+    "visionLabel": "Vision",
+    "missionLabel": "Mission",
+    "outcomeLabel": "Outcome",
+    "vision": "Vitality should be a default, not a perk — accessible to teams, founders, and individuals alike.",
+    "mission": "We merge data, habit design, and empathetic coaching to make routines sustainable.",
+    "outcome": "Expected outcome: clarity on personal levers, a shared health language, and measurable energy in day-to-day life."
+  },
+  "newsletter": {
+    "title": "Mini prompts & workshop updates",
+    "description": "Monthly email with focus tips, tools, and recipes. Double opt-in.",
+    "email": "Email",
+    "consent": "I agree to receive emails according to the privacy policy.",
+    "success": "Thanks! Please confirm via the link in your inbox.",
+    "error": "Something went wrong. Please try again later."
+  },
+  "contact": {
+    "title": "Get in touch",
+    "intro": "Book a time slot or drop us your project. We reply within 24 business hours.",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send request",
+    "booking": "Book directly"
+  },
+  "workshopsPage": {
+    "heroTitle": "Workshops that change behaviour",
+    "heroSubtitle": "Sleep, nutrition, activity & mindfulness modules — onsite or remote, fully GDPR-compliant.",
+    "flowTitle": "The flow",
+    "flowSteps": [
+      "Kick-off: goals, consent, onboarding",
+      "Experience: live sessions + async pulses",
+      "Transfer: roadmaps & team reports"
+    ],
+    "formatsTitle": "Formats",
+    "formats": [
+      "90-minute deep dive (virtual)",
+      "Half-day workshop (hybrid)",
+      "Cohort program (4 weeks)"
+    ],
+    "pricingNote": "Pricing depends on team size and support level. Let’s explore what you need.",
+    "disclaimer": "Disclaimer: Livalance is not a substitute for medical diagnosis or treatment."
+  },
+  "aboutPage": {
+    "heroTitle": "About Livalance",
+    "heroSubtitle": "We blend sports science, nutrition, and coaching to make healthy routines stick.",
+    "missionTitle": "Mission",
+    "mission": "Make vitality the default — with programmes that respect schedules and measure outcomes."
+  },
+  "legal": {
+    "imprint": "Imprint",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cancellation": "Cancellation"
+  },
+  "footer": {
+    "tagline": "Live vital. In balance.",
+    "rights": "© Livalance {year}. All rights reserved.",
+    "newsletterLabel": "Newsletter",
+    "follow": "Follow"
+  },
+  "articlesPage": {
+    "readMore": "Read more"
+  },
+  "pillarsPage": {
+    "title": "The Livalance pillars",
+    "intro": "Each pillar comes with its own frameworks, experiments, and resources. Together they form an adaptable wellbeing stack.",
+    "items": {
+      "sleep": {
+        "headline": "Sleep",
+        "body": "Circadian design, light and temperature routines, and evening rituals for deeper rest."
+      },
+      "nutrition": {
+        "headline": "Nutrition",
+        "body": "Sequencing, protein focus, meal design, and flexible prep templates."
+      },
+      "activity": {
+        "headline": "Activity",
+        "body": "Kettlebell blocks, mobility staples, and micro workouts for packed calendars."
+      },
+      "mindfulness": {
+        "headline": "Mindfulness",
+        "body": "Down-regulation, breathwork, journaling, and focus rituals to counter overload."
+      }
+    }
+  },
+  "booking": {
+    "headline": "Book instantly",
+    "description": "Powered by Cal.com — bilingual slots available."
+  }
+}

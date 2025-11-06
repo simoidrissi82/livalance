@@ -1,0 +1,61 @@
+{
+  "name": "livalance",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "format": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,json}\"",
+    "format:write": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,json}\"",
+    "typecheck": "tsc --noEmit",
+    "generate:sitemap": "cross-env SITEMAP_LOCALE=de next-sitemap && cross-env SITEMAP_LOCALE=en next-sitemap"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "@tailwindcss/forms": "^0.5.6",
+    "@tailwindcss/typography": "^0.5.11",
+    "autoprefixer": "^10.4.17",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "gray-matter": "^4.0.3",
+    "next": "^14.2.33",
+    "next-intl": "^3.10.0",
+    "next-mdx-remote": "^5.0.0",
+    "next-seo": "^6.0.0",
+    "next-sitemap": "^4.2.0",
+    "postcss": "^8.4.35",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rehype-autolink-headings": "^7.0.1",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.0",
+    "tailwindcss": "^3.4.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "vite-tsconfig-paths": "^4.3.1",
+    "vitest": "^4.0.7"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

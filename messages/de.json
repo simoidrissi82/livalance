@@ -1,0 +1,216 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "workshops": "Workshops",
+    "pillars": "Säulen",
+    "insights": "Wissen",
+    "about": "Über",
+    "contact": "Kontakt"
+  },
+  "cta": {
+    "bookIntro": "Kostenloses Erstgespräch",
+    "viewWorkshops": "Workshop-Termine",
+    "downloadLeadMagnet": "PDF herunterladen",
+    "viewArticles": "Alle Artikel ansehen",
+    "seePackages": "Pakete vergleichen",
+    "joinNewsletter": "Newsletter abonnieren",
+    "submit": "Absenden"
+  },
+  "hero": {
+    "title": "Livalance: Vital leben. Im Gleichgewicht.",
+    "subtitle": "Coaching & Workshops für Schlaf, Ernährung, Aktivität (Kettlebells) und Mindfulness – fundiert, individuell, umsetzbar.",
+    "primaryCta": "Kostenloses Erstgespräch",
+    "secondaryCta": "Workshop-Termine"
+  },
+  "pillars": {
+    "title": "Die vier Säulen von Livalance",
+    "description": "Wir kombinieren Schlaf, Ernährung, Aktivität und Mindfulness zu einem individuellen Rhythmus, der in den Alltag passt.",
+    "items": {
+      "sleep": {
+        "title": "Schlaf",
+        "body": "Circadiane Routinen, Abendrituale und Lichtmanagement, um tiefer zu schlafen."
+      },
+      "nutrition": {
+        "title": "Ernährung",
+        "body": "Glukosefreundliche Mahlzeiten, Protein-Building und flexible Meal-Prep-Ideen."
+      },
+      "activity": {
+        "title": "Aktivität",
+        "body": "Kettlebell-basierte Sessions, Mobility und Mikro-Workouts für echte Busy Schedules."
+      },
+      "mindfulness": {
+        "title": "Mindfulness",
+        "body": "Tools gegen Overload: Breathwork, Journaling und Nervensystem-Regulation."
+      }
+    }
+  },
+  "workshopsSection": {
+    "badge": "Flagship Workshop",
+    "title": "Kontinuierliches Glukose-Monitoring für Teams",
+    "description": "Von Consent über Setup bis zum Transfer in konkrete Gewohnheiten – wir begleiten eure Crew durch eine 4-wöchige CGM-Erfahrung.",
+    "agenda": [
+      "Kick-off mit medizinischer Freigabe und DSGVO-konformen Prozessen",
+      "Live-Workshops zu Ernährung, Aktivität und Schlaf – hybrid oder vor Ort",
+      "Slack/Teams-Check-ins, Micro-Challenges und DocSummaries",
+      "Review & Transfer: Daten lesen, Gewohnheiten konsolidieren"
+    ],
+    "cta": "Workshop anfragen",
+    "disclaimer": "Hinweis: Livalance ersetzt keine ärztliche Beratung."
+  },
+  "programSection": {
+    "title": "Workshops & Programme aus einer Hand",
+    "description": "Wir verbinden datenbasierte Sensorphasen mit Live-Sessions, Habit-Design und Teamkommunikation – abgestimmt auf eure Realität.",
+    "bundles": [
+      {
+        "name": "Focus Sprint",
+        "description": "2 Wochen Intensivphase mit CGM, täglichen Micro-Nudges und Synthese-Workshop."
+      },
+      {
+        "name": "Team Journey",
+        "description": "4–6 Wochen Hybrid-Programm inklusive Leader Enablement, async Impulsen und Reporting."
+      },
+      {
+        "name": "Season Reset",
+        "description": "Quartalsweise Refresh-Workshops mit Pillar-spezifischen Experimenten und Check-ins."
+      }
+    ],
+    "cta": "Programme anfragen"
+  },
+  "socialProof": {
+    "title": "Vertrauen von Teams & Gründer:innen",
+    "logos": [
+      "SaaS Scale-ups",
+      "Remote-first Unternehmen",
+      "CrossFit & Boutique Gyms"
+    ]
+  },
+  "leadMagnet": {
+    "title": "7-Tage Balance Reset",
+    "description": "PDF mit Morgen-, Mittags- und Abend-Ritualen plus Einkaufsliste. Double Opt-in, kein Spam.",
+    "cta": "PDF erhalten"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      {
+        "question": "Wie laufen Workshops ab?",
+        "answer": "Wir starten mit einem Klarheitsgespräch, passen Agenda und Formate an und integrieren bei Bedarf Cal.com-Buchungen. Alle Materialien sind zweisprachig verfügbar."
+      },
+      {
+        "question": "Brauche ich Vorerfahrung mit CGM?",
+        "answer": "Nein. Wir erklären Sicherheits-Checks, DSGVO-Flow und richten Sensoren gemeinsam ein. Medizinische Fragen gehören jedoch zur Hausärztin / zum Hausarzt."
+      },
+      {
+        "question": "Welche Sprachen unterstützt ihr?",
+        "answer": "Deutsch und Englisch – inklusive Templates für interne Kommunikation."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Bereit für mehr Balance?",
+    "subtitle": "Buche ein kostenloses Erstgespräch und wir skizzieren deinen nächsten Schritt.",
+    "primary": "Kostenloses Erstgespräch"
+  },
+  "articles": {
+    "title": "Wissen",
+    "intro": "Artikel, Skripte und Daten-Insights für Teamgesundheit und persönliche Routinen.",
+    "filters": {
+      "category": "Kategorie",
+      "readingTime": "Lesedauer",
+      "all": "Alle",
+      "under5": "< 5 Min",
+      "under10": "< 10 Min"
+    },
+    "empty": "Noch keine Artikel veröffentlicht."
+  },
+  "visionSection": {
+    "title": "Unsere Ausrichtung",
+    "visionLabel": "Vision",
+    "missionLabel": "Mission",
+    "outcomeLabel": "Ergebnis",
+    "vision": "Vitalität ist kein Luxus, sondern Standard – zugänglich für Teams, Gründer:innen und Einzelpersonen.",
+    "mission": "Wir kombinieren Daten, Habit-Design und empathische Begleitung, um nachhaltige Routinen aufzubauen.",
+    "outcome": "Erwartetes Ergebnis: Klarheit über persönliche Hebel, eine gemeinsame Sprache für Gesundheit und messbare Energie im Alltag."
+  },
+  "newsletter": {
+    "title": "Mini-Impulse & Workshop-Updates",
+    "description": "Monatliche E-Mail mit Fokus-Tipps, Tools und Rezepten. Double Opt-in.",
+    "email": "E-Mail",
+    "consent": "Ich stimme dem Erhalt von E-Mails gemäß Datenschutz zu.",
+    "success": "Danke! Bitte bestätige deine E-Mail im Posteingang.",
+    "error": "Ups, das hat nicht geklappt. Bitte später erneut versuchen."
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "intro": "Buche einen Termin oder sende uns dein Projekt. Wir antworten innerhalb von 24 Stunden (werktags).",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "submit": "Anfrage senden",
+    "booking": "Direkt Termin buchen"
+  },
+  "workshopsPage": {
+    "heroTitle": "Workshops mit Tiefenwirkung",
+    "heroSubtitle": "Sleep, Nutrition, Activity & Mindfulness Module – onsite oder remote, DSGVO-konform.",
+    "flowTitle": "So läuft es ab",
+    "flowSteps": [
+      "Kick-off: Ziele, Consent, Onboarding",
+      "Experience: Live-Sessions + Async-Impulse",
+      "Transfer: Roadmaps & Teamreports"
+    ],
+    "formatsTitle": "Formate",
+    "formats": [
+      "90 Minuten Deep Dive (virtuell)",
+      "Halbtages-Workshop (hybrid)",
+      "Cohort-Programm (4 Wochen)"
+    ],
+    "pricingNote": "Preisstrukturen orientieren sich an Teamgröße und Support-Level. Lass uns darüber sprechen.",
+    "disclaimer": "Hinweis: Livalance ist kein Ersatz für ärztliche Diagnosen oder Therapien."
+  },
+  "aboutPage": {
+    "heroTitle": "Über Livalance",
+    "heroSubtitle": "Wir verbinden Sportwissenschaft, Ernährungsmedizin und Coaching, um gesunde Routinen zugänglich zu machen.",
+    "missionTitle": "Unsere Mission",
+    "mission": "Vitalität als Standard – mit Programmen, die Zeitpläne respektieren und Ergebnisse messbar machen."
+  },
+  "legal": {
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "cancellation": "Widerruf"
+  },
+  "footer": {
+    "tagline": "Vital leben. Im Gleichgewicht.",
+    "rights": "© Livalance {year}. Alle Rechte vorbehalten.",
+    "newsletterLabel": "Newsletter",
+    "follow": "Folge uns"
+  },
+  "articlesPage": {
+    "readMore": "Weiterlesen"
+  },
+  "pillarsPage": {
+    "title": "Die Livalance Säulen",
+    "intro": "Jede Säule erhält eigene Frameworks, Experimente und Ressourcen. Gemeinsam ergeben sie einen adaptierbaren Gesundheits-Stack.",
+    "items": {
+      "sleep": {
+        "headline": "Schlaf",
+        "body": "Circadianes Design, Licht- und Temperatursteuerung sowie Abendrituale für tieferen Schlaf."
+      },
+      "nutrition": {
+        "headline": "Ernährung",
+        "body": "Sequencing, Proteinfokus, Meal-Design und flexible Prep-Templates."
+      },
+      "activity": {
+        "headline": "Aktivität",
+        "body": "Kettlebell-Blöcke, Mobility-Staples und Mikro-Workouts für volle Kalender."
+      },
+      "mindfulness": {
+        "headline": "Mindfulness",
+        "body": "Down-Regulation, Atemarbeit, Journaling und Fokus-Rituale gegen Overload."
+      }
+    }
+  },
+  "booking": {
+    "headline": "Direkt buchen",
+    "description": "Calendly-Alternative via Cal.com – Slots in DE/EN verfügbar."
+  }
+}

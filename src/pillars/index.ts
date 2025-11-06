@@ -1,0 +1,1 @@
+export {PillarsPage} from './PillarsPage';
