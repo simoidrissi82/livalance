@@ -20,7 +20,37 @@
     "title": "Livalance: Vital leben. Im Gleichgewicht.",
     "subtitle": "Coaching & Workshops für Schlaf, Ernährung, Aktivität (Kettlebells) und Mindfulness – fundiert, individuell, umsetzbar.",
     "primaryCta": "Kostenloses Erstgespräch",
-    "secondaryCta": "Workshop-Termine"
+    "secondaryCta": "Workshop-Termine",
+    "announcement": "Ganzheitliches Health & Performance Design",
+    "trustSignal": "Für Gründer:innen, Führungskräfte und Teams, die Energie als Erfolgsfaktor verstehen.",
+    "metrics": [
+      {
+        "value": "92%",
+        "label": "empfinden mehr Klarheit über ihre Gesundheits-Hebel"
+      },
+      {
+        "value": "4 Wochen",
+        "label": "bis zu messbaren Veränderungen im Alltag"
+      },
+      {
+        "value": "3 Formate",
+        "label": "Remote, Hybrid & Onsite kombinierbar"
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Daten + Empathie",
+        "body": "Sensorik, Habit-Design und Coaching verschmelzen zu einem System, das nachhaltige Routinen ermöglicht."
+      },
+      {
+        "title": "Rhythmen statt Dogmen",
+        "body": "Wir übersetzen Wissenschaft in flexible Protokolle, die zu anspruchsvollen Lebensrealitäten passen."
+      },
+      {
+        "title": "Gesundheit als Teamkultur",
+        "body": "Wir geben Führungskräften Werkzeuge, um Wellbeing in der Organisation verankert zu halten."
+      }
+    ]
   },
   "pillars": {
     "title": "Die vier Säulen von Livalance",
@@ -28,19 +58,39 @@
     "items": {
       "sleep": {
         "title": "Schlaf",
-        "body": "Circadiane Routinen, Abendrituale und Lichtmanagement, um tiefer zu schlafen."
+        "body": "Circadiane Routinen, Abendrituale und Lichtmanagement, um tiefer zu schlafen.",
+        "focus": [
+          "Schlafdruck aufbauen durch Tageslicht & Aktivität",
+          "Abendliche Wind-Down-Strukturen für das Nervensystem",
+          "Tracking-Auswertung ohne Overwhelm"
+        ]
       },
       "nutrition": {
         "title": "Ernährung",
-        "body": "Glukosefreundliche Mahlzeiten, Protein-Building und flexible Meal-Prep-Ideen."
+        "body": "Glukosefreundliche Mahlzeiten, Protein-Building und flexible Meal-Prep-Ideen.",
+        "focus": [
+          "Blutzuckerfreundliche Mahlzeiten-Sequenzierung",
+          "Makronährstoff-Balancing für Fokus & Sättigung",
+          "Meal-Prep-Templates für volle Wochen"
+        ]
       },
       "activity": {
         "title": "Aktivität",
-        "body": "Kettlebell-basierte Sessions, Mobility und Mikro-Workouts für echte Busy Schedules."
+        "body": "Kettlebell-basierte Sessions, Mobility und Mikro-Workouts für echte Busy Schedules.",
+        "focus": [
+          "Strength & Skill Sessions mit Kettlebells",
+          "Mobility-Protokolle für Desk-Worker",
+          "Snackable Workouts für Zwischendurch"
+        ]
       },
       "mindfulness": {
         "title": "Mindfulness",
-        "body": "Tools gegen Overload: Breathwork, Journaling und Nervensystem-Regulation."
+        "body": "Tools gegen Overload: Breathwork, Journaling und Nervensystem-Regulation.",
+        "focus": [
+          "Breathwork- und Regulationstechniken",
+          "Micro-Pauses für Remote Teams",
+          "Reflexions-Frameworks für mehr Klarheit"
+        ]
       }
     }
   },
@@ -55,38 +105,87 @@
       "Review & Transfer: Daten lesen, Gewohnheiten konsolidieren"
     ],
     "cta": "Workshop anfragen",
+    "ctaSupporting": "Wir melden uns innerhalb von 48 Stunden mit passenden Slots.",
+    "outcomesTitle": "Nach dem Workshop",
+    "outcomes": [
+      "Teams interpretieren CGM-Daten sicher und souverän",
+      "Konkrete Habit-Roadmap für Ernährung, Schlaf & Aktivität",
+      "Leadership-Guide für nachhaltige Gesundheitskommunikation"
+    ],
     "disclaimer": "Hinweis: Livalance ersetzt keine ärztliche Beratung."
   },
   "programSection": {
     "title": "Workshops & Programme aus einer Hand",
     "description": "Wir verbinden datenbasierte Sensorphasen mit Live-Sessions, Habit-Design und Teamkommunikation – abgestimmt auf eure Realität.",
+    "supporting": "Jedes Paket startet mit einem gemeinsamen Architektur-Call und endet mit einem klaren Transferplan.",
     "bundles": [
       {
         "name": "Focus Sprint",
-        "description": "2 Wochen Intensivphase mit CGM, täglichen Micro-Nudges und Synthese-Workshop."
+        "description": "2 Wochen Intensivphase mit CGM, täglichen Micro-Nudges und Synthese-Workshop.",
+        "duration": "14 Tage Betreuung",
+        "deliverables": [
+          "Kick-off & Medical Playbook",
+          "Tägliche Slack/Teams Nudges",
+          "Transfer-Session mit Aktionsplan"
+        ]
       },
       {
         "name": "Team Journey",
-        "description": "4–6 Wochen Hybrid-Programm inklusive Leader Enablement, async Impulsen und Reporting."
+        "description": "4–6 Wochen Hybrid-Programm inklusive Leader Enablement, async Impulsen und Reporting.",
+        "duration": "4–6 Wochen Begleitung",
+        "deliverables": [
+          "Live-Workshops & Office Hours",
+          "Leader Enablement Toolkit",
+          "Fortlaufende Daten-Reports"
+        ]
       },
       {
         "name": "Season Reset",
-        "description": "Quartalsweise Refresh-Workshops mit Pillar-spezifischen Experimenten und Check-ins."
+        "description": "Quartalsweise Refresh-Workshops mit Pillar-spezifischen Experimenten und Check-ins.",
+        "duration": "Quarterly Touchpoints",
+        "deliverables": [
+          "Seasonal Habit Experiments",
+          "Community Q&A Sessions",
+          "Executive Summary & KPIs"
+        ]
       }
     ],
+    "note": "Alle Programme sind deutsch- und englischsprachig verfügbar und skalieren mit eurer Teamgröße.",
     "cta": "Programme anfragen"
   },
   "socialProof": {
     "title": "Vertrauen von Teams & Gründer:innen",
+    "description": "Gesundheit wird Teil der Kultur, wenn sie in klare Prozesse übersetzt wird. Livalance begleitet Remote- und Hybrid-Teams in Europa.",
     "logos": [
       "SaaS Scale-ups",
       "Remote-first Unternehmen",
       "CrossFit & Boutique Gyms"
+    ],
+    "metrics": [
+      {
+        "value": "250+",
+        "label": "Teilnehmende in Sensor-Programmen"
+      },
+      {
+        "value": "12",
+        "label": "durchgeführte Kohorten pro Jahr"
+      },
+      {
+        "value": "98%",
+        "label": "empfehlen Livalance weiter"
+      }
     ]
   },
   "leadMagnet": {
     "title": "7-Tage Balance Reset",
     "description": "PDF mit Morgen-, Mittags- und Abend-Ritualen plus Einkaufsliste. Double Opt-in, kein Spam.",
+    "benefits": [
+      "Strukturierte Morning-, Noon- und Night-Rituale",
+      "Meal-Prep-Templates und Einkaufsliste",
+      "Check-ins zum Tracken deiner Energie"
+    ],
+    "note": "Starte mit einem mikro-strukturierten Reset, der sich in volle Wochen integrieren lässt.",
+    "privacy": "Double Opt-in. Du kannst dich jederzeit mit einem Klick abmelden.",
     "cta": "PDF erhalten"
   },
   "faq": {
@@ -109,7 +208,8 @@
   "finalCta": {
     "title": "Bereit für mehr Balance?",
     "subtitle": "Buche ein kostenloses Erstgespräch und wir skizzieren deinen nächsten Schritt.",
-    "primary": "Kostenloses Erstgespräch"
+    "primary": "Kostenloses Erstgespräch",
+    "tagline": "Gesundheit als Wettbewerbsvorteil"
   },
   "articles": {
     "title": "Wissen",
@@ -121,7 +221,8 @@
       "under5": "< 5 Min",
       "under10": "< 10 Min"
     },
-    "empty": "Noch keine Artikel veröffentlicht."
+    "empty": "Noch keine Artikel veröffentlicht.",
+    "cta": "Zum Wissens-Archiv"
   },
   "visionSection": {
     "title": "Unsere Ausrichtung",
@@ -130,7 +231,13 @@
     "outcomeLabel": "Ergebnis",
     "vision": "Vitalität ist kein Luxus, sondern Standard – zugänglich für Teams, Gründer:innen und Einzelpersonen.",
     "mission": "Wir kombinieren Daten, Habit-Design und empathische Begleitung, um nachhaltige Routinen aufzubauen.",
-    "outcome": "Erwartetes Ergebnis: Klarheit über persönliche Hebel, eine gemeinsame Sprache für Gesundheit und messbare Energie im Alltag."
+    "outcome": "Erwartetes Ergebnis: Klarheit über persönliche Hebel, eine gemeinsame Sprache für Gesundheit und messbare Energie im Alltag.",
+    "valuesTitle": "Was uns leitet",
+    "values": [
+      "Wissenschaftlich geprüft, menschlich vermittelt",
+      "Transparente Kommunikation auf Augenhöhe",
+      "Kulturwandel statt kurzfristiger Challenge"
+    ]
   },
   "newsletter": {
     "title": "Mini-Impulse & Workshop-Updates",
@@ -143,21 +250,31 @@
   "contact": {
     "title": "Kontakt aufnehmen",
     "intro": "Buche einen Termin oder sende uns dein Projekt. Wir antworten innerhalb von 24 Stunden (werktags).",
+    "supporting": "Gemeinsam schaffen wir gesundheitsorientierte Strukturen, die im Alltag funktionieren.",
     "email": "E-Mail",
     "message": "Nachricht",
     "submit": "Anfrage senden",
-    "booking": "Direkt Termin buchen"
+    "booking": "Direkt Termin buchen",
+    "channels": [
+      "hello@livalance.com",
+      "+49 30 000 000",
+      "Berlin & Remote Europe"
+    ],
+    "response": "Wir antworten werktags innerhalb von 24 Stunden."
   },
   "workshopsPage": {
     "heroTitle": "Workshops mit Tiefenwirkung",
     "heroSubtitle": "Sleep, Nutrition, Activity & Mindfulness Module – onsite oder remote, DSGVO-konform.",
+    "heroTagline": "Modulare Programme für Führungskräfte, Teams und Company Offsites.",
     "flowTitle": "So läuft es ab",
+    "flowDescription": "Wir führen euch von der Vorbereitung bis zum Transfer – mit klaren Verantwortlichkeiten auf jeder Etappe.",
     "flowSteps": [
       "Kick-off: Ziele, Consent, Onboarding",
       "Experience: Live-Sessions + Async-Impulse",
       "Transfer: Roadmaps & Teamreports"
     ],
     "formatsTitle": "Formate",
+    "formatsDescription": "Alle Formate lassen sich kombinieren und auf bestehende Kalender abstimmen.",
     "formats": [
       "90 Minuten Deep Dive (virtuell)",
       "Halbtages-Workshop (hybrid)",
@@ -170,7 +287,17 @@
     "heroTitle": "Über Livalance",
     "heroSubtitle": "Wir verbinden Sportwissenschaft, Ernährungsmedizin und Coaching, um gesunde Routinen zugänglich zu machen.",
     "missionTitle": "Unsere Mission",
-    "mission": "Vitalität als Standard – mit Programmen, die Zeitpläne respektieren und Ergebnisse messbar machen."
+    "mission": "Vitalität als Standard – mit Programmen, die Zeitpläne respektieren und Ergebnisse messbar machen.",
+    "storyTitle": "Warum es Livalance gibt",
+    "story": "Gegründet von Athlet:innen, Coaches und Strateg:innen, die in Start-ups, Remote-Teams und Agenturen erlebt haben, wie Energie-Management zum Engpass wird.",
+    "valuesTitle": "Werte, die wir leben",
+    "values": [
+      "Empathie und radikale Ehrlichkeit",
+      "Evidence first, dann Experimente",
+      "Kollaboration statt Silodenken"
+    ],
+    "approachTitle": "Unser Ansatz",
+    "approach": "Wir kombinieren Analysen, Workshops und Habit-Design zu einem iterativen Prozess. Jede Zusammenarbeit endet mit klaren Messpunkten und Follow-up."
   },
   "legal": {
     "imprint": "Impressum",

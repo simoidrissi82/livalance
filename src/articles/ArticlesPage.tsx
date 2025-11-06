@@ -23,7 +23,8 @@ export async function ArticlesPage({locale}: {locale: AppLocale}) {
         under5: labels('filters.under5'),
         under10: labels('filters.under10'),
         empty: labels('empty'),
-        readMore: articlePage('readMore')
+        readMore: articlePage('readMore'),
+        cta: labels('cta')
       }}
     />
   );
