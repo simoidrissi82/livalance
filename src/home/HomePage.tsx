@@ -51,6 +51,18 @@ export async function HomePage({locale}: HomePageProps) {
       <Hero
         title={hero('title')}
         subtitle={hero('subtitle')}
+        announcement={hero('announcement')}
+        trustSignal={hero('trustSignal')}
+        metrics={[
+          {value: hero('metrics.0.value'), label: hero('metrics.0.label')},
+          {value: hero('metrics.1.value'), label: hero('metrics.1.label')},
+          {value: hero('metrics.2.value'), label: hero('metrics.2.label')}
+        ]}
+        highlights={[
+          {title: hero('highlights.0.title'), description: hero('highlights.0.body')},
+          {title: hero('highlights.1.title'), description: hero('highlights.1.body')},
+          {title: hero('highlights.2.title'), description: hero('highlights.2.body')}
+        ]}
         primaryCta={{label: hero('primaryCta'), href: '/contact'}}
         secondaryCta={{label: hero('secondaryCta'), href: '/workshops'}}
       />
@@ -62,22 +74,42 @@ export async function HomePage({locale}: HomePageProps) {
           {
             id: 'sleep',
             title: pillars('items.sleep.title'),
-            description: pillars('items.sleep.body')
+            description: pillars('items.sleep.body'),
+            focusPoints: [
+              pillars('items.sleep.focus.0'),
+              pillars('items.sleep.focus.1'),
+              pillars('items.sleep.focus.2')
+            ]
           },
           {
             id: 'nutrition',
             title: pillars('items.nutrition.title'),
-            description: pillars('items.nutrition.body')
+            description: pillars('items.nutrition.body'),
+            focusPoints: [
+              pillars('items.nutrition.focus.0'),
+              pillars('items.nutrition.focus.1'),
+              pillars('items.nutrition.focus.2')
+            ]
           },
           {
             id: 'activity',
             title: pillars('items.activity.title'),
-            description: pillars('items.activity.body')
+            description: pillars('items.activity.body'),
+            focusPoints: [
+              pillars('items.activity.focus.0'),
+              pillars('items.activity.focus.1'),
+              pillars('items.activity.focus.2')
+            ]
           },
           {
             id: 'mindfulness',
             title: pillars('items.mindfulness.title'),
-            description: pillars('items.mindfulness.body')
+            description: pillars('items.mindfulness.body'),
+            focusPoints: [
+              pillars('items.mindfulness.focus.0'),
+              pillars('items.mindfulness.focus.1'),
+              pillars('items.mindfulness.focus.2')
+            ]
           }
         ]}
       />
@@ -93,36 +125,69 @@ export async function HomePage({locale}: HomePageProps) {
           workshopsSection('agenda.3')
         ]}
         ctaLabel={workshopsSection('cta')}
+        ctaSupporting={workshopsSection('ctaSupporting')}
+        outcomesTitle={workshopsSection('outcomesTitle')}
+        outcomes={[
+          workshopsSection('outcomes.0'),
+          workshopsSection('outcomes.1'),
+          workshopsSection('outcomes.2')
+        ]}
         disclaimer={workshopsSection('disclaimer')}
       />
 
       <ProgramOverview
         title={programSection('title')}
         description={programSection('description')}
+        supporting={programSection('supporting')}
         bundles={[
           {
             name: programSection('bundles.0.name'),
-            description: programSection('bundles.0.description')
+            description: programSection('bundles.0.description'),
+            duration: programSection('bundles.0.duration'),
+            deliverables: [
+              programSection('bundles.0.deliverables.0'),
+              programSection('bundles.0.deliverables.1'),
+              programSection('bundles.0.deliverables.2')
+            ]
           },
           {
             name: programSection('bundles.1.name'),
-            description: programSection('bundles.1.description')
+            description: programSection('bundles.1.description'),
+            duration: programSection('bundles.1.duration'),
+            deliverables: [
+              programSection('bundles.1.deliverables.0'),
+              programSection('bundles.1.deliverables.1'),
+              programSection('bundles.1.deliverables.2')
+            ]
           },
           {
             name: programSection('bundles.2.name'),
-            description: programSection('bundles.2.description')
+            description: programSection('bundles.2.description'),
+            duration: programSection('bundles.2.duration'),
+            deliverables: [
+              programSection('bundles.2.deliverables.0'),
+              programSection('bundles.2.deliverables.1'),
+              programSection('bundles.2.deliverables.2')
+            ]
           }
         ]}
+        note={programSection('note')}
         ctaLabel={programSection('cta')}
         ctaHref="/contact"
       />
 
       <SocialProof
         title={socialProof('title')}
+        description={socialProof('description')}
         items={[
           socialProof('logos.0'),
           socialProof('logos.1'),
           socialProof('logos.2')
+        ]}
+        metrics={[
+          {value: socialProof('metrics.0.value'), label: socialProof('metrics.0.label')},
+          {value: socialProof('metrics.1.value'), label: socialProof('metrics.1.label')},
+          {value: socialProof('metrics.2.value'), label: socialProof('metrics.2.label')}
         ]}
       />
 
@@ -137,7 +202,8 @@ export async function HomePage({locale}: HomePageProps) {
           under5: articlesLabels('filters.under5'),
           under10: articlesLabels('filters.under10'),
           empty: articlesLabels('empty'),
-          readMore: articlesPage('readMore')
+          readMore: articlesPage('readMore'),
+          cta: articlesLabels('cta')
         }}
       />
 
@@ -149,11 +215,24 @@ export async function HomePage({locale}: HomePageProps) {
         vision={visionSection('vision')}
         mission={visionSection('mission')}
         outcome={visionSection('outcome')}
+        valuesTitle={visionSection('valuesTitle')}
+        values={[
+          visionSection('values.0'),
+          visionSection('values.1'),
+          visionSection('values.2')
+        ]}
       />
 
       <LeadMagnet
         title={leadMagnet('title')}
         description={leadMagnet('description')}
+        benefits={[
+          leadMagnet('benefits.0'),
+          leadMagnet('benefits.1'),
+          leadMagnet('benefits.2')
+        ]}
+        note={leadMagnet('note')}
+        privacy={leadMagnet('privacy')}
         ctaLabel={leadMagnet('cta')}
       />
 
@@ -179,6 +258,7 @@ export async function HomePage({locale}: HomePageProps) {
         title={finalCta('title')}
         subtitle={finalCta('subtitle')}
         ctaLabel={finalCta('primary')}
+        tagline={finalCta('tagline')}
       />
     </>
   );

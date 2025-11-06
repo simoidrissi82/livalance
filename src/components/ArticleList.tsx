@@ -3,6 +3,8 @@
 import {useMemo, useState} from 'react';
 
 import {Link} from '@/i18n/routing';
+
+import {CTAButton} from './CTAButton';
 import type {ArticleFrontmatter} from '@/lib/content-types';
 
 type ArticleListProps = {
@@ -17,6 +19,7 @@ type ArticleListProps = {
     under10: string;
     empty: string;
     readMore: string;
+    cta: string;
   };
 };
 
@@ -69,42 +72,46 @@ export function ArticleList({articles, labels}: ArticleListProps) {
   };
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
-      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
+    <section className="mx-auto max-w-6xl px-6 py-20">
+      <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+        <div className="max-w-3xl space-y-3">
           <h2 className="font-display text-3xl font-semibold text-brand-text">
             {labels.title}
           </h2>
-          <p className="mt-2 text-base text-brand-muted">{labels.intro}</p>
+          <p className="text-base text-brand-muted">{labels.intro}</p>
         </div>
-        <div className="flex flex-wrap gap-3">
-          <label className="flex flex-col text-xs font-semibold text-brand-muted">
-            {labels.category}
-            <select
-              className="mt-1 rounded-xl border border-slate-200 bg-brand-surface px-3 py-2 text-sm text-brand-text focus:border-brand-primary"
-              value={selectedCategory}
-              onChange={(event) => handleCategoryChange(event.target.value)}
-            >
-              <option value="all">{labels.all}</option>
-              {categories.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="flex flex-col text-xs font-semibold text-brand-muted">
-            {labels.readingTime}
-            <select
-              className="mt-1 rounded-xl border border-slate-200 bg-brand-surface px-3 py-2 text-sm text-brand-text focus:border-brand-primary"
-              value={selectedTime}
-              onChange={(event) => handleReadingChange(event.target.value)}
-            >
-              <option value="all">{labels.all}</option>
-              <option value="under5">{labels.under5}</option>
-              <option value="under10">{labels.under10}</option>
-            </select>
-          </label>
+        <CTAButton href="/insights" variant="ghost">
+          {labels.cta}
+        </CTAButton>
+      </div>
+
+      <div className="mt-8 flex flex-wrap items-end gap-4 rounded-3xl bg-white/60 p-5 shadow-soft backdrop-blur">
+        <div className="flex flex-col text-xs font-semibold text-brand-muted">
+          <span>{labels.category}</span>
+          <select
+            className="mt-1 rounded-2xl border border-white/60 bg-white/90 px-3 py-2 text-sm text-brand-text shadow-soft focus:border-brand-primary"
+            value={selectedCategory}
+            onChange={(event) => handleCategoryChange(event.target.value)}
+          >
+            <option value="all">{labels.all}</option>
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="flex flex-col text-xs font-semibold text-brand-muted">
+          <span>{labels.readingTime}</span>
+          <select
+            className="mt-1 rounded-2xl border border-white/60 bg-white/90 px-3 py-2 text-sm text-brand-text shadow-soft focus:border-brand-primary"
+            value={selectedTime}
+            onChange={(event) => handleReadingChange(event.target.value)}
+          >
+            <option value="all">{labels.all}</option>
+            <option value="under5">{labels.under5}</option>
+            <option value="under10">{labels.under10}</option>
+          </select>
         </div>
       </div>
 
@@ -115,25 +122,26 @@ export function ArticleList({articles, labels}: ArticleListProps) {
           {currentItems.map((article) => (
             <article
               key={article.slug}
-              className="flex h-full flex-col gap-4 rounded-3xl border border-slate-200 bg-brand-surface p-6 shadow-soft"
+              className="group flex h-full flex-col gap-4 overflow-hidden rounded-3xl border border-white/60 bg-white/80 p-6 shadow-soft backdrop-blur transition hover:-translate-y-1 hover:border-brand-primary/30"
             >
-              <div>
-                <span className="text-xs uppercase tracking-wide text-brand-muted">
+              <div className="space-y-3">
+                <span className="inline-flex items-center rounded-full bg-brand-primary-tint px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-primary">
                   {article.category} · {article.readingTime} min
                 </span>
                 <h3 className="mt-2 font-display text-xl font-semibold text-brand-text">
                   {article.title}
                 </h3>
-                <p className="mt-2 text-sm text-brand-muted">{article.excerpt}</p>
+                <p className="text-sm text-brand-muted">{article.excerpt}</p>
               </div>
               <Link
                 href={{
                   pathname: '/articles/[slug]',
                   params: {slug: article.slug}
                 }}
-                className="text-sm font-semibold text-brand-primary"
+                className="flex items-center gap-2 text-sm font-semibold text-brand-primary"
               >
                 {labels.readMore}
+                <span aria-hidden>→</span>
               </Link>
             </article>
           ))}
