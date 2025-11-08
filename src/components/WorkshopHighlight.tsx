@@ -6,6 +6,7 @@ type WorkshopHighlightProps = {
   description: string;
   agenda: string[];
   ctaLabel: string;
+  ctaHref?: string;
   ctaSupporting?: string;
   outcomesTitle?: string;
   outcomes?: string[];
@@ -18,6 +19,7 @@ export function WorkshopHighlight({
   description,
   agenda,
   ctaLabel,
+  ctaHref = '/workshops',
   ctaSupporting,
   outcomesTitle,
   outcomes,
@@ -37,7 +39,7 @@ export function WorkshopHighlight({
             <h2 className="font-display text-3xl font-semibold text-brand-text">{title}</h2>
             <p className="text-base text-brand-muted">{description}</p>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <CTAButton href="/workshops">{ctaLabel}</CTAButton>
+              <CTAButton href={ctaHref}>{ctaLabel}</CTAButton>
               {ctaSupporting ? (
                 <p className="text-sm text-brand-text/80">{ctaSupporting}</p>
               ) : null}

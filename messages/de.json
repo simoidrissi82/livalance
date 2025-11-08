@@ -103,7 +103,7 @@
         ]
       }
     ],
-    "note": "Cal.com läuft über NEXT_PUBLIC_CAL_URL – Termine bleiben damit gebrandet, mehrsprachig und DSGVO-konform.",
+    "note": "Cal.com läuft über NEXT_PUBLIC_CAL_URL – Termine bleiben damit gebrandet, mehrsprachig und datensparsam.",
     "cta": "Alle Angebote ansehen"
   },
   "pillars": {
@@ -271,7 +271,7 @@
   },
   "workshopsPage": {
     "heroTitle": "Workshops mit Tiefenwirkung",
-    "heroSubtitle": "Sleep, Nutrition, Bewegung & Achtsamkeit – Workshops als dein Weg zur Transformation. Vor Ort in Berlin oder remote – passend zu deinem Alltag und DSGVO-konform.",
+    "heroSubtitle": "Sleep, Nutrition, Bewegung & Achtsamkeit – Workshops als dein Weg zur Transformation. In-person oder remote – abgestimmt auf euren Alltag und mit klaren Ergebnissen.",
     "heroTagline": "Wähle den Workshop, der deinen nächsten Schritt möglich macht.",
     "flowTitle": "So läuft es ab",
     "flowDescription": "Wir führen euch von der Vorbereitung bis zum Transfer – mit klaren Verantwortlichkeiten auf jeder Etappe.",

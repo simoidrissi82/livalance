@@ -3,13 +3,18 @@ import {getLocale, getTranslations} from 'next-intl/server';
 import {BookingEmbed} from '@/components/BookingEmbed';
 import {CTAButton} from '@/components/CTAButton';
 import {ProgramOverview} from '@/components/ProgramOverview';
+import {WorkshopHighlight} from '@/components/WorkshopHighlight';
 
 export async function WorkshopsPage() {
-  const t = await getTranslations('workshopsPage');
-  const program = await getTranslations('programSection');
-  const locale = await getLocale();
-  const cta = await getTranslations('cta');
-  const booking = await getTranslations('booking');
+  const [t, offers, cta, booking, locale] = await Promise.all([
+    getTranslations('workshopsPage'),
+    getTranslations('offersTeaser'),
+    getTranslations('cta'),
+    getTranslations('booking'),
+    getLocale()
+  ]);
+
+  const workshopDeliverables = offers.raw('bundles.0.deliverables') as string[];
 
   return (
     <div className="space-y-16 bg-brand-bg pb-20">
@@ -33,6 +38,16 @@ export async function WorkshopsPage() {
           </div>
         </div>
       </section>
+
+      <WorkshopHighlight
+        badge={offers('bundles.0.duration')}
+        title={offers('bundles.0.name')}
+        description={offers('bundles.0.description')}
+        agenda={workshopDeliverables}
+        ctaLabel={cta('bookIntro')}
+        ctaHref="/contact"
+        disclaimer={offers('supporting')}
+      />
 
       <section className="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-2">
         <div className="rounded-3xl border border-white/60 bg-white/80 p-8 shadow-soft backdrop-blur">
@@ -61,44 +76,44 @@ export async function WorkshopsPage() {
       </section>
 
       <ProgramOverview
-        title={program('title')}
-        description={program('description')}
-        supporting={program('supporting')}
+        title={offers('title')}
+        description={offers('description')}
+        supporting={offers('supporting')}
         bundles={[
           {
-            name: program('bundles.0.name'),
-            description: program('bundles.0.description'),
-            duration: program('bundles.0.duration'),
+            name: offers('bundles.0.name'),
+            description: offers('bundles.0.description'),
+            duration: offers('bundles.0.duration'),
             deliverables: [
-              program('bundles.0.deliverables.0'),
-              program('bundles.0.deliverables.1'),
-              program('bundles.0.deliverables.2')
+              offers('bundles.0.deliverables.0'),
+              offers('bundles.0.deliverables.1'),
+              offers('bundles.0.deliverables.2')
             ]
           },
           {
-            name: program('bundles.1.name'),
-            description: program('bundles.1.description'),
-            duration: program('bundles.1.duration'),
+            name: offers('bundles.1.name'),
+            description: offers('bundles.1.description'),
+            duration: offers('bundles.1.duration'),
             deliverables: [
-              program('bundles.1.deliverables.0'),
-              program('bundles.1.deliverables.1'),
-              program('bundles.1.deliverables.2')
+              offers('bundles.1.deliverables.0'),
+              offers('bundles.1.deliverables.1'),
+              offers('bundles.1.deliverables.2')
             ]
           },
           {
-            name: program('bundles.2.name'),
-            description: program('bundles.2.description'),
-            duration: program('bundles.2.duration'),
+            name: offers('bundles.2.name'),
+            description: offers('bundles.2.description'),
+            duration: offers('bundles.2.duration'),
             deliverables: [
-              program('bundles.2.deliverables.0'),
-              program('bundles.2.deliverables.1'),
-              program('bundles.2.deliverables.2')
+              offers('bundles.2.deliverables.0'),
+              offers('bundles.2.deliverables.1'),
+              offers('bundles.2.deliverables.2')
             ]
           }
         ]}
-        note={program('note')}
-        ctaLabel={program('cta')}
-        ctaHref="/contact"
+        note={offers('note')}
+        ctaLabel={offers('cta')}
+        ctaHref="/offers"
       />
 
       <section id="booking" className="mx-auto max-w-6xl px-6">
