@@ -25,6 +25,7 @@ Produktionsreife, zweisprachige (DE/EN) Marketing-Plattform für Livalance auf B
 ├── content/                 # MDX-Inhalte (Artikel je Locale) + slug-map.json
 ├── messages/                # next-intl JSON Messages pro Sprache
 ├── public/                  # Statische Assets (Logos, Platzhalter-Bilder, Sitemap-Ausgabe)
+├── scripts/                 # Hilfsskripte (z. B. Cloudflare-Build-Workflow)
 ├── src/
 │   ├── home/                # HomePage-Komposition
 │   ├── pillars/, about/, …  # Feature-spezifische Server-Komponenten
