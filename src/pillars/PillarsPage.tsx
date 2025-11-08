@@ -34,12 +34,12 @@ export async function PillarsPage() {
 
   return (
     <div className="space-y-16 bg-brand-bg pb-20">
-      <section className="relative overflow-hidden bg-brand-primary-tint/40">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/30 via-transparent to-brand-accent/20" aria-hidden />
+      <section className="bg-brand-primary-tint/40 relative overflow-hidden">
+        <div className="from-brand-primary/30 to-brand-accent/20 absolute inset-0 bg-gradient-to-br via-transparent" aria-hidden />
         <div className="relative mx-auto max-w-5xl px-6 py-24">
           <div className="max-w-3xl space-y-4">
             <h1 className="font-display text-4xl font-semibold text-brand-text">{page('title')}</h1>
-            <p className="text-lg text-brand-text/80">{page('intro')}</p>
+            <p className="text-brand-text/80 text-lg">{page('intro')}</p>
           </div>
         </div>
       </section>
@@ -50,11 +50,11 @@ export async function PillarsPage() {
             <h2 className="font-display text-3xl font-semibold text-brand-text">
               {page('conceptTitle')}
             </h2>
-            <p className="text-base text-brand-text/80">{page('conceptBody')}</p>
-            <ul className="mt-6 space-y-3 text-sm text-brand-text/80">
+            <p className="text-brand-text/80 text-base">{page('conceptBody')}</p>
+            <ul className="text-brand-text/80 mt-6 space-y-3 text-sm">
               {conceptBullets.map((bullet) => (
                 <li key={bullet} className="flex gap-3">
-                  <span className="mt-1 h-2 w-2 flex-none rounded-full bg-brand-primary" />
+                  <span className="mt-1 size-2 flex-none rounded-full bg-brand-primary" />
                   <span>{bullet}</span>
                 </li>
               ))}
@@ -74,16 +74,16 @@ export async function PillarsPage() {
                 className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide ${badgeClassMap[key]}`}
               >
                 {pillars(`items.${key}.title`)}
-                <span className="h-1.5 w-1.5 rounded-full bg-current" aria-hidden />
+                <span className="size-1.5 rounded-full bg-current" aria-hidden />
               </span>
               <h2 className="font-display text-2xl font-semibold text-brand-text">
                 {page(`items.${key}.headline`)}
               </h2>
-              <p className="mt-4 text-sm text-brand-text/80">{page(`items.${key}.body`)}</p>
-              <ul className="mt-6 space-y-2 text-sm text-brand-text/80">
+              <p className="text-brand-text/80 mt-4 text-sm">{page(`items.${key}.body`)}</p>
+              <ul className="text-brand-text/80 mt-6 space-y-2 text-sm">
                 {[0, 1, 2].map((index) => (
                   <li key={index} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand-primary/80" />
+                    <span className="bg-brand-primary/80 mt-2 size-1.5 flex-none rounded-full" />
                     <span>{page(`items.${key}.details.${index}`)}</span>
                   </li>
                 ))}
@@ -94,9 +94,9 @@ export async function PillarsPage() {
       </section>
 
       <section className="mx-auto max-w-4xl px-6">
-        <div className="rounded-3xl border border-brand-primary/10 bg-brand-surface p-10 text-center shadow-soft">
+        <div className="border-brand-primary/10 rounded-3xl border bg-brand-surface p-10 text-center shadow-soft">
           <h3 className="font-display text-2xl font-semibold text-brand-text">{page('ctaTitle')}</h3>
-          <p className="mt-4 text-sm text-brand-text/80">{page('ctaBody')}</p>
+          <p className="text-brand-text/80 mt-4 text-sm">{page('ctaBody')}</p>
           <div className="mt-6 flex justify-center">
             <CTAButton href="/contact">{page('ctaButton')}</CTAButton>
           </div>

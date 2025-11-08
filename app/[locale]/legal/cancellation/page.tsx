@@ -1,7 +1,7 @@
 export default function Page({params}: {params: {locale: 'de' | 'en'}}) {
   if (params.locale === 'de') {
     return (
-      <div className="mx-auto max-w-3xl px-6 py-16 space-y-4 text-sm text-brand-muted">
+      <div className="mx-auto max-w-3xl space-y-4 px-6 py-16 text-sm text-brand-muted">
         <h1 className="font-display text-3xl font-semibold text-brand-text">Widerruf</h1>
         <p>
           Verbraucher:innen haben das Recht, binnen 14 Tagen ohne Angabe von Gründen einen Vertrag zu widerrufen. Die
@@ -16,7 +16,7 @@ export default function Page({params}: {params: {locale: 'de' | 'en'}}) {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16 space-y-4 text-sm text-brand-muted">
+    <div className="mx-auto max-w-3xl space-y-4 px-6 py-16 text-sm text-brand-muted">
       <h1 className="font-display text-3xl font-semibold text-brand-text">Cancellation Policy</h1>
       <p>
         Consumers may cancel within 14 days without stating a reason. The period starts on the day the agreement is

@@ -11,13 +11,13 @@ export async function ContactPage() {
 
   return (
     <div className="space-y-16 bg-brand-bg pb-20">
-      <section className="relative overflow-hidden bg-brand-primary-tint/40">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/30 via-transparent to-brand-accent/30" aria-hidden />
+      <section className="bg-brand-primary-tint/40 relative overflow-hidden">
+        <div className="from-brand-primary/30 to-brand-accent/30 absolute inset-0 bg-gradient-to-br via-transparent" aria-hidden />
         <div className="relative mx-auto max-w-5xl px-6 py-24">
           <div className="rounded-[2.5rem] border border-white/60 bg-white/80 p-12 shadow-soft backdrop-blur">
             <h1 className="font-display text-4xl font-semibold text-brand-text">{t('title')}</h1>
-            <p className="mt-4 text-lg text-brand-text/80">{t('intro')}</p>
-            <p className="mt-2 text-sm text-brand-text/70">{t('supporting')}</p>
+            <p className="text-brand-text/80 mt-4 text-lg">{t('intro')}</p>
+            <p className="text-brand-text/70 mt-2 text-sm">{t('supporting')}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <CTAButton href="mailto:hello@livalance.com">{cta('submit')}</CTAButton>
               <CTAButton href="#booking" variant="secondary">
@@ -49,16 +49,16 @@ export async function ContactPage() {
             <CTAButton type="submit">{cta('submit')}</CTAButton>
           </form>
         </div>
-        <aside className="flex flex-col justify-between rounded-3xl border border-brand-primary/20 bg-brand-primary-tint/50 p-8 shadow-soft">
+        <aside className="border-brand-primary/20 bg-brand-primary-tint/50 flex flex-col justify-between rounded-3xl border p-8 shadow-soft">
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-primary">Connections</h2>
-            <ul className="mt-4 space-y-3 text-sm text-brand-text/80">
+            <ul className="text-brand-text/80 mt-4 space-y-3 text-sm">
               {channels.map((channel) => (
                 <li key={channel}>{channel}</li>
               ))}
             </ul>
           </div>
-          <p className="text-xs text-brand-text/70">{t('response')}</p>
+          <p className="text-brand-text/70 text-xs">{t('response')}</p>
         </aside>
       </section>
 

@@ -17,7 +17,7 @@ export function CgmKickstart({title, bullets, disclaimer, ctaLabel}: CgmKickstar
             <ul className="mt-4 space-y-3 text-sm text-brand-muted">
               {bullets.map((bullet) => (
                 <li key={bullet} className="flex gap-3">
-                  <span className="mt-1 inline-block h-2 w-2 rounded-full bg-brand-primary" aria-hidden />
+                  <span className="mt-1 inline-block size-2 rounded-full bg-brand-primary" aria-hidden />
                   <span>{bullet}</span>
                 </li>
               ))}

@@ -30,7 +30,7 @@ export function BookingEmbed({locale}: BookingEmbedProps) {
       <iframe
         title="Cal.com booking"
         src={src}
-        className="h-full w-full"
+        className="size-full"
         allow="camera; microphone; fullscreen"
       />
     </div>

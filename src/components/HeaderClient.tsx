@@ -24,7 +24,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
   const close = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-100 bg-brand-bg/80 backdrop-blur">
+    <header className="bg-brand-bg/80 sticky top-0 z-50 border-b border-slate-100 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <div className="flex items-center gap-3">
           <Link
@@ -49,7 +49,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
             <Link
               key={item.key}
               href={item.href}
-              className="rounded-xl px-3 py-2 text-sm font-medium text-brand-muted transition hover:bg-brand-primary-tint hover:text-brand-text"
+              className="hover:bg-brand-primary-tint rounded-xl px-3 py-2 text-sm font-medium text-brand-muted transition hover:text-brand-text"
             >
               {item.label}
             </Link>
@@ -67,7 +67,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
           onClick={toggle}
           aria-label="Toggle navigation"
         >
-          {open ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
+          {open ? <XMarkIcon className="size-6" /> : <Bars3Icon className="size-6" />}
         </button>
       </div>
 
@@ -78,7 +78,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
               <Link
                 key={item.key}
                 href={item.href}
-                className="rounded-xl px-3 py-2 text-sm font-medium text-brand-text hover:bg-brand-primary-tint"
+                className="hover:bg-brand-primary-tint rounded-xl px-3 py-2 text-sm font-medium text-brand-text"
                 onClick={close}
               >
                 {item.label}

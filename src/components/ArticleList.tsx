@@ -122,10 +122,10 @@ export function ArticleList({articles, labels}: ArticleListProps) {
           {currentItems.map((article) => (
             <article
               key={article.slug}
-              className="group flex h-full flex-col gap-4 overflow-hidden rounded-3xl border border-white/60 bg-white/80 p-6 shadow-soft backdrop-blur transition hover:-translate-y-1 hover:border-brand-primary/30"
+              className="hover:border-brand-primary/30 group flex h-full flex-col gap-4 overflow-hidden rounded-3xl border border-white/60 bg-white/80 p-6 shadow-soft backdrop-blur transition hover:-translate-y-1"
             >
               <div className="space-y-3">
-                <span className="inline-flex items-center rounded-full bg-brand-primary-tint px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-primary">
+                <span className="bg-brand-primary-tint inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-primary">
                   {article.category} · {article.readingTime} min
                 </span>
                 <h3 className="mt-2 font-display text-xl font-semibold text-brand-text">
@@ -158,7 +158,7 @@ export function ArticleList({articles, labels}: ArticleListProps) {
                 key={pageNumber}
                 type="button"
                 onClick={() => setPage(pageNumber)}
-                className={`h-9 w-9 rounded-full text-sm font-semibold ${
+                className={`size-9 rounded-full text-sm font-semibold ${
                   isActive
                     ? 'bg-brand-primary text-white'
                     : 'bg-brand-primary-tint text-brand-text'

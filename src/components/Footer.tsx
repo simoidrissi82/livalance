@@ -13,14 +13,14 @@ export async function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/40 bg-brand-primary-tint/40">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/30 via-transparent to-brand-accent/20" aria-hidden />
+    <footer className="bg-brand-primary-tint/40 relative overflow-hidden border-t border-white/40">
+      <div className="from-brand-primary/30 to-brand-accent/20 absolute inset-0 bg-gradient-to-br via-transparent" aria-hidden />
       <div className="relative mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-[2fr_1fr_1fr]">
         <div>
           <h2 className="font-display text-xl text-brand-text">
             {tFooter('tagline')}
           </h2>
-          <p className="mt-3 text-sm text-brand-text/70">
+          <p className="text-brand-text/70 mt-3 text-sm">
             {tFooter('rights', {year})}
           </p>
         </div>
@@ -38,7 +38,7 @@ export async function Footer() {
           <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-primary">
             {tFooter('follow')}
           </h3>
-          <ul className="mt-3 space-y-2 text-sm text-brand-text/80">
+          <ul className="text-brand-text/80 mt-3 space-y-2 text-sm">
             <li>
               <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
                 LinkedIn
@@ -54,7 +54,7 @@ export async function Footer() {
       </div>
 
       <div className="relative border-t border-white/50">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-6 py-4 text-xs text-brand-text/70">
+        <div className="text-brand-text/70 mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-6 py-4 text-xs">
           <Link href={locale === 'de' ? '/impressum' : '/legal/imprint'}>
             {tLegal('imprint')}
           </Link>

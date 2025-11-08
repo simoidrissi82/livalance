@@ -5,7 +5,7 @@ export function ToolkitSection({title, bullets}: {title: string; bullets: string
       <ul className="mt-6 space-y-3 text-sm text-brand-muted">
         {bullets.map((bullet) => (
           <li key={bullet} className="flex gap-3">
-            <span className="mt-1 inline-block h-2 w-2 rounded-full bg-brand-accent" aria-hidden />
+            <span className="mt-1 inline-block size-2 rounded-full bg-brand-accent" aria-hidden />
             <span>{bullet}</span>
           </li>
         ))}

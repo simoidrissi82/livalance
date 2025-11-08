@@ -10,7 +10,7 @@ type FinalCTAProps = {
 export function FinalCTA({title, subtitle, ctaLabel, tagline}: FinalCTAProps) {
   return (
     <section className="relative overflow-hidden px-6 py-24">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 via-brand-primary-tint to-brand-accent/30" aria-hidden />
+      <div className="from-brand-primary/20 via-brand-primary-tint to-brand-accent/30 absolute inset-0 bg-gradient-to-br" aria-hidden />
       <div className="relative mx-auto max-w-4xl rounded-[2.5rem] border border-white/60 bg-white/85 p-12 text-center shadow-soft backdrop-blur">
         <h2 className="font-display text-3xl font-semibold text-brand-text">
           {title}

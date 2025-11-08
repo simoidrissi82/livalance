@@ -22,10 +22,10 @@ const iconBgMap: Record<PillarItem['id'], string> = {
 };
 
 const iconMap: Record<PillarItem['id'], JSX.Element> = {
-  sleep: <MoonIcon className="h-6 w-6" />,
-  nutrition: <SparklesIcon className="h-6 w-6" />,
-  activity: <BoltIcon className="h-6 w-6" />,
-  mindfulness: <HeartIcon className="h-6 w-6" />
+  sleep: <MoonIcon className="size-6" />,
+  nutrition: <SparklesIcon className="size-6" />,
+  activity: <BoltIcon className="size-6" />,
+  mindfulness: <HeartIcon className="size-6" />
 };
 
 export function PillarsGrid({
@@ -52,7 +52,7 @@ export function PillarsGrid({
         {items.map((item) => (
           <article
             key={item.id}
-            className="group relative overflow-hidden rounded-3xl border border-white/50 bg-brand-surface/90 p-8 shadow-soft backdrop-blur"
+            className="bg-brand-surface/90 group relative overflow-hidden rounded-3xl border border-white/50 p-8 shadow-soft backdrop-blur"
           >
             <div
               className={`absolute inset-0 bg-gradient-to-br ${gradientMap[item.id]} opacity-0 transition group-hover:opacity-100`}
@@ -61,7 +61,7 @@ export function PillarsGrid({
             <div className="relative flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <div
-                  className={`flex h-12 w-12 items-center justify-center rounded-2xl ${iconBgMap[item.id]}`}
+                  className={`flex size-12 items-center justify-center rounded-2xl ${iconBgMap[item.id]}`}
                 >
                   {iconMap[item.id]}
                 </div>
@@ -72,10 +72,10 @@ export function PillarsGrid({
                   <p className="text-sm text-brand-muted">{item.description}</p>
                 </div>
               </div>
-              <ul className="space-y-2 text-sm text-brand-text/80">
+              <ul className="text-brand-text/80 space-y-2 text-sm">
                 {item.focusPoints.map((point) => (
                   <li key={point} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand-primary" />
+                    <span className="mt-2 size-1.5 flex-none rounded-full bg-brand-primary" />
                     <span>{point}</span>
                   </li>
                 ))}

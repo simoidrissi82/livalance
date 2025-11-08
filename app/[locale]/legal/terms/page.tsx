@@ -1,7 +1,7 @@
 export default function Page({params}: {params: {locale: 'de' | 'en'}}) {
   if (params.locale === 'de') {
     return (
-      <div className="mx-auto max-w-3xl px-6 py-16 space-y-4 text-sm text-brand-muted">
+      <div className="mx-auto max-w-3xl space-y-4 px-6 py-16 text-sm text-brand-muted">
         <h1 className="font-display text-3xl font-semibold text-brand-text">AGB</h1>
         <p>
           Unsere Allgemeinen Geschäftsbedingungen regeln Leistungsumfang, Zahlungsmodalitäten und Haftung. Projekte
@@ -14,7 +14,7 @@ export default function Page({params}: {params: {locale: 'de' | 'en'}}) {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16 space-y-4 text-sm text-brand-muted">
+    <div className="mx-auto max-w-3xl space-y-4 px-6 py-16 text-sm text-brand-muted">
       <h1 className="font-display text-3xl font-semibold text-brand-text">Terms & Conditions</h1>
       <p>
         Our general terms cover scope, payment, and liability. Projects begin once confirmed in writing alongside the

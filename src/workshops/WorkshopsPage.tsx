@@ -13,8 +13,8 @@ export async function WorkshopsPage() {
 
   return (
     <div className="space-y-16 bg-brand-bg pb-20">
-      <section className="relative overflow-hidden bg-brand-primary-tint/40">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/30 via-transparent to-brand-accent/20" aria-hidden />
+      <section className="bg-brand-primary-tint/40 relative overflow-hidden">
+        <div className="from-brand-primary/30 to-brand-accent/20 absolute inset-0 bg-gradient-to-br via-transparent" aria-hidden />
         <div className="relative mx-auto max-w-6xl px-6 py-24">
           <div className="max-w-3xl space-y-4">
             <span className="inline-flex rounded-full bg-white/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-brand-primary">
@@ -23,7 +23,7 @@ export async function WorkshopsPage() {
             <h1 className="font-display text-4xl font-semibold text-brand-text">
               {t('heroTitle')}
             </h1>
-            <p className="text-lg text-brand-text/80">{t('heroSubtitle')}</p>
+            <p className="text-brand-text/80 text-lg">{t('heroSubtitle')}</p>
             <div className="flex flex-wrap gap-3 pt-4">
               <CTAButton href="/contact">{cta('bookIntro')}</CTAButton>
               <CTAButton href="#booking" variant="secondary">
@@ -39,7 +39,7 @@ export async function WorkshopsPage() {
           <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-muted">
             {t('flowTitle')}
           </h2>
-          <p className="mt-2 text-sm text-brand-text/80">{t('flowDescription')}</p>
+          <p className="text-brand-text/80 mt-2 text-sm">{t('flowDescription')}</p>
           <ol className="mt-6 space-y-4 text-sm text-brand-text">
             <li>{t('flowSteps.0')}</li>
             <li>{t('flowSteps.1')}</li>
@@ -50,7 +50,7 @@ export async function WorkshopsPage() {
           <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-muted">
             {t('formatsTitle')}
           </h2>
-          <p className="mt-2 text-sm text-brand-text/80">{t('formatsDescription')}</p>
+          <p className="text-brand-text/80 mt-2 text-sm">{t('formatsDescription')}</p>
           <ul className="mt-6 space-y-3 text-sm text-brand-text">
             <li>{t('formats.0')}</li>
             <li>{t('formats.1')}</li>
