@@ -12,6 +12,7 @@ Produktionsreife, zweisprachige (DE/EN) Marketing-Plattform für Livalance auf B
 - [Inhalte & CMS-Flow (MDX)](#inhalte--cms-flow-mdx)
 - [Komponenten & Layouts](#komponenten--layouts)
 - [Tests & Qualität](#tests--qualität)
+- [Deployment](#deployment)
 - [Analytics & Integrationen](#analytics--integrationen)
 
 ## Projektstruktur
@@ -71,6 +72,8 @@ npm start
 | `npm run format`        | Prettier Check.
 | `npm run format:write`  | Prettier mit automatischer Formatierung.
 | `npm run generate:sitemap` | Generiert lokalisierte Sitemaps & robots.txt via `next-sitemap`.
+| `npm run export`        | Next.js Static Export nach `out/` (reine HTML/JS Assets).
+| `npm run build:pages`   | Convenience-Command für Cloudflare Pages (`next build && next export`).
 
 ## Umgebungsvariablen
 | Variable                     | Beschreibung |
@@ -103,6 +106,14 @@ Die Variablen werden im Browser benötigt, deshalb `NEXT_PUBLIC_` Präfix.
 - Vitest (`tests/slug-map.spec.ts`) demonstriert Slug-Mapping – weitere Tests willkommen (Target: ≥80 % Coverage).
 - ESLint + Prettier + Tailwind Plugin stellen Style & Barrierefreiheit sicher.
 - `npm run typecheck` garantiert, dass App Router & MDX-konforme Typen bestehen.
+
+## Deployment
+- Cloudflare Pages ist für das Projekt ausreichend, weil ausschließlich statische Assets produziert werden. Verknüpfe das GitHub-Repo mit Pages (bereits geschehen) und nutze folgende Build-Einstellungen:
+  - **Build command:** `npm run build:pages`
+  - **Build output directory:** `out`
+  - **Environment variables:** `NODE_VERSION=20`, `NEXT_TELEMETRY_DISABLED=1` (optional), sowie die produktiven Werte für `NEXT_PUBLIC_BASE_URL` und `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`.
+- Pages kümmert sich nach jedem Push auf `main` um Build & Rollout; zusätzliche Cloudflare-Dienste (R2, KV, Workers) sind nicht nötig.
+- Falls du die Sitemaps aktualisieren willst, kannst du vor dem Deployment `npm run generate:sitemap` laufen lassen oder den Befehl als zusätzlichen Schritt in Pages konfigurieren.
 
 ## Analytics & Integrationen
 - Plausible Analytics (cookieless) wird nur eingebunden, wenn `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` gesetzt ist.

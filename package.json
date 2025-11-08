@@ -14,7 +14,8 @@
     "format:write": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,json}\"",
     "typecheck": "tsc --noEmit",
     "generate:sitemap": "cross-env SITEMAP_LOCALE=de next-sitemap && cross-env SITEMAP_LOCALE=en next-sitemap",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
+    "export": "next export",
+    "build:pages": "next build && next export"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -40,7 +41,6 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^1.11.1",
     "@types/node": "^20.11.16",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
@@ -55,8 +55,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
     "vite-tsconfig-paths": "^4.3.1",
-    "vitest": "^4.0.7",
-    "wrangler": "^4.46.0"
+    "vitest": "^4.0.7"
   },
   "engines": {
     "node": ">=18.18.0"
