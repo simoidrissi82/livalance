@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .teal { fill: #36A8A2; }
+      .purple { fill: #7E57C2; }
+      .green { fill: #7CB342; }
+      .orange { fill: #F6A623; }
+    </style>
+    <!-- Perfect circular clip for the whole mark -->
+    <clipPath id="outerCircle">
+      <circle cx="256.0" cy="256.0" r="236"/>
+    </clipPath>
+    <!-- Central diamond cutout -->
+    <mask id="centerCutout">
+      <rect x="0" y="0" width="512" height="512" fill="white"/>
+      <polygon points="256.0,200.0 312.0,256.0 256.0,312.0 200.0,256.0" fill="black"/>
+    </mask>
+  </defs>
+
+  <!-- Background circle (invisible, ensures circle silhouette if needed) -->
+  <circle cx="256.0" cy="256.0" r="236" fill="none"/>
+
+  <!-- Petals clipped to perfect circle and masked for center cutout -->
+  <g clip-path="url(#outerCircle)" mask="url(#centerCutout)">
+    <g transform="translate(256.0,256.0)">
+      <!-- Right (orange) -->
+      <path class="orange" d="
+        M 148 0
+        A 260 260 0 0 1 0 148
+        A 148 148 0 0 1 148 0
+        Z"/>
+      <!-- Bottom (green) -->
+      <g transform="rotate(90)">
+        <path class="green" d="
+          M 148 0
+          A 260 260 0 0 1 0 148
+          A 148 148 0 0 1 148 0
+          Z"/>
+      </g>
+      <!-- Left (teal) -->
+      <g transform="rotate(180)">
+        <path class="teal" d="
+          M 148 0
+          A 260 260 0 0 1 0 148
+          A 148 148 0 0 1 148 0
+          Z"/>
+      </g>
+      <!-- Top (purple) -->
+      <g transform="rotate(270)">
+        <path class="purple" d="
+          M 148 0
+          A 260 260 0 0 1 0 148
+          A 148 148 0 0 1 148 0
+          Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

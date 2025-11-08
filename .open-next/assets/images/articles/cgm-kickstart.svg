@@ -1,0 +1,11 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-cgm" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7CB342"/>
+      <stop offset="100%" stop-color="#F6A623"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="48" fill="url(#grad-cgm)"/>
+  <text x="50%" y="45%" text-anchor="middle" font-family="Manrope, sans-serif" font-size="60" fill="#0B1220">14-Day CGM</text>
+  <text x="50%" y="60%" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" fill="#0B1220" opacity="0.8">Awareness · Iteration · Transfer</text>
+</svg>

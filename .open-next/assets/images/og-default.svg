@@ -1,0 +1,11 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ccfbf1"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad)" rx="48"/>
+  <text x="50%" y="45%" text-anchor="middle" font-family="Outfit, sans-serif" font-size="72" fill="#0F172A">Livalance</text>
+  <text x="50%" y="60%" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" fill="#0F172A" opacity="0.8">Lebe vital. In Balance.</text>
+</svg>
