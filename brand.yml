@@ -1,0 +1,77 @@
+brand:
+  name: "Livalance"
+  claim: "..."
+  one_liner: "..."
+  pillars: ["...", "...", "...", "..."]
+  differentiators: ["...", "...", "..."]
+  voice: ["klar", "wissenschaftlich", "direkt"]
+
+personas:
+  - name: "..."
+    lang: "DE|EN"
+    profile: "Alter, Beruf, Lifestyle"
+    goals: ["...", "..."]
+    pains: ["...", "..."]
+    objections: ["...", "..."]
+    decision_criteria: ["...", "..."]
+  - name: "..." # optional
+
+offers:
+  - id: "cgm_workshop"
+    title: "..."
+    outcome: "..."
+    format: "..."
+    duration: "..."
+    price: "..."
+    cta: "..."
+  - id: "coaching_1to1"
+    title: "..."
+    packages: ["...", "..."]
+    price_range: "..."
+    cta: "..."
+
+goals:
+  primary: "Leads|Buchungen|Newsletter"
+  secondary: ["...", "..."]
+  primary_cta: "..."
+  lead_capture: ["Assessment-Quiz", "Freebie-PDF"]
+
+content:
+  value_prop: "Für [Persona] ..."
+  reasons_to_believe: ["...", "...", "..."]
+  blog_categories: ["Metabolismus", "Training"]
+  first_posts: ["...", "...", "..."]
+  faq: ["...", "...", "..."]
+
+seo:
+  region: "DACH"
+  keywords_de: ["...", "..."]
+  keywords_en: ["...", "..."]
+
+legal:
+  need_impressum: true
+  need_privacy: true
+  medical_disclaimer: true
+  data_protection_statement: "kurzer Satz zu CGM-Daten"
+
+design:
+  colors: { primary: "#...", secondary: "#...", accent: "#..." }
+  fonts: { heading: "Inter", body: "Inter" }
+  logo_svg: "vorhanden|benötigt"
+  imagery: "Fotos|Illustrationen"
+  mood: ["modern", "clean", "luftig"]
+
+tech:
+  stack: ["Next.js", "Tailwind", "i18n", "MDX"]
+  integrations: ["Calendly", "Plausible", "Mailchimp", "Stripe"]
+  domain: "livalance.com"
+  deploy: "Vercel"
+
+pricing:
+  show_prices: true
+  tiers: ["...", "..."]
+  guarantees: ["...", "..."]
+
+metrics:
+  conversion_definition: "..."
+  dashboard: ["Leads", "Buchungen", "CTA-Klicks"]

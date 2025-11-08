@@ -1,16 +1,15 @@
 import {getTranslations} from 'next-intl/server';
 
-import {ArticleList} from '@/components/ArticleList';
 import {FAQ} from '@/components/FAQ';
 import {FinalCTA} from '@/components/FinalCTA';
 import {Hero} from '@/components/Hero';
-import {LeadMagnet} from '@/components/LeadMagnet';
-import {PillarsGrid} from '@/components/PillarsGrid';
-import {ProgramOverview} from '@/components/ProgramOverview';
 import {SocialProof} from '@/components/SocialProof';
-import {VisionSection} from '@/components/VisionSection';
-import {WorkshopHighlight} from '@/components/WorkshopHighlight';
-import {getArticles} from '@/lib/content';
+import {Testimonials} from '@/components/Testimonials';
+import {CgmKickstart} from '@/components/CgmKickstart';
+import {ProgramOverview} from '@/components/ProgramOverview';
+import {ToolkitSection} from '@/components/ToolkitSection';
+import {ValuePropsSection} from '@/components/ValueProps';
+import {PillarsGrid} from '@/components/PillarsGrid';
 import type {AppLocale} from '@/i18n/routing';
 
 type HomePageProps = {
@@ -21,50 +20,46 @@ export async function HomePage({locale}: HomePageProps) {
   const [
     hero,
     pillars,
-    workshopsSection,
-    programSection,
+    valueProps,
+    toolkit,
+    cgmKickstart,
+    offersTeaser,
     socialProof,
-    leadMagnet,
+    testimonials,
     faq,
-    finalCta,
-    articlesLabels,
-    visionSection,
-    articlesPage
+    finalCta
   ] = await Promise.all([
     getTranslations({locale, namespace: 'hero'}),
     getTranslations({locale, namespace: 'pillars'}),
-    getTranslations({locale, namespace: 'workshopsSection'}),
-    getTranslations({locale, namespace: 'programSection'}),
+    getTranslations({locale, namespace: 'valueProps'}),
+    getTranslations({locale, namespace: 'toolkit'}),
+    getTranslations({locale, namespace: 'cgmKickstart'}),
+    getTranslations({locale, namespace: 'offersTeaser'}),
     getTranslations({locale, namespace: 'socialProof'}),
-    getTranslations({locale, namespace: 'leadMagnet'}),
+    getTranslations({locale, namespace: 'testimonials'}),
     getTranslations({locale, namespace: 'faq'}),
-    getTranslations({locale, namespace: 'finalCta'}),
-    getTranslations({locale, namespace: 'articles'}),
-    getTranslations({locale, namespace: 'visionSection'}),
-    getTranslations({locale, namespace: 'articlesPage'})
+    getTranslations({locale, namespace: 'finalCta'})
   ]);
-
-  const articles = await getArticles(locale);
 
   return (
     <>
       <Hero
         title={hero('title')}
-        subtitle={hero('subtitle')}
-        announcement={hero('announcement')}
-        trustSignal={hero('trustSignal')}
-        metrics={[
-          {value: hero('metrics.0.value'), label: hero('metrics.0.label')},
-          {value: hero('metrics.1.value'), label: hero('metrics.1.label')},
-          {value: hero('metrics.2.value'), label: hero('metrics.2.label')}
-        ]}
-        highlights={[
-          {title: hero('highlights.0.title'), description: hero('highlights.0.body')},
-          {title: hero('highlights.1.title'), description: hero('highlights.1.body')},
-          {title: hero('highlights.2.title'), description: hero('highlights.2.body')}
-        ]}
+        inlinePillars={hero.raw('pillarsInline') as string[]}
+        subtitleSuffix={hero('subtitleSuffix')}
         primaryCta={{label: hero('primaryCta'), href: '/contact'}}
         secondaryCta={{label: hero('secondaryCta'), href: '/workshops'}}
+      />
+
+      <ValuePropsSection
+        title={valueProps('title')}
+        items={[
+          {title: valueProps('items.0.title'), body: valueProps('items.0.body')},
+          {title: valueProps('items.1.title'), body: valueProps('items.1.body')},
+          {title: valueProps('items.2.title'), body: valueProps('items.2.body')}
+        ]}
+        ctaLabel={valueProps('ctaLabel')}
+        ctaHref="/contact"
       />
 
       <PillarsGrid
@@ -114,66 +109,68 @@ export async function HomePage({locale}: HomePageProps) {
         ]}
       />
 
-      <WorkshopHighlight
-        badge={workshopsSection('badge')}
-        title={workshopsSection('title')}
-        description={workshopsSection('description')}
-        agenda={[
-          workshopsSection('agenda.0'),
-          workshopsSection('agenda.1'),
-          workshopsSection('agenda.2'),
-          workshopsSection('agenda.3')
+      <ToolkitSection
+        title={toolkit('title')}
+        bullets={[
+          toolkit('bullets.0'),
+          toolkit('bullets.1'),
+          toolkit('bullets.2'),
+          toolkit('bullets.3'),
+          toolkit('bullets.4'),
+          toolkit('bullets.5')
         ]}
-        ctaLabel={workshopsSection('cta')}
-        ctaSupporting={workshopsSection('ctaSupporting')}
-        outcomesTitle={workshopsSection('outcomesTitle')}
-        outcomes={[
-          workshopsSection('outcomes.0'),
-          workshopsSection('outcomes.1'),
-          workshopsSection('outcomes.2')
+      />
+
+      <CgmKickstart
+        title={cgmKickstart('title')}
+        bullets={[
+          cgmKickstart('bullets.0'),
+          cgmKickstart('bullets.1'),
+          cgmKickstart('bullets.2')
         ]}
-        disclaimer={workshopsSection('disclaimer')}
+        disclaimer={cgmKickstart('disclaimer')}
+        ctaLabel={cgmKickstart('cta')}
       />
 
       <ProgramOverview
-        title={programSection('title')}
-        description={programSection('description')}
-        supporting={programSection('supporting')}
+        title={offersTeaser('title')}
+        description={offersTeaser('description')}
+        supporting={offersTeaser('supporting')}
         bundles={[
           {
-            name: programSection('bundles.0.name'),
-            description: programSection('bundles.0.description'),
-            duration: programSection('bundles.0.duration'),
+            name: offersTeaser('bundles.0.name'),
+            description: offersTeaser('bundles.0.description'),
+            duration: offersTeaser('bundles.0.duration'),
             deliverables: [
-              programSection('bundles.0.deliverables.0'),
-              programSection('bundles.0.deliverables.1'),
-              programSection('bundles.0.deliverables.2')
+              offersTeaser('bundles.0.deliverables.0'),
+              offersTeaser('bundles.0.deliverables.1'),
+              offersTeaser('bundles.0.deliverables.2')
             ]
           },
           {
-            name: programSection('bundles.1.name'),
-            description: programSection('bundles.1.description'),
-            duration: programSection('bundles.1.duration'),
+            name: offersTeaser('bundles.1.name'),
+            description: offersTeaser('bundles.1.description'),
+            duration: offersTeaser('bundles.1.duration'),
             deliverables: [
-              programSection('bundles.1.deliverables.0'),
-              programSection('bundles.1.deliverables.1'),
-              programSection('bundles.1.deliverables.2')
+              offersTeaser('bundles.1.deliverables.0'),
+              offersTeaser('bundles.1.deliverables.1'),
+              offersTeaser('bundles.1.deliverables.2')
             ]
           },
           {
-            name: programSection('bundles.2.name'),
-            description: programSection('bundles.2.description'),
-            duration: programSection('bundles.2.duration'),
+            name: offersTeaser('bundles.2.name'),
+            description: offersTeaser('bundles.2.description'),
+            duration: offersTeaser('bundles.2.duration'),
             deliverables: [
-              programSection('bundles.2.deliverables.0'),
-              programSection('bundles.2.deliverables.1'),
-              programSection('bundles.2.deliverables.2')
+              offersTeaser('bundles.2.deliverables.0'),
+              offersTeaser('bundles.2.deliverables.1'),
+              offersTeaser('bundles.2.deliverables.2')
             ]
           }
         ]}
-        note={programSection('note')}
-        ctaLabel={programSection('cta')}
-        ctaHref="/contact"
+        note={offersTeaser('note')}
+        ctaLabel={offersTeaser('cta')}
+        ctaHref="/offers"
       />
 
       <SocialProof
@@ -191,49 +188,22 @@ export async function HomePage({locale}: HomePageProps) {
         ]}
       />
 
-      <ArticleList
-        articles={articles}
-        labels={{
-          title: articlesLabels('title'),
-          intro: articlesLabels('intro'),
-          category: articlesLabels('filters.category'),
-          readingTime: articlesLabels('filters.readingTime'),
-          all: articlesLabels('filters.all'),
-          under5: articlesLabels('filters.under5'),
-          under10: articlesLabels('filters.under10'),
-          empty: articlesLabels('empty'),
-          readMore: articlesPage('readMore'),
-          cta: articlesLabels('cta')
-        }}
-      />
-
-      <VisionSection
-        title={visionSection('title')}
-        visionLabel={visionSection('visionLabel')}
-        missionLabel={visionSection('missionLabel')}
-        outcomeLabel={visionSection('outcomeLabel')}
-        vision={visionSection('vision')}
-        mission={visionSection('mission')}
-        outcome={visionSection('outcome')}
-        valuesTitle={visionSection('valuesTitle')}
-        values={[
-          visionSection('values.0'),
-          visionSection('values.1'),
-          visionSection('values.2')
+      <Testimonials
+        title={testimonials('title')}
+        items={[
+          {
+            quote: testimonials('items.0.quote'),
+            author: testimonials('items.0.author')
+          },
+          {
+            quote: testimonials('items.1.quote'),
+            author: testimonials('items.1.author')
+          },
+          {
+            quote: testimonials('items.2.quote'),
+            author: testimonials('items.2.author')
+          }
         ]}
-      />
-
-      <LeadMagnet
-        title={leadMagnet('title')}
-        description={leadMagnet('description')}
-        benefits={[
-          leadMagnet('benefits.0'),
-          leadMagnet('benefits.1'),
-          leadMagnet('benefits.2')
-        ]}
-        note={leadMagnet('note')}
-        privacy={leadMagnet('privacy')}
-        ctaLabel={leadMagnet('cta')}
       />
 
       <FAQ

@@ -1,4 +1,4 @@
-import {Inter, Outfit} from 'next/font/google';
+import {Inter, Manrope} from 'next/font/google';
 
 export const inter = Inter({
   weight: ['400', '500', '600'],
@@ -7,9 +7,9 @@ export const inter = Inter({
   display: 'swap'
 });
 
-export const outfit = Outfit({
-  weight: ['300', '400', '600'],
+export const manrope = Manrope({
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
-  variable: '--font-outfit',
+  variable: '--font-manrope',
   display: 'swap'
 });

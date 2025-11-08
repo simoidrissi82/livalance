@@ -24,10 +24,10 @@ const config: Config = {
           accentHover: 'var(--brand-accent-hover)'
         },
         pillar: {
-          sleep: '#6366F1',
-          nutrition: '#22C55E',
-          activity: '#0EA5E9',
-          mindfulness: '#F59E0B'
+          schlaf: '#36A8A2',
+          ernaehrung: '#7CB342',
+          bewegung: '#F6A623',
+          achtsamkeit: '#7E57C2'
         }
       },
       borderRadius: {
@@ -41,19 +41,20 @@ const config: Config = {
         '3xl': '2rem'
       },
       boxShadow: {
-        soft: '0 4px 16px rgba(15, 23, 42, 0.06)'
+        soft: '0 4px 16px rgba(11, 18, 32, 0.08)'
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui'],
-        display: ['var(--font-outfit)', 'system-ui']
+        display: ['var(--font-manrope)', 'system-ui']
       },
       spacing: {
+        15: '3.75rem',
         18: '4.5rem',
         22: '5.5rem'
       },
       backgroundImage: {
         'hero-gradient':
-          'radial-gradient(120% 120% at 20% 20%, rgba(20, 184, 166, 0.25), transparent)'
+          'radial-gradient(120% 120% at 20% 20%, rgba(54, 168, 162, 0.25), transparent)'
       }
     }
   },

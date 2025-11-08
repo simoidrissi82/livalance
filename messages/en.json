@@ -17,44 +17,98 @@
     "submit": "Submit"
   },
   "hero": {
-    "title": "Livalance: Live vital. In balance.",
-    "subtitle": "Coaching & workshops across sleep, nutrition, activity (kettlebells) and mindfulness — science-based, personal, practical.",
-    "primaryCta": "Book a free intro call",
-    "secondaryCta": "See workshop dates",
-    "announcement": "Holistic health & performance architecture",
-    "trustSignal": "Built for founders, leaders, and teams who treat energy as a strategic asset.",
-    "metrics": [
-      {
-        "value": "92%",
-        "label": "gain clarity on their personal wellbeing levers"
-      },
-      {
-        "value": "4 weeks",
-        "label": "to notice measurable day-to-day shifts"
-      },
-      {
-        "value": "3 formats",
-        "label": "Remote, hybrid, and onsite — mix & match"
-      }
+    "title": "Live vital. In balance.",
+    "subtitleSuffix": "in balance — a simple recipe for sustainable results.",
+    "pillarsInline": [
+      "Nutrition",
+      "Sleep",
+      "Activity",
+      "Mindfulness"
     ],
-    "highlights": [
+    "primaryCta": "Book intro call",
+    "secondaryCta": "How it works"
+  },
+  "valueProps": {
+    "title": "System, not guesswork",
+    "ctaLabel": "Book intro call",
+    "items": [
       {
-        "title": "Data + empathy",
-        "body": "We merge sensors, habit design, and coaching to build routines that last."
+        "title": "Beyond calorie counting",
+        "body": "Insulin-smart meal design and meal breaks tame cravings; decisions get easier."
       },
       {
-        "title": "Rhythms over dogma",
-        "body": "Science translated into flexible protocols that respect ambitious schedules."
+        "title": "Steady energy",
+        "body": "Low glycemic load plus protein & fiber keep glucose flatter; optional CGM adds feedback."
       },
       {
-        "title": "Wellbeing as culture",
-        "body": "Leaders receive tools to anchor health within their organisation."
+        "title": "Short & effective",
+        "body": "Activity that sticks: mobility, short strength pulses, and NEAT cues keep insulin sensitivity high."
       }
     ]
   },
+  "toolkit": {
+    "title": "Toolkit across six modules",
+    "bullets": [
+      "Insulin regulation (glycemic load ↓, protein & fiber ↑, clear meal breaks)",
+      "Intermittent fasting (12:12 → 14:10 → 16:8 progression based on context)",
+      "Nutrition: insulin-smart meal design, joy in cooking",
+      "Activity: short strength pulses, mobility & NEAT you’ll actually do",
+      "Mindfulness & sleep: dial stress down, recovery up",
+      "Environment: plan kitchen, routines, social moments"
+    ]
+  },
+  "cgmKickstart": {
+    "title": "14-day CGM kickstart",
+    "bullets": [
+      "Spot post-meal peaks and variability",
+      "Identify craving triggers",
+      "Apply adjustments immediately"
+    ],
+    "disclaimer": "Awareness, not forever-tracking. Get medical clearance if needed.",
+    "cta": "See the flow"
+  },
+  "offersTeaser": {
+    "title": "Your path to transformation",
+    "description": "Workshops, coaching, and digital accompaniment flow seamlessly together — anchored by a clear roadmap, defined goals, and measurable outcomes.",
+    "supporting": "Every engagement starts with a clarity call and ends with measurable rituals.",
+    "bundles": [
+      {
+        "name": "Workshops",
+        "description": "Half-day or full-day immersions on sleep, nutrition, activity, and Mindfulness.",
+        "duration": "Half-day / Full-day",
+        "deliverables": [
+          "Kick-off + agenda with stakeholders",
+          "Live impulses + experiments for each pillar",
+          "Transfer board with next steps"
+        ]
+      },
+      {
+        "name": "1:1 Coaching",
+        "description": "8 or 12 weeks of mentoring with sensor feedback, habit design, and accountability.",
+        "duration": "8 / 12 weeks",
+        "deliverables": [
+          "Assessments + optional CGM",
+          "Rhythm plan covering fasting & meal design",
+          "Weekly check-ins (async + live)"
+        ]
+      },
+      {
+        "name": "Remote",
+        "description": "Fully remote companion layer with async pulses, video library, and structured check-ins.",
+        "duration": "Always-on",
+        "deliverables": [
+          "Bilingual slots & reminders via Cal.com",
+          "Async prompts, resources, and templates",
+          "Automated follow-ups for intros, workshops, and check-ins"
+        ]
+      }
+    ],
+    "note": "Powered by NEXT_PUBLIC_CAL_URL for GDPR-ready scheduling.",
+    "cta": "Explore all offers"
+  },
   "pillars": {
     "title": "The four pillars of Livalance",
-    "description": "We combine sleep, nutrition, activity, and mindfulness to craft a rhythm that respects your real life.",
+    "description": "We combine sleep, nutrition, activity, and Mindfulness to craft a rhythm that respects your real life.",
     "items": {
       "sleep": {
         "title": "Sleep",
@@ -76,11 +130,11 @@
       },
       "activity": {
         "title": "Activity",
-        "body": "Kettlebell complexes, mobility, and micro-workouts that fit tight schedules.",
+        "body": "Activity stays playful: mobility, power pulses, and NEAT habits for dense schedules.",
         "focus": [
-          "Strength & skill sessions with kettlebells",
-          "Mobility protocols for desk-heavy days",
-          "Snackable workouts between meetings"
+          "Mobility stacks for desk-heavy bodies",
+          "Compact strength pulses without gym machines",
+          "NEAT tricks: walk & talk, stairs, micro-snacks"
         ]
       },
       "mindfulness": {
@@ -93,26 +147,6 @@
         ]
       }
     }
-  },
-  "workshopsSection": {
-    "badge": "Flagship Workshop",
-    "title": "Continuous Glucose Monitoring for Teams",
-    "description": "Consent to integration: we guide teams through a 4-week CGM experience with actionable behaviour change.",
-    "agenda": [
-      "Kick-off with medical clearance and GDPR-compliant data flow",
-      "Live workshops on nutrition, movement, and sleep — hybrid or onsite",
-      "Async check-ins, micro challenges, and concise summaries",
-      "Review & transfer: reading the data and locking habits in"
-    ],
-    "cta": "Request a workshop",
-    "ctaSupporting": "We reply within 48 hours with tailored slot suggestions.",
-    "outcomesTitle": "After the workshop",
-    "outcomes": [
-      "Teams interpret CGM data confidently",
-      "Concrete habit roadmap across nutrition, sleep & activity",
-      "Leadership guide for lasting wellbeing communication"
-    ],
-    "disclaimer": "Note: Livalance does not replace medical care."
   },
   "programSection": {
     "title": "Integrated workshops & programmes",
@@ -154,62 +188,50 @@
     "cta": "Request programme"
   },
   "socialProof": {
-    "title": "Trusted by founders & hybrid teams",
-    "description": "Health becomes culture when it’s translated into processes. Livalance supports remote and hybrid teams across Europe.",
+    "title": "Proof from everyday routines",
+    "description": "Figures are drawn from anonymised check-ins, CGM windows, and HRV reports — not marketing claims.",
     "logos": [
-      "SaaS Scale-ups",
-      "Remote-first teams",
-      "CrossFit & boutique gyms"
+      "Afternoon snacking impulses drop for 9 out of 10 participants.",
+      "Average sleep score rises by +12 points (Whoop/Oura benchmarks).",
+      "Teams log two extra focus blocks per day after four weeks."
     ],
     "metrics": [
       {
-        "value": "250+",
-        "label": "Participants in sensor-led programmes"
+        "value": "92%",
+        "label": "feel fewer energy dips after 4 weeks"
       },
       {
-        "value": "12",
-        "label": "Cohorts delivered per year"
+        "value": "14",
+        "label": "experiments inside the toolkit"
       },
       {
-        "value": "98%",
-        "label": "would recommend Livalance"
+        "value": "2x",
+        "label": "more consistent fasting windows"
       }
     ]
-  },
-  "leadMagnet": {
-    "title": "7-Day Balance Reset",
-    "description": "PDF with morning, midday, and evening rituals plus a focused shopping list. Double opt-in, zero spam.",
-    "benefits": [
-      "Structured AM, PM, and evening rituals",
-      "Meal prep templates & grocery list",
-      "Energy tracking check-ins"
-    ],
-    "note": "Kick off with a micro-structured reset that slips into even the busiest weeks.",
-    "privacy": "Double opt-in. Unsubscribe anytime with a single click.",
-    "cta": "Send me the reset"
   },
   "faq": {
     "title": "FAQ",
     "items": [
       {
-        "question": "How do workshops run?",
-        "answer": "We start with a clarity call, co-design the agenda, and plug Cal.com booking links where needed. All assets are bilingual."
+        "question": "Why focus on insulin over calorie counting?",
+        "answer": "Managing insulin makes appetite and choices easier. Energy balance still matters, but decisions feel lighter."
       },
       {
-        "question": "Do I need CGM experience?",
-        "answer": "No. We cover safety checks, GDPR process, and sensor setup. Medical decisions remain with your physician."
+        "question": "Is IF mandatory?",
+        "answer": "No. We start pragmatically (e.g., 12:12) and adjust windows to daily life, cycle, and stress."
       },
       {
-        "question": "Which languages do you support?",
-        "answer": "German and English — including internal comms templates."
+        "question": "Do I need a CGM?",
+        "answer": "Optional for 14 days to spot patterns. After that, routines and check-ins are enough."
       }
     ]
   },
   "finalCta": {
-    "title": "Ready to rebalance?",
-    "subtitle": "Book a free intro call and we’ll outline your quickest next step.",
-    "primary": "Book a free intro call",
-    "tagline": "Wellbeing as a strategic advantage"
+    "title": "Start with clarity",
+    "subtitle": "Book your intro call and get a micro-plan for nutrition, sleep, activity, and Mindfulness.",
+    "primary": "Book intro call",
+    "tagline": "Understand the system. Stabilize signals."
   },
   "articles": {
     "title": "Insights",
@@ -223,21 +245,6 @@
     },
     "empty": "No articles published yet.",
     "cta": "Browse the archive"
-  },
-  "visionSection": {
-    "title": "Our orientation",
-    "visionLabel": "Vision",
-    "missionLabel": "Mission",
-    "outcomeLabel": "Outcome",
-    "vision": "Vitality should be a default, not a perk — accessible to teams, founders, and individuals alike.",
-    "mission": "We merge data, habit design, and empathetic coaching to make routines sustainable.",
-    "outcome": "Expected outcome: clarity on personal levers, a shared health language, and measurable energy in day-to-day life.",
-    "valuesTitle": "Guiding principles",
-    "values": [
-      "Evidence translated with empathy",
-      "Radically transparent communication",
-      "Culture change over short-term challenges"
-    ]
   },
   "newsletter": {
     "title": "Mini prompts & workshop updates",
@@ -263,9 +270,9 @@
     "response": "We respond within 24 business hours."
   },
   "workshopsPage": {
-    "heroTitle": "Workshops that change behaviour",
-    "heroSubtitle": "Sleep, nutrition, activity & mindfulness modules — onsite or remote, fully GDPR-compliant.",
-    "heroTagline": "Modular programmes for leadership teams, company offsites, and wellbeing cohorts.",
+    "heroTitle": "Deep-impact workshops",
+    "heroSubtitle": "Sleep, nutrition, activity & mindfulness workshops as your path to transformation. In person in Berlin or remote — whatever fits your life, fully GDPR-compliant.",
+    "heroTagline": "Choose the workshop that unlocks your next step.",
     "flowTitle": "The flow",
     "flowDescription": "We guide you from preparation to transfer with clear owners for every milestone.",
     "flowSteps": [
@@ -320,24 +327,74 @@
     "items": {
       "sleep": {
         "headline": "Sleep",
-        "body": "Circadian design, light and temperature routines, and evening rituals for deeper rest."
+        "body": "Circadian design, light and temperature routines, and evening rituals for deeper rest.",
+        "details": [
+          "Chronotype + light audit plus temperature routines",
+          "Wind-down lab: breathwork, journaling, stimulus control",
+          "Sleep ops: HRV/wearable reviews to plan upgrades"
+        ]
       },
       "nutrition": {
         "headline": "Nutrition",
-        "body": "Sequencing, protein focus, meal design, and flexible prep templates."
+        "body": "Sequencing, protein focus, meal design, and flexible prep templates.",
+        "details": [
+          "Meal design: protein, fiber, and fat building blocks",
+          "Sequencing & satiety: soups, bitter greens, glucose-gentle treats",
+          "Prep sprints: shopping list, batch cooking, backup snacks"
+        ]
       },
       "activity": {
         "headline": "Activity",
-        "body": "Kettlebell blocks, mobility staples, and micro workouts for packed calendars."
+        "body": "Activity stays light: mobility, short strength bursts, and NEAT routines for packed days.",
+        "details": [
+          "Mobility lab: 5-minute resets for hips, shoulders, spine",
+          "Strength pulses: 10–15 min stacks without a full gym",
+          "NEAT scoreboard: walk & talk, stairs, micro-sprints throughout the day"
+        ]
       },
       "mindfulness": {
         "headline": "Mindfulness",
-        "body": "Down-regulation, breathwork, journaling, and focus rituals to counter overload."
+        "body": "Down-regulation, breathwork, journaling, and focus rituals to counter overload.",
+        "details": [
+          "Stress audit: nervous-system check and friction mapping",
+          "Breath & journaling: box breathing, CO2 work, gains & drains log",
+          "Focus rituals: intent setting in the morning, shutdown sequences at night"
+        ]
       }
-    }
+    },
+    "conceptTitle": "How the pillar system works",
+    "conceptBody": "Each pillar gets its own assessment, playbook, and experiments before we stitch everything into one weekly rhythm.",
+    "conceptBullets": [
+      "Assess: chronotype, glucose, stress, and habit inventory",
+      "Design: modular 2–4 week experiments that compound",
+      "Ops: check-ins, reviews, and playbooks to keep routines measurable"
+    ],
+    "ctaTitle": "Start with the right pillar",
+    "ctaBody": "In the intro call we identify your biggest lever and show how the remaining pillars plug in.",
+    "ctaButton": "Book an intro call"
   },
   "booking": {
     "headline": "Book instantly",
     "description": "Powered by Cal.com — bilingual slots available."
+  },
+  "testimonials": {
+    "title": "Client voices",
+    "items": [
+      {
+        "quote": "By week three the afternoon snack spiral was gone – templates and fasting windows give structure without stress.",
+        "author": "Lea, product lead",
+        "rating": 4.8
+      },
+      {
+        "quote": "Short kettlebell blocks plus NEAT cues keep activity doable. Energy stays stable through launches.",
+        "author": "Mark, founder",
+        "rating": 4.7
+      },
+      {
+        "quote": "The CGM kickstart surfaced patterns I now manage without sensors. Sleep & focus both improved.",
+        "author": "Sofia, UX strategist",
+        "rating": 4.9
+      }
+    ]
   }
 }

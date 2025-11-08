@@ -3,7 +3,7 @@ import {headers} from 'next/headers';
 import {ReactNode} from 'react';
 
 import {PlausibleScript} from '@/components/PlausibleScript';
-import {inter, outfit} from '@/fonts';
+import {inter, manrope} from '@/fonts';
 import {getOrganizationJsonLd, getWebsiteJsonLd} from '@/lib/structured-data';
 import '@/styles/globals.css';
 
@@ -13,7 +13,7 @@ const baseUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Livalance – Vital leben. Im Gleichgewicht.',
+    default: 'Livalance – Lebe vital. In Balance.',
     template: '%s | Livalance'
   },
   description:
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     locale: 'de_DE',
     url: baseUrl,
     siteName: 'Livalance',
-    title: 'Livalance – Vital leben. Im Gleichgewicht.',
+    title: 'Livalance – Lebe vital. In Balance.',
     description:
       'Ganzheitliches Coaching und Workshops für Schlaf, Ernährung, Aktivität und Mindfulness.',
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         url: '/images/og-default.svg',
         width: 1200,
         height: 630,
-        alt: 'Livalance – Vital leben. Im Gleichgewicht.'
+        alt: 'Livalance – Lebe vital. In Balance.'
       }
     ]
   },
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#14B8A6'
+  themeColor: '#0B1220'
 };
 
 const organizationJsonLd = JSON.stringify(getOrganizationJsonLd());
@@ -57,7 +57,7 @@ export default function RootLayout({children}: {children: ReactNode}) {
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} ${outfit.variable} font-sans`}>
+      <body className={`${inter.variable} ${manrope.variable} font-sans`}>
         <PlausibleScript />
         <script
           type="application/ld+json"

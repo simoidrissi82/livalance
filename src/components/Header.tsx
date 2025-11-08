@@ -1,18 +1,18 @@
 import {getLocale, getTranslations} from 'next-intl/server';
 
 import {NAV_LINKS} from '@/config/navigation';
+import type {AppLocale} from '@/i18n/routing';
 
-import {CTAButton} from './CTAButton';
-import {LocaleSwitcher} from './LocaleSwitcher';
 import {HeaderClient} from './HeaderClient';
 
 export async function Header() {
-  const locale = await getLocale();
+  const locale = (await getLocale()) as AppLocale;
   const navTranslations = await getTranslations('nav');
   const ctaTranslations = await getTranslations('cta');
 
   const navItems = NAV_LINKS.map((item) => ({
-    ...item,
+    key: item.key,
+    href: {pathname: item.href},
     label: navTranslations(item.key)
   }));
 
@@ -27,6 +27,6 @@ export async function Header() {
 
 export type HeaderNavItem = {
   key: string;
-  href: string;
+  href: {pathname: string};
   label: string;
 };

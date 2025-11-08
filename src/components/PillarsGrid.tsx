@@ -1,3 +1,5 @@
+import {BoltIcon, HeartIcon, MoonIcon, SparklesIcon} from '@heroicons/react/24/outline';
+
 type PillarItem = {
   id: 'sleep' | 'nutrition' | 'activity' | 'mindfulness';
   title: string;
@@ -5,11 +7,18 @@ type PillarItem = {
   focusPoints: string[];
 };
 
-const colorMap: Record<PillarItem['id'], string> = {
-  sleep: 'from-pillar-sleep/20 via-pillar-sleep/5 to-transparent',
-  nutrition: 'from-pillar-nutrition/20 via-pillar-nutrition/5 to-transparent',
-  activity: 'from-pillar-activity/20 via-pillar-activity/5 to-transparent',
-  mindfulness: 'from-pillar-mindfulness/20 via-pillar-mindfulness/5 to-transparent'
+const gradientMap: Record<PillarItem['id'], string> = {
+  sleep: 'from-pillar-schlaf/30 via-pillar-schlaf/5 to-transparent',
+  nutrition: 'from-pillar-ernaehrung/30 via-pillar-ernaehrung/5 to-transparent',
+  activity: 'from-pillar-bewegung/30 via-pillar-bewegung/5 to-transparent',
+  mindfulness: 'from-pillar-achtsamkeit/30 via-pillar-achtsamkeit/5 to-transparent'
+};
+
+const iconBgMap: Record<PillarItem['id'], string> = {
+  sleep: 'bg-pillar-schlaf/20 text-pillar-schlaf',
+  nutrition: 'bg-pillar-ernaehrung/20 text-pillar-ernaehrung',
+  activity: 'bg-pillar-bewegung/20 text-pillar-bewegung',
+  mindfulness: 'bg-pillar-achtsamkeit/20 text-pillar-achtsamkeit'
 };
 
 const iconMap: Record<PillarItem['id'], JSX.Element> = {
@@ -46,12 +55,14 @@ export function PillarsGrid({
             className="group relative overflow-hidden rounded-3xl border border-white/50 bg-brand-surface/90 p-8 shadow-soft backdrop-blur"
           >
             <div
-              className={`absolute inset-0 bg-gradient-to-br ${colorMap[item.id]} opacity-0 transition group-hover:opacity-100`}
+              className={`absolute inset-0 bg-gradient-to-br ${gradientMap[item.id]} opacity-0 transition group-hover:opacity-100`}
               aria-hidden
             />
             <div className="relative flex flex-col gap-4">
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-primary-tint text-brand-primary">
+                <div
+                  className={`flex h-12 w-12 items-center justify-center rounded-2xl ${iconBgMap[item.id]}`}
+                >
                   {iconMap[item.id]}
                 </div>
                 <div>
@@ -76,5 +87,3 @@ export function PillarsGrid({
     </section>
   );
 }
-import {BoltIcon, HeartIcon, MoonIcon, SparklesIcon} from '@heroicons/react/24/outline';
-

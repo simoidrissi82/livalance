@@ -27,18 +27,28 @@ const buttonStyles = cva(
   }
 );
 
+type LinkHref = string | {pathname: string};
+
 type CTAButtonProps = VariantProps<typeof buttonStyles> &
   (
-    | {href: string; children: ReactNode; type?: never}
+    | {href: LinkHref; children: ReactNode; type?: never}
     | {onClick?: () => void; children: ReactNode; type?: 'button' | 'submit'}
   );
+
+const isInternalPath = (href: string) =>
+  href.startsWith('/') && !href.startsWith('//');
 
 export function CTAButton(props: CTAButtonProps) {
   const {variant, width, children} = props;
 
   if ('href' in props) {
+    const href =
+      typeof props.href === 'string' && isInternalPath(props.href)
+        ? {pathname: props.href}
+        : props.href;
+
     return (
-      <Link href={props.href} className={buttonStyles({variant, width})}>
+      <Link href={href} className={buttonStyles({variant, width})}>
         {children}
       </Link>
     );
