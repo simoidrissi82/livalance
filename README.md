@@ -63,6 +63,7 @@ npm start
 |-------------------------|-------|
 | `npm run dev`           | Startet Next.js Dev-Server (mit Hot Reload & i18n-Routing).
 | `npm run build`         | Produktions-Build (inkl. TypeScript & MDX).
+| `npm run build:cloudflare` | Erzeugt das Cloudflare-Worker-Bundle via OpenNext (`.open-next/`).
 | `npm start`             | Startet den optimierten Server (`next start`).
 | `npm run lint`          | ESLint (Next + TypeScript + Tailwind).
 | `npm run test`          | Vitest (inkl. jsdom & Path-Aliases).
@@ -111,6 +112,13 @@ Die Variablen werden im Browser benötigt, deshalb `NEXT_PUBLIC_` Präfix.
 - `next-sitemap.config.js` generiert sprachspezifische Sitemaps (`/sitemap_de.xml`, `/sitemap_en.xml`) sowie `robots.txt` mit Allow-Regeln.
 
 ---
+
+## Deployment auf Cloudflare Pages
+1. Verbinde das GitHub-Repository mit Cloudflare Pages und wähle den Free Plan.
+2. Stelle sicher, dass Cloudflare die Node.js-Version aus `.nvmrc` übernimmt (aktuell `20.16.0`). Alternativ kannst du die Umgebungsvariable `NODE_VERSION=20.16.0` setzen.
+3. Trage als Build-Kommando `npm run build:cloudflare` ein und gib `.open-next` als Ausgabeverzeichnis an. Der Befehl führt `opennextjs-cloudflare build` aus und erzeugt den Worker-Build.
+4. Übernimm die automatisch generierte `wrangler.jsonc` (Kompatibilitätsdatum ≤ aktuelles Tagesdatum). Optional kannst du in den Projekteinstellungen eine R2-Bucket-Bindung namens `NEXT_INC_CACHE_R2_BUCKET` hinterlegen, um das Incremental-Cache-Feature zu aktivieren.
+5. Nach erfolgreichem Build wird die Worker-Integration automatisch bereitgestellt; zusätzliche Funktionen/Bindings konfigurierst du unter **Pages → Settings → Functions**.
 
 ### Nächste Schritte / TODO-Ideen
 1. Echte Analytics-/Newsletter-Dienste anbinden (API-Key Secret Storage, Double Opt-In).

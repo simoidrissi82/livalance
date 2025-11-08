@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "build:cloudflare": "opennextjs-cloudflare build",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "format": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,json}\"",
