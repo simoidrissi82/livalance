@@ -1,0 +1,7 @@
+name = "livalance"
+
+[build]
+command = "npx opennextjs-cloudflare build"
+
+[pages]
+pages_build_output_dir = ".open-next"
