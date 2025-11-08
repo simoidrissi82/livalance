@@ -30,30 +30,30 @@ export function VisionSection({
             <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-muted">
               {visionLabel}
             </h3>
-            <p className="mt-3 text-sm text-brand-text/80">{vision}</p>
+            <p className="text-brand-text/80 mt-3 text-sm">{vision}</p>
           </article>
           <article className="rounded-3xl border border-white/60 bg-white/80 p-6 text-left shadow-soft backdrop-blur">
             <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-muted">
               {missionLabel}
             </h3>
-            <p className="mt-3 text-sm text-brand-text/80">{mission}</p>
+            <p className="text-brand-text/80 mt-3 text-sm">{mission}</p>
           </article>
           <article className="rounded-3xl border border-white/60 bg-white/80 p-6 text-left shadow-soft backdrop-blur">
             <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-muted">
               {outcomeLabel}
             </h3>
-            <p className="mt-3 text-sm text-brand-text/80">{outcome}</p>
+            <p className="text-brand-text/80 mt-3 text-sm">{outcome}</p>
           </article>
         </div>
 
-        <aside className="rounded-3xl border border-brand-primary/20 bg-brand-primary-tint/40 p-8 shadow-soft">
+        <aside className="border-brand-primary/20 bg-brand-primary-tint/40 rounded-3xl border p-8 shadow-soft">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-primary">
             {valuesTitle}
           </h3>
-          <ul className="mt-4 space-y-3 text-sm text-brand-text/80">
+          <ul className="text-brand-text/80 mt-4 space-y-3 text-sm">
             {values.map((value) => (
               <li key={value} className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand-primary" />
+                <span className="mt-2 size-1.5 flex-none rounded-full bg-brand-primary" />
                 <span>{value}</span>
               </li>
             ))}

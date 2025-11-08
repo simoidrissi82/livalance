@@ -16,20 +16,21 @@ export function buildPageMetadata({
   description: string;
 }): Metadata {
   const canonicalPath = path.startsWith('/') ? path : `/${path}`;
+  const canonicalUrl = new URL(canonicalPath, baseUrl).toString();
   const localeKey = locale === 'de' ? 'de_DE' : 'en';
 
   return {
     title,
     description,
     alternates: {
-      canonical: canonicalPath
+      canonical: canonicalUrl
     },
     openGraph: {
       type: 'website',
       locale: localeKey,
       title,
       description,
-      url: canonicalPath
+      url: canonicalUrl
     },
     twitter: {
       card: 'summary_large_image',

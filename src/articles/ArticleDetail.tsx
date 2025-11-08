@@ -36,7 +36,7 @@ export function ArticleDetail({frontmatter, content}: ArticleDetailProps) {
         />
       </div>
 
-      <div className="prose prose-brand max-w-none prose-headings:font-display prose-headings:text-brand-text prose-p:text-brand-text/80 prose-strong:text-brand-text">
+      <div className="prose-brand prose-p:text-brand-text/80 prose max-w-none prose-headings:font-display prose-headings:text-brand-text prose-strong:text-brand-text">
         {content}
       </div>
     </article>

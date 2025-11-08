@@ -29,7 +29,7 @@ export function WorkshopHighlight({
 
   return (
     <section className="relative overflow-hidden bg-brand-surface">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/15 via-transparent to-brand-accent/20" aria-hidden />
+      <div className="from-brand-primary/15 to-brand-accent/20 absolute inset-0 bg-gradient-to-br via-transparent" aria-hidden />
       <div className="relative mx-auto max-w-6xl px-6 py-20">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div className="flex flex-col gap-6">
@@ -41,7 +41,7 @@ export function WorkshopHighlight({
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <CTAButton href={ctaHref}>{ctaLabel}</CTAButton>
               {ctaSupporting ? (
-                <p className="text-sm text-brand-text/80">{ctaSupporting}</p>
+                <p className="text-brand-text/80 text-sm">{ctaSupporting}</p>
               ) : null}
             </div>
           </div>
@@ -49,10 +49,10 @@ export function WorkshopHighlight({
           <div className={`grid gap-6 ${hasOutcomes ? 'sm:grid-cols-2' : ''}`}>
             <article className="rounded-3xl border border-white/60 bg-white/80 p-6 shadow-soft backdrop-blur">
               <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-muted">Agenda</h3>
-              <ul className="mt-4 space-y-3 text-sm text-brand-text/80">
+              <ul className="text-brand-text/80 mt-4 space-y-3 text-sm">
                 {agenda.map((item) => (
                   <li key={item} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand-primary" />
+                    <span className="mt-2 size-1.5 flex-none rounded-full bg-brand-primary" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -64,10 +64,10 @@ export function WorkshopHighlight({
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-muted">
                   {outcomesTitle}
                 </h3>
-                <ul className="mt-4 space-y-3 text-sm text-brand-text/80">
+                <ul className="text-brand-text/80 mt-4 space-y-3 text-sm">
                   {outcomes?.map((item) => (
                     <li key={item} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand-accent" />
+                      <span className="mt-2 size-1.5 flex-none rounded-full bg-brand-accent" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -77,7 +77,7 @@ export function WorkshopHighlight({
           </div>
         </div>
 
-        <p className="mt-10 text-xs text-brand-text/60">{disclaimer}</p>
+        <p className="text-brand-text/60 mt-10 text-xs">{disclaimer}</p>
       </div>
     </section>
   );

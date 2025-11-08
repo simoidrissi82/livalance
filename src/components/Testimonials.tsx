@@ -23,7 +23,7 @@ function TestimonialCard({item}: {item: TestimonialItem}) {
   const rating = typeof item.rating === 'number' ? item.rating : null;
 
   return (
-    <figure className="flex h-full flex-col rounded-3xl border border-brand-primary/10 bg-white/90 p-6 shadow-soft backdrop-blur">
+    <figure className="border-brand-primary/10 flex h-full flex-col rounded-3xl border bg-white/90 p-6 shadow-soft backdrop-blur">
       {rating ? (
         <div className="mb-4 flex flex-col gap-2">
           <span className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-muted">
@@ -36,7 +36,7 @@ function TestimonialCard({item}: {item: TestimonialItem}) {
                   key={index}
                   viewBox="0 0 24 24"
                   aria-hidden="true"
-                  className={`h-4 w-4 ${
+                  className={`size-4 ${
                     rating && index < rating ? 'text-brand-primary' : 'text-brand-muted/40'
                   }`}
                   role="img"
@@ -48,12 +48,12 @@ function TestimonialCard({item}: {item: TestimonialItem}) {
                 </svg>
               ))}
             </div>
-            <span className="text-xs font-semibold text-brand-text/70">{rating.toFixed(1)} / 5</span>
+            <span className="text-brand-text/70 text-xs font-semibold">{rating.toFixed(1)} / 5</span>
           </div>
         </div>
       ) : null}
 
-      <blockquote className="text-sm text-brand-text/80">“{item.quote}”</blockquote>
+      <blockquote className="text-brand-text/80 text-sm">“{item.quote}”</blockquote>
       <figcaption className="mt-4 text-xs font-semibold uppercase tracking-wide text-brand-muted">
         {item.author}
       </figcaption>

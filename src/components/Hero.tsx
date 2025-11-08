@@ -25,8 +25,8 @@ export function Hero({
   return (
     <section className="relative isolate overflow-hidden bg-brand-bg">
       <div className="absolute inset-0 bg-hero-gradient" aria-hidden />
-      <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-brand-primary/10 blur-3xl" aria-hidden />
-      <div className="absolute bottom-[-6rem] right-[-8rem] h-96 w-96 rounded-full bg-brand-accent/10 blur-3xl" aria-hidden />
+      <div className="bg-brand-primary/10 absolute -left-24 top-20 size-72 rounded-full blur-3xl" aria-hidden />
+      <div className="bg-brand-accent/10 absolute -bottom-24 -right-32 size-96 rounded-full blur-3xl" aria-hidden />
 
       <div className="relative mx-auto max-w-6xl px-6 py-28">
         <div className="grid items-start gap-12 lg:grid-cols-[1.2fr_1fr]">

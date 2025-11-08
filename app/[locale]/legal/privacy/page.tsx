@@ -1,7 +1,7 @@
 export default function Page({params}: {params: {locale: 'de' | 'en'}}) {
   if (params.locale === 'de') {
     return (
-      <div className="mx-auto max-w-3xl px-6 py-16 space-y-4 text-sm text-brand-muted">
+      <div className="mx-auto max-w-3xl space-y-4 px-6 py-16 text-sm text-brand-muted">
         <h1 className="font-display text-3xl font-semibold text-brand-text">Datenschutz</h1>
         <p>
           Wir verarbeiten personenbezogene Daten ausschließlich zur Bereitstellung unserer Leistungen, zur
@@ -15,7 +15,7 @@ export default function Page({params}: {params: {locale: 'de' | 'en'}}) {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16 space-y-4 text-sm text-brand-muted">
+    <div className="mx-auto max-w-3xl space-y-4 px-6 py-16 text-sm text-brand-muted">
       <h1 className="font-display text-3xl font-semibold text-brand-text">Privacy Policy</h1>
       <p>
         We process personal data to deliver our services, handle contracts, and respond to enquiries in line with
