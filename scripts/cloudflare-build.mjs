@@ -31,7 +31,17 @@ async function ensureAssetsDirectory(path) {
 }
 
 async function main() {
-  await run("npx", ["opennextjs-cloudflare", "build"]);
+  try {
+    await run("npx", ["--no-install", "opennextjs-cloudflare", "build"]);
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      throw new Error(
+        "opennextjs-cloudflare CLI not found. Ensure dependencies are installed with `npm install`.",
+      );
+    }
+
+    throw error;
+  }
 
   const source = resolve(".open-next/assets");
   const destination = resolve("out");
