@@ -28,7 +28,7 @@ export function Hero({
   secondaryCta
 }: HeroProps) {
   return (
-    <section className="relative isolate min-h-[90vh] flex items-center overflow-hidden bg-brand-bg">
+    <section className="relative isolate min-h-[85vh] flex items-center overflow-hidden bg-brand-bg">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <div 
@@ -88,7 +88,7 @@ export function Hero({
         }}
       />
 
-      <div className="relative mx-auto max-w-6xl px-6 py-20 md:py-32">
+      <div className="relative mx-auto max-w-6xl px-6 py-12 md:py-16">
         <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
           <motion.div
             className="flex flex-col gap-6 text-left"
