@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "npx @cloudflare/next-on-pages build",
-    "build:next": "next build",
+    "build": "next build",
+    "build:cloudflare": "npx @cloudflare/next-on-pages build",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
