@@ -396,5 +396,11 @@
         "rating": 4.9
       }
     ]
+  },
+  "notFound": {
+    "label": "404",
+    "title": "Page not found",
+    "description": "We couldn't find the page you were looking for or the link is outdated.",
+    "cta": "Back to homepage"
   }
 }
