@@ -1,0 +1,66 @@
+/* Print Styles for Articles and Legal Pages */
+
+@media print {
+  /* Hide navigation and non-essential elements */
+  header,
+  footer,
+  nav,
+  .scroll-to-top,
+  button,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Optimize page breaks */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  img {
+    page-break-inside: avoid;
+    max-width: 100% !important;
+  }
+
+  /* Remove shadows and decorations */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Ensure readable text */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  /* Show URLs for links in articles */
+  article a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    color: #666;
+  }
+
+  /* Optimize article layout */
+  article {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Remove animations */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

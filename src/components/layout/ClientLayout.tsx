@@ -5,6 +5,7 @@ import {ReactNode} from 'react';
 
 import {Header} from './Header';
 import {Footer} from './Footer';
+import {ScrollToTop} from '../ui/ScrollToTop';
 
 type ClientLayoutProps = {
   locale: string;
@@ -18,6 +19,7 @@ export function ClientLayout({locale, messages, children}: ClientLayoutProps) {
       <Header />
       {children}
       <Footer />
+      <ScrollToTop />
     </NextIntlClientProvider>
   );
 }

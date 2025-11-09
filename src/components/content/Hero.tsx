@@ -31,11 +31,16 @@ export function Hero({
     <section className="relative isolate min-h-[85vh] flex items-center overflow-hidden bg-brand-bg">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
-          style={{backgroundImage: 'url(/images/brand/background.png)'}}
-          aria-hidden
-        />
+        <picture>
+          <source srcSet="/images/brand/background.webp" type="image/webp" />
+          <img
+            src="/images/brand/background.png"
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover opacity-40"
+            loading="eager"
+            aria-hidden="true"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-br from-brand-bg/95 via-brand-bg/90 to-brand-bg/85" aria-hidden />
       </div>
       

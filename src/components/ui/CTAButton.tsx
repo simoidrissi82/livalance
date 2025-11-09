@@ -35,8 +35,8 @@ type LinkHref = string | {pathname: string};
 
 type CTAButtonProps = VariantProps<typeof buttonStyles> &
   (
-    | {href: LinkHref; children: ReactNode; type?: never; showIcon?: boolean}
-    | {onClick?: () => void; children: ReactNode; type?: 'button' | 'submit'; showIcon?: boolean}
+    | {href: LinkHref; children: ReactNode; type?: never; showIcon?: boolean; disabled?: never}
+    | {onClick?: () => void; children: ReactNode; type?: 'button' | 'submit'; showIcon?: boolean; disabled?: boolean}
   );
 
 /**
@@ -108,6 +108,7 @@ export function CTAButton(props: CTAButtonProps) {
     <button
       type={props.type ?? 'button'}
       onClick={props.onClick}
+      disabled={props.disabled}
       className={buttonStyles({variant, width})}
     >
       {content}

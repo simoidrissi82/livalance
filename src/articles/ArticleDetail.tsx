@@ -2,6 +2,7 @@ import Image from 'next/image';
 import type {ReactNode} from 'react';
 
 import type {ArticleFrontmatter} from '@/lib/content-types';
+import {Breadcrumbs} from '@/components/ui/Breadcrumbs';
 
 type ArticleDetailProps = {
   frontmatter: ArticleFrontmatter;
@@ -9,8 +10,17 @@ type ArticleDetailProps = {
 };
 
 export function ArticleDetail({frontmatter, content}: ArticleDetailProps) {
+  const insightsLabel = frontmatter.locale === 'de' ? 'Wissen' : 'Insights';
+  
   return (
     <article className="mx-auto max-w-3xl px-6 py-16">
+      <Breadcrumbs
+        items={[
+          {label: insightsLabel, href: '/insights'},
+          {label: frontmatter.title}
+        ]}
+      />
+      
       <header className="mb-10 space-y-4">
         <p className="text-xs uppercase tracking-wide text-brand-muted">
           {frontmatter.category} · {frontmatter.readingTime} min

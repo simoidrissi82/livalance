@@ -15,7 +15,8 @@
     "format": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,json}\"",
     "format:write": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,json}\"",
     "typecheck": "tsc --noEmit",
-    "generate:sitemap": "cross-env SITEMAP_LOCALE=de next-sitemap && cross-env SITEMAP_LOCALE=en next-sitemap"
+    "generate:sitemap": "cross-env SITEMAP_LOCALE=de next-sitemap && cross-env SITEMAP_LOCALE=en next-sitemap",
+    "build:analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
@@ -42,6 +43,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.0.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.0",
