@@ -1,7 +1,7 @@
 "use client";
 
 import Image from 'next/image';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline';
 
 import {Link} from '@/i18n/routing';
@@ -18,13 +18,27 @@ type HeaderClientProps = {
 
 export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 100);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggle = () => setOpen((value) => !value);
 
   const close = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-bg/70 backdrop-blur-md">
+    <header className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
+      scrolled 
+        ? 'border-slate-200 bg-white/95 backdrop-blur-md shadow-sm' 
+        : 'border-white/10 bg-brand-bg/70 backdrop-blur-md'
+    }`}>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <div className="flex items-center gap-3">
           <Link
@@ -49,7 +63,11 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
             <Link
               key={item.key}
               href={item.href as any}
-              className="rounded-xl px-3 py-2 text-sm font-medium text-white/90 transition hover:bg-white/10 hover:text-white"
+              className={`rounded-xl px-3 py-2 text-sm font-medium transition ${
+                scrolled
+                  ? 'text-brand-text hover:bg-brand-primary-tint hover:text-brand-primary'
+                  : 'text-white/90 hover:bg-white/10 hover:text-white'
+              }`}
             >
               {item.label}
             </Link>

@@ -95,21 +95,19 @@ export function PillarsPage() {
             transition={{duration: 0.6}}
           >
             <motion.h1
-              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight"
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.2}}
-              style={{textShadow: '0 2px 10px rgba(0,0,0,0.3)'}}
             >
               {page('title')}
             </motion.h1>
             
             <motion.p
-              className="text-xl md:text-2xl text-white/90 leading-relaxed drop-shadow-md"
+              className="text-xl md:text-2xl text-brand-text/80 leading-relaxed"
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.3}}
-              style={{textShadow: '0 1px 6px rgba(0,0,0,0.25)'}}
             >
               {page('intro')}
             </motion.p>
