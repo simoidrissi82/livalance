@@ -1,4 +1,4 @@
-import {unstable_setRequestLocale} from 'next-intl/server';
+import {setRequestLocale} from 'next-intl/server';
 import type {ReactNode} from 'react';
 
 import {ClientLayout} from '@/components/layout/ClientLayout';
@@ -20,7 +20,7 @@ export default async function LocaleLayout({
   params: Promise<{locale: string}>;
 }) {
   const {locale} = await params;
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
   const localeMessages = messages[locale as AppLocale] || messages.de;
 
   return (

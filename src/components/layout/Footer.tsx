@@ -159,25 +159,25 @@ export function Footer() {
         >
           <div className="flex flex-wrap gap-6 text-sm">
             <Link
-              href={locale === 'de' ? '/impressum' : '/legal/imprint'}
+              href="/legal/imprint"
               className="text-white/60 transition-colors hover:text-white"
             >
               {tLegal('imprint')}
             </Link>
             <Link
-              href={locale === 'de' ? '/datenschutz' : '/legal/privacy'}
+              href="/legal/privacy"
               className="text-white/60 transition-colors hover:text-white"
             >
               {tLegal('privacy')}
             </Link>
             <Link
-              href={locale === 'de' ? '/agb' : '/legal/terms'}
+              href="/legal/terms"
               className="text-white/60 transition-colors hover:text-white"
             >
               {tLegal('terms')}
             </Link>
             <Link
-              href={locale === 'de' ? '/widerruf' : '/legal/cancellation'}
+              href="/legal/cancellation"
               className="text-white/60 transition-colors hover:text-white"
             >
               {tLegal('cancellation')}

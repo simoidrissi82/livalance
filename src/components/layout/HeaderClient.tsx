@@ -48,7 +48,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
           {navItems.map((item) => (
             <Link
               key={item.key}
-              href={item.href}
+              href={item.href as any}
               className="rounded-xl px-3 py-2 text-sm font-medium text-brand-muted transition hover:bg-brand-primary-tint hover:text-brand-text"
             >
               {item.label}
@@ -82,7 +82,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
             {navItems.map((item) => (
               <Link
                 key={item.key}
-                href={item.href}
+                href={item.href as any}
                 className="rounded-xl px-3 py-2 text-sm font-medium text-brand-text hover:bg-brand-primary-tint"
                 onClick={close}
               >

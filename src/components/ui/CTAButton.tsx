@@ -67,7 +67,7 @@ export function CTAButton(props: CTAButtonProps) {
         : props.href;
 
     return (
-      <Link href={href} className={buttonStyles({variant, width})}>
+      <Link href={href as any} className={buttonStyles({variant, width})}>
         {content}
       </Link>
     );

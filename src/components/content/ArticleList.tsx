@@ -191,10 +191,7 @@ export function ArticleList({articles, labels}: ArticleListProps) {
                 <p className="text-base leading-relaxed text-brand-muted">{article.excerpt}</p>
               </div>
               <Link
-                href={{
-                  pathname: '/articles/[slug]',
-                  params: {slug: article.slug}
-                }}
+                href={`/articles/${article.slug}` as any}
                 className="flex items-center gap-2 text-base font-bold text-brand-primary transition-all group-hover:gap-3"
               >
                 {labels.readMore}
