@@ -12,6 +12,8 @@ const messages = {
   en: enMessages
 };
 
+export const runtime = 'edge';
+
 export async function generateMetadata({
   params
 }: {
