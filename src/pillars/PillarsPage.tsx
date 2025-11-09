@@ -115,44 +115,46 @@ export function PillarsPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-pillar-schlaf/30 via-pillar-ernaehrung/25 via-pillar-bewegung/30 to-pillar-achtsamkeit/30 py-20">
-        {/* Animated gradient blobs using pillar colors */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-accent/40 via-pillar-ernaehrung/30 to-brand-primary/40 py-20">
+        {/* Enhanced animated gradient blobs - BIGGER & MORE SATURATED */}
         <motion.div
-          className="absolute top-0 left-0 h-96 w-96 bg-pillar-schlaf/15 rounded-full blur-3xl"
+          className="absolute -top-24 -left-24 h-[580px] w-[580px] bg-brand-primary/30 rounded-full blur-3xl"
           aria-hidden
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.35, 0.2]
+            scale: [1, 1.25, 1],
+            opacity: [0.3, 0.5, 0.3],
+            rotate: [0, 90, 180]
           }}
           transition={{
-            duration: 10,
+            duration: 18,
             repeat: Infinity,
             ease: 'easeInOut'
           }}
         />
         <motion.div
-          className="absolute top-1/2 right-0 h-80 w-80 bg-pillar-ernaehrung/12 rounded-full blur-3xl"
+          className="absolute -bottom-28 -right-28 h-[520px] w-[520px] bg-brand-accent/25 rounded-full blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.15, 0.3, 0.15]
+            opacity: [0.25, 0.4, 0.25]
           }}
           transition={{
-            duration: 12,
+            duration: 14,
             repeat: Infinity,
             ease: 'easeInOut',
             delay: 1
           }}
         />
         <motion.div
-          className="absolute bottom-0 left-1/3 h-72 w-72 bg-pillar-bewegung/15 rounded-full blur-3xl"
+          className="absolute top-1/3 right-1/3 h-[450px] w-[450px] bg-pillar-ernaehrung/20 rounded-full blur-3xl"
           aria-hidden
           animate={{
-            scale: [1, 1.25, 1],
-            opacity: [0.2, 0.35, 0.2]
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.35, 0.2],
+            y: [-50, 50, -50]
           }}
           transition={{
-            duration: 11,
+            duration: 16,
             repeat: Infinity,
             ease: 'easeInOut',
             delay: 2

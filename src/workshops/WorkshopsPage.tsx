@@ -115,33 +115,49 @@ export function WorkshopsPage() {
         disclaimer={offers('supporting')}
       />
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-accent/30 via-pillar-ernaehrung/20 to-brand-accent/35 py-12 sm:py-16 md:py-20">
-        {/* Animated gradient blobs */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-pillar-schlaf/40 via-pillar-ernaehrung/30 to-brand-accent/40 py-12 sm:py-16 md:py-20">
+        {/* Enhanced animated gradient blobs - BIGGER & MORE SATURATED */}
         <motion.div
-          className="absolute top-0 right-0 h-96 w-96 bg-brand-accent/20 rounded-full blur-3xl"
+          className="absolute -top-32 -right-32 h-[650px] w-[650px] bg-brand-accent/30 rounded-full blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.2, 0.4, 0.2]
+            opacity: [0.3, 0.5, 0.3],
+            rotate: [0, 180, 360]
           }}
           transition={{
-            duration: 8,
+            duration: 20,
             repeat: Infinity,
             ease: 'easeInOut'
           }}
         />
         <motion.div
-          className="absolute bottom-0 left-0 h-80 w-80 bg-brand-primary/15 rounded-full blur-3xl"
+          className="absolute -bottom-24 -left-24 h-[500px] w-[500px] bg-brand-primary/25 rounded-full blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.2, 0.35, 0.2]
+            opacity: [0.25, 0.4, 0.25]
           }}
           transition={{
-            duration: 10,
+            duration: 12,
             repeat: Infinity,
             ease: 'easeInOut',
             delay: 1
+          }}
+        />
+        <motion.div
+          className="absolute top-1/3 right-1/4 h-[450px] w-[450px] bg-pillar-ernaehrung/20 rounded-full blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.25, 1],
+            opacity: [0.2, 0.35, 0.2],
+            x: [0, 100, 0]
+          }}
+          transition={{
+            duration: 16,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 2
           }}
         />
         

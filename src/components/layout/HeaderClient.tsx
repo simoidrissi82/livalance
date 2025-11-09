@@ -49,7 +49,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
             aria-label="Livalance"
           >
             <Image
-              src="/images/brand/logo.svg"
+              src="/images/brand/logo_new.png"
               alt="Livalance"
               width={220}
               height={48}

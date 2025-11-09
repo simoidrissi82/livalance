@@ -73,33 +73,48 @@ export function ArticleList({articles, labels}: ArticleListProps) {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-accent/30 via-pillar-ernaehrung/20 to-brand-accent/35 py-20">
-      {/* Animated gradient blobs */}
+    <section className="relative overflow-hidden bg-gradient-to-br from-brand-accent/40 via-pillar-ernaehrung/30 to-brand-primary/35 py-20">
+      {/* Enhanced animated gradient blobs - BIGGER & MORE SATURATED */}
       <motion.div
-        className="absolute top-0 left-0 h-96 w-96 bg-brand-primary/20 rounded-full blur-3xl"
+        className="absolute -top-32 -left-32 h-[620px] w-[620px] bg-brand-primary/30 rounded-full blur-3xl"
         aria-hidden
         animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.2, 0.4, 0.2]
+          opacity: [0.3, 0.5, 0.3]
         }}
         transition={{
-          duration: 10,
+          duration: 11,
           repeat: Infinity,
           ease: 'easeInOut'
         }}
       />
       <motion.div
-        className="absolute bottom-0 right-0 h-80 w-80 bg-brand-accent/15 rounded-full blur-3xl"
+        className="absolute -bottom-24 -right-24 h-[540px] w-[540px] bg-brand-accent/25 rounded-full blur-3xl"
         aria-hidden
         animate={{
           scale: [1, 1.3, 1],
-          opacity: [0.15, 0.3, 0.15]
+          opacity: [0.25, 0.4, 0.25]
         }}
         transition={{
-          duration: 12,
+          duration: 13,
           repeat: Infinity,
           ease: 'easeInOut',
           delay: 1
+        }}
+      />
+      <motion.div
+        className="absolute top-1/2 left-1/2 h-[480px] w-[480px] bg-pillar-ernaehrung/20 rounded-full blur-3xl"
+        aria-hidden
+        animate={{
+          scale: [1, 1.15, 1],
+          opacity: [0.2, 0.35, 0.2],
+          x: [-60, 60, -60]
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          ease: 'easeInOut',
+          delay: 2
         }}
       />
       

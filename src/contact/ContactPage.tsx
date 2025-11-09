@@ -101,33 +101,49 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-accent/30 via-pillar-achtsamkeit/20 to-brand-accent/35 py-20">
-        {/* Animated gradient blobs */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-pillar-achtsamkeit/40 via-brand-accent/30 to-brand-primary/35 py-20">
+        {/* Enhanced animated gradient blobs - BIGGER & MORE SATURATED */}
         <motion.div
-          className="absolute top-0 right-0 h-96 w-96 bg-brand-accent/20 rounded-full blur-3xl"
+          className="absolute -top-40 -right-40 h-[700px] w-[700px] bg-brand-accent/35 rounded-full blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.2, 0.4, 0.2]
+            opacity: [0.35, 0.5, 0.35],
+            y: [0, -50, 0]
           }}
           transition={{
-            duration: 10,
+            duration: 14,
             repeat: Infinity,
             ease: 'easeInOut'
           }}
         />
         <motion.div
-          className="absolute bottom-0 left-0 h-80 w-80 bg-brand-primary/15 rounded-full blur-3xl"
+          className="absolute -bottom-32 -left-32 h-[600px] w-[600px] bg-brand-primary/30 rounded-full blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.15, 0.3, 0.15]
+            opacity: [0.3, 0.45, 0.3]
           }}
           transition={{
-            duration: 12,
+            duration: 13,
             repeat: Infinity,
             ease: 'easeInOut',
             delay: 1
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/3 h-[450px] w-[450px] bg-pillar-achtsamkeit/20 rounded-full blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.35, 0.2],
+            x: [-40, 40, -40]
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 2
           }}
         />
         

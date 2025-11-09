@@ -91,14 +91,14 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-accent/30 via-pillar-ernaehrung/20 to-brand-accent/35 py-20">
-        {/* Animated gradient blobs */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-accent/40 via-pillar-ernaehrung/30 to-brand-primary/35 py-20">
+        {/* Enhanced animated gradient blobs - BIGGER & MORE SATURATED */}
         <motion.div
-          className="absolute top-0 left-0 h-96 w-96 bg-brand-primary/20 rounded-full blur-3xl"
+          className="absolute -top-20 -left-20 h-[600px] w-[600px] bg-brand-primary/30 rounded-full blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.2, 0.4, 0.2]
+            opacity: [0.3, 0.5, 0.3]
           }}
           transition={{
             duration: 10,
@@ -107,17 +107,33 @@ export function AboutPage() {
           }}
         />
         <motion.div
-          className="absolute bottom-0 right-0 h-80 w-80 bg-brand-accent/15 rounded-full blur-3xl"
+          className="absolute -bottom-20 -right-20 h-[500px] w-[500px] bg-brand-accent/25 rounded-full blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.15, 0.3, 0.15]
+            opacity: [0.25, 0.4, 0.25]
           }}
           transition={{
             duration: 12,
             repeat: Infinity,
             ease: 'easeInOut',
             delay: 1
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 h-[400px] w-[400px] bg-pillar-ernaehrung/20 rounded-full blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.2, 0.35, 0.2],
+            x: [-50, 50, -50],
+            y: [-30, 30, -30]
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 2
           }}
         />
         
@@ -194,30 +210,30 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-accent/30 via-white to-pillar-bewegung/25 py-20">
-        {/* Animated gradient blobs */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-pillar-bewegung/35 via-white to-brand-accent/40 py-20">
+        {/* Enhanced animated gradient blobs */}
         <motion.div
-          className="absolute bottom-0 right-0 h-96 w-96 bg-brand-accent/20 rounded-full blur-3xl"
+          className="absolute -bottom-32 -right-32 h-[550px] w-[550px] bg-brand-accent/30 rounded-full blur-3xl"
           aria-hidden
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.35, 0.2]
+            scale: [1, 1.25, 1],
+            opacity: [0.3, 0.45, 0.3]
           }}
           transition={{
-            duration: 10,
+            duration: 11,
             repeat: Infinity,
             ease: 'easeInOut'
           }}
         />
         <motion.div
-          className="absolute top-0 left-0 h-80 w-80 bg-brand-primary/15 rounded-full blur-3xl"
+          className="absolute -top-24 -left-24 h-[480px] w-[480px] bg-brand-primary/25 rounded-full blur-3xl"
           aria-hidden
           animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.15, 0.3, 0.15]
+            scale: [1, 1.2, 1],
+            opacity: [0.25, 0.4, 0.25]
           }}
           transition={{
-            duration: 12,
+            duration: 13,
             repeat: Infinity,
             ease: 'easeInOut',
             delay: 1.5
