@@ -60,28 +60,31 @@ export function ContactPage() {
             whileHover={{scale: 1.01}}
           >
             <motion.h1
-              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg"
               initial={{opacity: 0, y: -10}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.2}}
+              style={{textShadow: '0 2px 10px rgba(0,0,0,0.3)'}}
             >
               {t('title')}
             </motion.h1>
             
             <motion.p
-              className="mt-6 text-xl md:text-2xl text-brand-text/80 leading-relaxed"
+              className="mt-6 text-xl md:text-2xl text-white/90 leading-relaxed drop-shadow-md"
               initial={{opacity: 0}}
               animate={{opacity: 1}}
               transition={{duration: 0.6, delay: 0.3}}
+              style={{textShadow: '0 1px 6px rgba(0,0,0,0.25)'}}
             >
               {t('intro')}
             </motion.p>
             
             <motion.p
-              className="mt-4 text-base text-brand-text/70 leading-relaxed"
+              className="mt-4 text-base text-white/85 leading-relaxed drop-shadow-md"
               initial={{opacity: 0}}
               animate={{opacity: 1}}
               transition={{duration: 0.6, delay: 0.4}}
+              style={{textShadow: '0 1px 6px rgba(0,0,0,0.25)'}}
             >
               {t('supporting')}
             </motion.p>
