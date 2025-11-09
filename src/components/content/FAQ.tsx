@@ -11,7 +11,7 @@ export function FAQ({title, items}: {title: string; items: FAQItem[]}) {
   return (
     <section className="mx-auto max-w-4xl px-6 py-20">
       <motion.h2
-        className="text-center font-display text-5xl font-bold text-brand-text"
+        className="text-center font-display text-3xl sm:text-4xl md:text-5xl font-bold text-brand-text"
         initial={{opacity: 0, y: 20}}
         whileInView={{opacity: 1, y: 0}}
         viewport={{once: true, margin: '-100px'}}
@@ -30,7 +30,7 @@ export function FAQ({title, items}: {title: string; items: FAQItem[]}) {
             transition={{delay: index * 0.1}}
             whileHover={{scale: 1.01}}
           >
-            <summary className="flex cursor-pointer items-center justify-between text-left text-xl font-semibold text-brand-text">
+            <summary className="flex cursor-pointer items-center justify-between text-left text-lg md:text-xl font-semibold text-brand-text">
               <span>{item.question}</span>
               <motion.span
                 className="ml-4 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-brand-primary/10 text-2xl text-brand-primary transition-all group-open:rotate-45 group-open:bg-brand-primary group-open:text-white"

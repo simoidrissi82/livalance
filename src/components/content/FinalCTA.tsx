@@ -16,7 +16,7 @@ export function FinalCTA({title, subtitle, ctaLabel, tagline}: FinalCTAProps) {
     <section className="relative overflow-hidden px-6 py-24">
       <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 via-brand-primary-tint to-brand-accent/30" aria-hidden />
       <motion.div
-        className="relative mx-auto max-w-4xl rounded-[2.5rem] border-2 border-white/60 bg-white/85 p-16 text-center shadow-medium backdrop-blur"
+        className="relative mx-auto max-w-4xl rounded-[2.5rem] border-2 border-white/60 bg-white/85 p-8 sm:p-12 md:p-16 text-center shadow-medium backdrop-blur"
         initial={{opacity: 0, scale: 0.9, y: 30}}
         whileInView={{opacity: 1, scale: 1, y: 0}}
         viewport={{once: true, margin: '-100px'}}
@@ -24,7 +24,7 @@ export function FinalCTA({title, subtitle, ctaLabel, tagline}: FinalCTAProps) {
         whileHover={{scale: 1.02, boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)'}}
       >
         <motion.h2
-          className="font-display text-5xl font-bold text-brand-text"
+          className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-brand-text"
           initial={{opacity: 0, y: -20}}
           whileInView={{opacity: 1, y: 0}}
           viewport={{once: true}}

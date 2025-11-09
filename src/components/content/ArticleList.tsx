@@ -86,7 +86,7 @@ export function ArticleList({articles, labels}: ArticleListProps) {
         >
           <div className="max-w-3xl space-y-4">
             <motion.h2
-              className="font-display text-5xl font-bold text-brand-text"
+              className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-brand-text"
               initial={{opacity: 0, y: -10}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.2}}

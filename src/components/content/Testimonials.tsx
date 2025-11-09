@@ -86,7 +86,7 @@ export function Testimonials({title, items}: {title: string; items: TestimonialI
           </motion.div>
           
           <motion.h2
-            className="font-display text-5xl font-bold text-brand-text mb-4"
+            className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-brand-text mb-4"
             initial={{opacity: 0, y: 20}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true}}
@@ -96,7 +96,7 @@ export function Testimonials({title, items}: {title: string; items: TestimonialI
           </motion.h2>
           
           <motion.p
-            className="text-xl text-brand-muted max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-brand-muted max-w-2xl mx-auto"
             initial={{opacity: 0, y: 20}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true}}

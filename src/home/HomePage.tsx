@@ -154,7 +154,7 @@ export function HomePage() {
         ]}
         note={offersTeaser('note')}
         ctaLabel={offersTeaser('cta')}
-        ctaHref="/offers"
+        ctaHref="/workshops"
       />
 
       <SocialProof

@@ -55,7 +55,7 @@ export function CgmKickstart({title, bullets, disclaimer, ctaLabel}: CgmKickstar
             viewport={{once: true}}
             transition={{delay: 0.4}}
           >
-            <CTAButton href="/assessment" width="full" showIcon>
+            <CTAButton href="/contact" width="full" showIcon>
               {ctaLabel}
             </CTAButton>
           </motion.div>

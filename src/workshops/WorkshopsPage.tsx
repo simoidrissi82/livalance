@@ -226,7 +226,7 @@ export function WorkshopsPage() {
         ]}
         note={offers('note')}
         ctaLabel={offers('cta')}
-        ctaHref="/offers"
+        ctaHref="/contact"
       />
 
       <section id="booking" className="relative overflow-hidden bg-gradient-to-br from-brand-bg via-brand-surface to-brand-bg py-20">
