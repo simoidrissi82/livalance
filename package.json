@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "npx @cloudflare/next-on-pages build",
+    "build": "node ./scripts/build-cloudflare.mjs",
+    "generate:articles": "node ./scripts/generate-articles.mjs",
     "build:next": "next build",
     "start": "next start",
     "lint": "next lint",
