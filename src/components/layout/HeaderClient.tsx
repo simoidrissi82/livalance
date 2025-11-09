@@ -43,7 +43,9 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
         <div className="flex items-center gap-3">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-brand-text"
+            className={`inline-flex items-center gap-2 transition-opacity duration-300 ${
+              scrolled ? 'opacity-100' : 'opacity-95'
+            }`}
             aria-label="Livalance"
           >
             <Image
@@ -51,7 +53,9 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
               alt="Livalance"
               width={220}
               height={48}
-              className="h-12 w-auto"
+              className={`h-12 w-auto transition-all duration-300 ${
+                scrolled ? 'brightness-100' : 'brightness-100 drop-shadow-md'
+              }`}
               priority
             />
             <span className="sr-only">Livalance</span>
