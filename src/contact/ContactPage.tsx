@@ -87,13 +87,13 @@ export function ContactPage() {
             </motion.p>
             
             <motion.div
-              className="mt-8 flex flex-wrap gap-4"
+              className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4"
               initial={{opacity: 0, y: 10}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.5}}
             >
-              <CTAButton href="mailto:hello@livalance.com" showIcon>{cta('submit')}</CTAButton>
-              <CTAButton href="#booking" variant="secondary">
+              <CTAButton href="mailto:hello@livalance.com" showIcon width="full-mobile">{cta('submit')}</CTAButton>
+              <CTAButton href="#booking" variant="secondary" width="full-mobile">
                 {t('booking')}
               </CTAButton>
             </motion.div>

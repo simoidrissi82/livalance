@@ -134,13 +134,13 @@ export function Hero({
             </motion.p>
             
             <motion.div
-              className="flex flex-col gap-3 sm:flex-row"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
               variants={motionVariants.fadeIn}
             >
-              <CTAButton href={primaryCta.href} variant="primary">
+              <CTAButton href={primaryCta.href} variant="primary" width="full-mobile">
                 {primaryCta.label}
               </CTAButton>
-              <CTAButton href={secondaryCta.href} variant="secondary">
+              <CTAButton href={secondaryCta.href} variant="secondary" width="full-mobile">
                 {secondaryCta.label}
               </CTAButton>
             </motion.div>

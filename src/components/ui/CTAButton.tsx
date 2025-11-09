@@ -21,7 +21,8 @@ const buttonStyles = cva(
       },
       width: {
         auto: 'w-auto',
-        full: 'w-full'
+        full: 'w-full',
+        'full-mobile': 'w-full sm:w-auto'
       }
     },
     defaultVariants: {

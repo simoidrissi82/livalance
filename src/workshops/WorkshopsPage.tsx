@@ -91,13 +91,13 @@ export function WorkshopsPage() {
             </motion.p>
             
             <motion.div
-              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4"
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.5}}
             >
-              <CTAButton href="/contact" showIcon>{cta('bookIntro')}</CTAButton>
-              <CTAButton href="#booking" variant="secondary">
+              <CTAButton href="/contact" showIcon width="full-mobile">{cta('bookIntro')}</CTAButton>
+              <CTAButton href="#booking" variant="secondary" width="full-mobile">
                 {cta('viewWorkshops')}
               </CTAButton>
             </motion.div>
