@@ -7,6 +7,8 @@ import {inter, manrope} from '@/fonts';
 import {getOrganizationJsonLd, getWebsiteJsonLd} from '@/lib/structured-data';
 import '@/styles/globals.css';
 
+export const runtime = 'edge';
+
 const baseUrl =
   process.env.NEXT_PUBLIC_BASE_URL ?? 'https://www.livalance.example';
 
