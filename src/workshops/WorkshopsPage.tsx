@@ -19,7 +19,7 @@ export function WorkshopsPage() {
 
   return (
     <div className="space-y-16 bg-brand-bg pb-20">
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-brand-primary-tint/40 via-brand-surface/20 to-brand-accent-tint/30">
+      <section className="relative min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-brand-primary-tint/40 via-brand-surface/20 to-brand-accent-tint/30">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 via-transparent to-brand-accent/15" aria-hidden />
         
         {/* Animated gradient blobs */}
@@ -56,15 +56,15 @@ export function WorkshopsPage() {
           }}
         />
         
-        <div className="relative mx-auto max-w-6xl px-6 py-24">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-16 md:py-24">
           <motion.div
-            className="max-w-3xl space-y-6"
+            className="max-w-3xl space-y-4 sm:space-y-6"
             initial={{opacity: 0, y: 30}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.6}}
           >
             <motion.span
-              className="inline-flex rounded-full bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-brand-primary shadow-soft"
+              className="inline-flex rounded-full bg-white/70 px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-brand-primary shadow-soft"
               initial={{scale: 0.8, opacity: 0}}
               animate={{scale: 1, opacity: 1}}
               transition={{duration: 0.4, delay: 0.2}}
@@ -73,7 +73,7 @@ export function WorkshopsPage() {
             </motion.span>
             
             <motion.h1
-              className="font-display text-5xl md:text-6xl font-bold text-brand-text leading-tight"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight"
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.3}}
@@ -82,7 +82,7 @@ export function WorkshopsPage() {
             </motion.h1>
             
             <motion.p
-              className="text-xl md:text-2xl text-brand-text/80 leading-relaxed"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-brand-text/80 leading-relaxed"
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.4}}
@@ -91,7 +91,7 @@ export function WorkshopsPage() {
             </motion.p>
             
             <motion.div
-              className="flex flex-wrap gap-4 pt-4"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4"
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.5}}
@@ -115,23 +115,23 @@ export function WorkshopsPage() {
         disclaimer={offers('supporting')}
       />
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-brand-surface via-white to-brand-surface py-20">
+      <section className="relative overflow-hidden bg-gradient-to-b from-brand-surface via-white to-brand-surface py-12 sm:py-16 md:py-20">
         <div className="absolute top-0 right-0 h-64 w-64 bg-brand-accent/5 rounded-full blur-3xl" aria-hidden />
         
-        <div className="relative mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-2">
+        <div className="relative mx-auto grid max-w-6xl gap-6 sm:gap-8 px-4 sm:px-6 md:grid-cols-2">
           <motion.div
-            className="group rounded-3xl border-2 border-white/60 bg-white/95 p-10 shadow-soft backdrop-blur transition-all duration-300 hover:shadow-medium hover:-translate-y-1"
+            className="group rounded-3xl border-2 border-white/60 bg-white/95 p-6 sm:p-8 md:p-10 shadow-soft backdrop-blur transition-all duration-300 hover:shadow-medium hover:-translate-y-1"
             initial={{opacity: 0, x: -30}}
             whileInView={{opacity: 1, x: 0}}
             viewport={{once: true, margin: '-100px'}}
             transition={{duration: 0.6}}
             whileHover={{scale: 1.02}}
           >
-            <h2 className="text-base font-bold uppercase tracking-wide text-brand-primary mb-4">
+            <h2 className="text-sm sm:text-base font-bold uppercase tracking-wide text-brand-primary mb-3 sm:mb-4">
               {t('flowTitle')}
             </h2>
-            <p className="text-base text-brand-text/80 leading-relaxed">{t('flowDescription')}</p>
-            <ol className="mt-8 space-y-4 text-base text-brand-text">
+            <p className="text-sm sm:text-base text-brand-text/80 leading-relaxed">{t('flowDescription')}</p>
+            <ol className="mt-6 sm:mt-8 space-y-3 sm:space-y-4 text-sm sm:text-base text-brand-text">
               {[0, 1, 2].map((index) => (
                 <motion.li
                   key={index}
@@ -149,18 +149,18 @@ export function WorkshopsPage() {
           </motion.div>
           
           <motion.div
-            className="group rounded-3xl border-2 border-white/60 bg-white/95 p-10 shadow-soft backdrop-blur transition-all duration-300 hover:shadow-medium hover:-translate-y-1"
+            className="group rounded-3xl border-2 border-white/60 bg-white/95 p-6 sm:p-8 md:p-10 shadow-soft backdrop-blur transition-all duration-300 hover:shadow-medium hover:-translate-y-1"
             initial={{opacity: 0, x: 30}}
             whileInView={{opacity: 1, x: 0}}
             viewport={{once: true, margin: '-100px'}}
             transition={{duration: 0.6, delay: 0.2}}
             whileHover={{scale: 1.02}}
           >
-            <h2 className="text-base font-bold uppercase tracking-wide text-brand-accent mb-4">
+            <h2 className="text-sm sm:text-base font-bold uppercase tracking-wide text-brand-accent mb-3 sm:mb-4">
               {t('formatsTitle')}
             </h2>
-            <p className="text-base text-brand-text/80 leading-relaxed">{t('formatsDescription')}</p>
-            <ul className="mt-8 space-y-4 text-base text-brand-text">
+            <p className="text-sm sm:text-base text-brand-text/80 leading-relaxed">{t('formatsDescription')}</p>
+            <ul className="mt-6 sm:mt-8 space-y-3 sm:space-y-4 text-sm sm:text-base text-brand-text">
               {[0, 1, 2].map((index) => (
                 <motion.li
                   key={index}
@@ -176,7 +176,7 @@ export function WorkshopsPage() {
               ))}
             </ul>
             <motion.p
-              className="mt-8 text-sm text-brand-muted italic"
+              className="mt-6 sm:mt-8 text-xs sm:text-sm text-brand-muted italic"
               initial={{opacity: 0}}
               whileInView={{opacity: 1}}
               viewport={{once: true}}

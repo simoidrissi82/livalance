@@ -8,7 +8,7 @@ export function AboutPage() {
 
   return (
     <div className="space-y-16 bg-brand-bg pb-20">
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-brand-primary-tint/40 via-brand-surface/20 to-brand-accent-tint/30">
+      <section className="relative min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-brand-primary-tint/40 via-brand-surface/20 to-brand-accent-tint/30">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 via-transparent to-brand-accent/15" aria-hidden />
         
         {/* Animated gradient blobs */}
@@ -45,7 +45,7 @@ export function AboutPage() {
           }}
         />
         
-        <div className="relative mx-auto max-w-5xl px-6 py-24">
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16 md:py-24">
           <motion.div
             className="max-w-3xl space-y-6"
             initial={{opacity: 0, y: 30}}
@@ -62,7 +62,7 @@ export function AboutPage() {
             </motion.span>
             
             <motion.h1
-              className="font-display text-5xl md:text-6xl font-bold text-brand-text leading-tight"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight"
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.3}}

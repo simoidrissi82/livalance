@@ -28,7 +28,7 @@ export function Hero({
   secondaryCta
 }: HeroProps) {
   return (
-    <section className="relative isolate min-h-[85vh] flex items-center overflow-hidden bg-brand-bg">
+    <section className="relative isolate min-h-[70vh] sm:min-h-[75vh] md:min-h-[85vh] flex items-center overflow-hidden bg-brand-bg">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <picture>
@@ -93,7 +93,7 @@ export function Hero({
         }}
       />
 
-      <div className="relative mx-auto max-w-6xl px-6 py-12 md:py-16">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-12 md:py-16">
         <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
           <motion.div
             className="flex flex-col gap-6 text-left"
@@ -102,14 +102,14 @@ export function Hero({
             variants={motionVariants.stagger}
           >
             <motion.h1
-              className="max-w-3xl font-display text-5xl font-bold leading-tight text-brand-text md:text-6xl lg:text-7xl"
+              className="max-w-3xl font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-brand-text"
               variants={motionVariants.fadeIn}
             >
               {title}
             </motion.h1>
             
             <motion.p
-              className="max-w-2xl text-lg text-brand-muted md:text-xl"
+              className="max-w-2xl text-base sm:text-lg md:text-xl text-brand-muted"
               variants={motionVariants.fadeIn}
             >
               {inlinePillars.length ? (
