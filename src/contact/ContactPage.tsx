@@ -14,37 +14,34 @@ export function ContactPage() {
 
   return (
     <div className="space-y-16 bg-brand-bg pb-20">
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-brand-primary-tint/60 via-brand-surface/40 to-brand-accent-tint/50">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 via-transparent to-brand-accent/15" aria-hidden />
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-pillar-achtsamkeit/40 via-brand-accent/30 to-brand-primary/35">
         
-        {/* Animated gradient blobs */}
+        {/* HUGE Animated gradient blobs */}
         <motion.div
-          className="absolute top-10 left-10 h-96 w-96 rounded-full bg-brand-primary/15 blur-3xl"
+          className="absolute -top-40 -left-40 h-[580px] w-[580px] rounded-full bg-brand-primary/30 blur-3xl"
           aria-hidden
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.4, 0.6, 0.4],
-            x: [0, -20, 0],
-            y: [0, 30, 0]
+            scale: [1, 1.25, 1],
+            opacity: [0.3, 0.5, 0.3],
+            y: [0, -40, 0]
           }}
           transition={{
-            duration: 10,
+            duration: 16,
             repeat: Infinity,
             ease: 'easeInOut'
           }}
         />
         
         <motion.div
-          className="absolute bottom-20 right-10 h-80 w-80 rounded-full bg-brand-accent/15 blur-3xl"
+          className="absolute -right-32 -bottom-32 h-[500px] w-[500px] rounded-full bg-brand-accent/25 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.3, 0.5, 0.3],
-            x: [0, 20, 0],
-            y: [0, -20, 0]
+            opacity: [0.25, 0.4, 0.25],
+            x: [0, -30, 0]
           }}
           transition={{
-            duration: 12,
+            duration: 14,
             repeat: Infinity,
             ease: 'easeInOut',
             delay: 1

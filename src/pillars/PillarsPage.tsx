@@ -35,28 +35,26 @@ export function PillarsPage() {
 
   return (
     <div className="space-y-16 bg-brand-bg pb-20">
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-brand-primary-tint/60 via-brand-surface/40 to-brand-accent-tint/50">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 via-transparent to-brand-accent/15" aria-hidden />
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-brand-accent/40 via-pillar-ernaehrung/30 to-brand-primary/35">
         
-        {/* Animated gradient blobs */}
+        {/* HUGE Animated gradient blobs */}
         <motion.div
-          className="absolute top-20 left-20 h-96 w-96 rounded-full bg-brand-primary/15 blur-3xl"
+          className="absolute -top-36 -left-36 h-[560px] w-[560px] rounded-full bg-brand-primary/30 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.4, 0.6, 0.4],
-            x: [0, -30, 0],
-            y: [0, 20, 0]
+            opacity: [0.3, 0.5, 0.3],
+            rotate: [0, 180, 360]
           }}
           transition={{
-            duration: 10,
+            duration: 20,
             repeat: Infinity,
             ease: 'easeInOut'
           }}
         />
         
         <motion.div
-          className="absolute bottom-20 right-20 h-80 w-80 rounded-full bg-brand-accent/15 blur-3xl"
+          className="absolute -right-28 -bottom-28 h-[490px] w-[490px] rounded-full bg-brand-accent/25 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.3, 1],
