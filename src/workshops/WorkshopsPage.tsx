@@ -18,8 +18,8 @@ export function WorkshopsPage() {
   const workshopDeliverables = offers.raw('bundles.0.deliverables') as string[];
 
   return (
-    <div className="space-y-16 bg-brand-bg pb-20">
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-pillar-schlaf/40 via-pillar-ernaehrung/30 to-brand-accent/40">
+    <div className="bg-brand-bg pb-20">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-pillar-schlaf/40 via-pillar-ernaehrung/30 to-brand-accent/40 pt-20">
         
         {/* HUGE Animated gradient blobs */}
         <motion.div
@@ -114,7 +114,7 @@ export function WorkshopsPage() {
         disclaimer={offers('supporting')}
       />
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-pillar-schlaf/40 via-pillar-ernaehrung/30 to-brand-accent/40 py-12 sm:py-16 md:py-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-pillar-schlaf/40 via-pillar-ernaehrung/30 to-brand-accent/40 py-20">
         {/* Enhanced animated gradient blobs - BIGGER & MORE SATURATED */}
         <motion.div
           className="absolute -top-32 -right-32 h-[650px] w-[650px] bg-brand-accent/30 rounded-full blur-3xl"

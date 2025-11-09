@@ -52,7 +52,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
               src="/images/brand/logo_new.png"
               alt="Livalance"
               width={350}
-              height={75}
+              height={200}
               className={`h-16 w-auto transition-all duration-300 ${
                 scrolled ? 'brightness-100' : 'brightness-100 drop-shadow-lg'
               }`}

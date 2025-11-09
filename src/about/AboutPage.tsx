@@ -7,8 +7,8 @@ export function AboutPage() {
   const t = useTranslations('aboutPage');
 
   return (
-    <div className="space-y-16 bg-brand-bg pb-20">
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-brand-accent/40 via-pillar-ernaehrung/30 to-brand-primary/35">
+    <div className="bg-brand-bg pb-20">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-brand-accent/40 via-pillar-ernaehrung/30 to-brand-primary/35 pt-20">
         
         {/* HUGE Animated gradient blobs */}
         <motion.div
