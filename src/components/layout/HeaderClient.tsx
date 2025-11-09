@@ -7,7 +7,7 @@ import {Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline';
 import {Link} from '@/i18n/routing';
 
 import type {HeaderNavItem} from './Header';
-import {CTAButton} from './CTAButton';
+import {CTAButton} from '../ui/CTAButton';
 import {LocaleSwitcher} from './LocaleSwitcher';
 
 type HeaderClientProps = {
@@ -65,14 +65,19 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
           type="button"
           className="inline-flex items-center justify-center rounded-xl p-2 text-brand-text md:hidden"
           onClick={toggle}
-          aria-label="Toggle navigation"
+          aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
         >
           {open ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
         </button>
       </div>
 
       {open ? (
-        <div className="absolute left-0 top-full w-full border-b border-slate-200 bg-brand-surface shadow-soft md:hidden">
+        <div
+          id="mobile-navigation"
+          className="absolute left-0 top-full w-full border-b border-slate-200 bg-brand-surface shadow-soft md:hidden"
+        >
           <nav className="flex flex-col px-6 py-4" aria-label="Mobile navigation">
             {navItems.map((item) => (
               <Link

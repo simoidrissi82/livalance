@@ -1,21 +1,31 @@
 import type {Metadata} from 'next';
-import {getTranslations} from 'next-intl/server';
 
 import {AboutPage} from '@/about';
 import {buildPageMetadata} from '@/lib/metadata';
 import type {AppLocale} from '@/i18n/routing';
 
+import deMessages from '@/messages/de.json';
+import enMessages from '@/messages/en.json';
+
+const messages = {
+  de: deMessages,
+  en: enMessages
+};
+
 export async function generateMetadata({
   params
 }: {
-  params: {locale: AppLocale};
+  params: Promise<{locale: AppLocale}>;
 }): Promise<Metadata> {
-  const t = await getTranslations({locale: params.locale, namespace: 'aboutPage'});
+  const {locale} = await params;
+  const localeMessages = messages[locale] || messages.de;
+  const aboutPage = localeMessages.aboutPage as any;
+  
   return buildPageMetadata({
-    locale: params.locale,
-    path: params.locale === 'de' ? '/ueber' : '/en/about',
-    title: t('heroTitle'),
-    description: t('heroSubtitle')
+    locale,
+    path: locale === 'de' ? '/ueber' : '/en/about',
+    title: aboutPage.heroTitle,
+    description: aboutPage.heroSubtitle
   });
 }
 

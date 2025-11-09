@@ -3,7 +3,7 @@
 import {FormEvent, useState} from 'react';
 import {useTranslations} from 'next-intl';
 
-import {CTAButton} from './CTAButton';
+import {CTAButton} from '../ui/CTAButton';
 
 export function NewsletterForm() {
   const t = useTranslations('newsletter');

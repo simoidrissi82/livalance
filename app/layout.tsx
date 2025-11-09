@@ -2,7 +2,7 @@ import type {Metadata, Viewport} from 'next';
 import {headers} from 'next/headers';
 import {ReactNode} from 'react';
 
-import {PlausibleScript} from '@/components/PlausibleScript';
+import {PlausibleScript} from '@/components/ui/PlausibleScript';
 import {inter, manrope} from '@/fonts';
 import {getOrganizationJsonLd, getWebsiteJsonLd} from '@/lib/structured-data';
 import '@/styles/globals.css';
@@ -52,12 +52,19 @@ export const viewport: Viewport = {
 const organizationJsonLd = JSON.stringify(getOrganizationJsonLd());
 const websiteJsonLd = JSON.stringify(getWebsiteJsonLd());
 
-export default function RootLayout({children}: {children: ReactNode}) {
-  const locale = headers().get('x-next-intl-locale') ?? 'de';
+export default async function RootLayout({children}: {children: ReactNode}) {
+  const headersList = await headers();
+  const locale = headersList.get('x-next-intl-locale') ?? 'de';
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} ${manrope.variable} font-sans`}>
+      <body className={`${inter.variable} ${manrope.variable} font-sans`} suppressHydrationWarning>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-xl focus:bg-brand-primary focus:px-4 focus:py-2 focus:text-white focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2"
+        >
+          Skip to main content
+        </a>
         <PlausibleScript />
         <script
           type="application/ld+json"

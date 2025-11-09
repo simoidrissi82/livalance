@@ -17,7 +17,8 @@ const localeToFileMap: Record<string, () => Promise<AbstractIntlMessages>> = {
 };
 
 export default getRequestConfig(async () => {
-  const headerLocale = headers().get('x-next-intl-locale');
+  const headersList = await headers();
+  const headerLocale = headersList.get('x-next-intl-locale');
   const locale = headerLocale && headerLocale in localeToFileMap ? headerLocale : defaultLocale;
   const loader = localeToFileMap[locale];
 

@@ -21,7 +21,12 @@ Produktionsreife, zweisprachige (DE/EN) Marketing-Plattform für Livalance auf B
 │   ├── api/subscribe        # Newsletter-Endpoint (Placeholder)
 │   ├── de/…                 # Alle deutschen Seiten & Layouts
 │   └── en/…                 # Alle englischen Seiten & Layouts
-├── components/              # UI-Komponenten (Header, Footer, Navigation, CTA, etc.)
+├── src/components/          # UI-Komponenten, organisiert in:
+│   ├── layout/             # Header, Footer, LocaleSwitcher
+│   ├── content/            # Hero, ArticleList, Sections
+│   ├── ui/                 # CTAButton, PlausibleScript
+│   ├── forms/              # NewsletterForm
+│   └── booking/            # BookingEmbed
 ├── content/                 # MDX-Inhalte (Artikel je Locale) + slug-map.json
 ├── messages/                # next-intl JSON Messages pro Sprache
 ├── public/                  # Statische Assets (Logos, Platzhalter-Bilder, Sitemap-Ausgabe)
@@ -42,7 +47,7 @@ Produktionsreife, zweisprachige (DE/EN) Marketing-Plattform für Livalance auf B
 ```
 
 ## Voraussetzungen
-- Node.js **>= 18.18**
+- Node.js **>= 20.0.0**
 - npm (oder pnpm/yarn) für Paketverwaltung
 - Optional: Cal.com & E-Mail Marketing Dienst für Produktiv-Integrationen
 
@@ -63,7 +68,8 @@ npm start
 | Befehl                  | Zweck |
 |-------------------------|-------|
 | `npm run dev`           | Startet Next.js Dev-Server (mit Hot Reload & i18n-Routing).
-| `npm run build`         | Produktions-Build (inkl. TypeScript & MDX).
+| `npm run build`         | Cloudflare Pages Build (mit `@cloudflare/next-on-pages`).
+| `npm run build:next`    | Standard Next.js Build.
 | `npm start`             | Startet den optimierten Server (`next start`).
 | `npm run lint`          | ESLint (Next + TypeScript + Tailwind).
 | `npm run test`          | Vitest (inkl. jsdom & Path-Aliases).
@@ -72,8 +78,9 @@ npm start
 | `npm run format`        | Prettier Check.
 | `npm run format:write`  | Prettier mit automatischer Formatierung.
 | `npm run generate:sitemap` | Generiert lokalisierte Sitemaps & robots.txt via `next-sitemap`.
-| `npm run export`        | Next.js Static Export nach `out/` (reine HTML/JS Assets).
-| `npm run build:pages`   | Convenience-Command für Cloudflare Pages (`next build && next export`).
+| `npm run pages:build`   | Build für Cloudflare Pages.
+| `npm run preview`       | Lokale Vorschau mit Wrangler.
+| `npm run deploy`       | Build und Deploy zu Cloudflare Pages.
 
 ## Umgebungsvariablen
 | Variable                     | Beschreibung |
@@ -97,10 +104,16 @@ Die Variablen werden im Browser benötigt, deshalb `NEXT_PUBLIC_` Präfix.
 - Neue Artikel: MDX-Datei mit Frontmatter anlegen, optional Cover unter `public/images/...` ergänzen, Slug in `slug-map.json` pflegen, fertig.
 
 ## Komponenten & Layouts
-- Globales Layout (`app/layout.tsx`) lädt Fonts (Inter/Outfit via `next/font`), Tailwind, Plausible-Script (optional) und JSON-LD (WebSite + Organization).
-- Lokale Layouts (`app/de/layout.tsx`, `app/en/layout.tsx`) binden `Header`, `Footer` und `NextIntlClientProvider` je Sprache ein.
-- UI-Bausteine: Hero, CTAButton, PillarsGrid, WorkshopHighlight, ProgramOverview, ArticleList, VisionSection, LeadMagnet, FAQs, BookingEmbed u.v.m.
+- Globales Layout (`app/layout.tsx`) lädt Fonts (Inter/Manrope via `next/font`), Tailwind, Plausible-Script (optional), Skip-Link für Accessibility und JSON-LD (WebSite + Organization).
+- Lokale Layouts (`app/[locale]/layout.tsx`) binden `Header`, `Footer` und `NextIntlClientProvider` je Sprache ein.
+- Komponenten sind in logische Unterverzeichnisse organisiert:
+  - `layout/`: Header, Footer, LocaleSwitcher
+  - `content/`: Hero, ArticleList, Sections (PillarsGrid, WorkshopHighlight, etc.)
+  - `ui/`: CTAButton, PlausibleScript
+  - `forms/`: NewsletterForm
+  - `booking/`: BookingEmbed
 - Strukturierte Daten für Artikel via `src/lib/structured-data.ts` (Schema.org Article + Breadcrumbs Ergänzung möglich).
+- Error Boundary (`app/error.tsx`) und Loading States (`app/[locale]/loading.tsx`) für bessere UX.
 
 ## Tests & Qualität
 - Vitest (`tests/slug-map.spec.ts`) demonstriert Slug-Mapping – weitere Tests willkommen (Target: ≥80 % Coverage).
@@ -108,12 +121,14 @@ Die Variablen werden im Browser benötigt, deshalb `NEXT_PUBLIC_` Präfix.
 - `npm run typecheck` garantiert, dass App Router & MDX-konforme Typen bestehen.
 
 ## Deployment
-- Cloudflare Pages ist für das Projekt ausreichend, weil ausschließlich statische Assets produziert werden. Verknüpfe das GitHub-Repo mit Pages (bereits geschehen) und nutze folgende Build-Einstellungen:
-  - **Build command:** `npm run build:pages`
-  - **Build output directory:** `out`
-  - **Environment variables:** `NODE_VERSION=20`, `NEXT_TELEMETRY_DISABLED=1` (optional), sowie die produktiven Werte für `NEXT_PUBLIC_BASE_URL` und `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`.
-- Pages kümmert sich nach jedem Push auf `main` um Build & Rollout; zusätzliche Cloudflare-Dienste (R2, KV, Workers) sind nicht nötig.
-- Falls du die Sitemaps aktualisieren willst, kannst du vor dem Deployment `npm run generate:sitemap` laufen lassen oder den Befehl als zusätzlichen Schritt in Pages konfigurieren.
+- **Cloudflare Pages** mit `@cloudflare/next-on-pages` für vollständige Next.js-Feature-Unterstützung
+- Siehe [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) für detaillierte Anleitung
+- Build-Einstellungen:
+  - **Build command:** `npm run pages:build`
+  - **Build output directory:** `.vercel/output/static`
+  - **Environment variables:** `NODE_VERSION=20`, `NEXT_PUBLIC_BASE_URL`, `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`
+- Automatisches Deployment bei Push auf `main` Branch
+- API Routes verwenden Edge Runtime für Cloudflare-Kompatibilität
 
 ## Analytics & Integrationen
 - Plausible Analytics (cookieless) wird nur eingebunden, wenn `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` gesetzt ist.

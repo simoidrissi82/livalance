@@ -1,5 +1,6 @@
-export default function Page({params}: {params: {locale: 'de' | 'en'}}) {
-  if (params.locale === 'de') {
+export default async function Page({params}: {params: Promise<{locale: 'de' | 'en'}>}) {
+  const {locale} = await params;
+  if (locale === 'de') {
     return (
       <div className="mx-auto max-w-3xl px-6 py-16 space-y-4 text-sm text-brand-muted">
         <h1 className="font-display text-3xl font-semibold text-brand-text">Impressum</h1>

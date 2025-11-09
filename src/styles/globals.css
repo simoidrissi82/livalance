@@ -12,10 +12,42 @@
   --brand-primary-tint: #e6e8ee;
   --brand-accent: #36a8a2;
   --brand-accent-hover: #2b837e;
+  
+  /* Extended neutral palette */
+  --brand-gray-50: #f9fafb;
+  --brand-gray-100: #f3f4f6;
+  --brand-gray-200: #e5e7eb;
+  --brand-gray-300: #d1d5db;
+  --brand-gray-600: #4b5563;
+  --brand-gray-900: #111827;
+  
+  /* Primary variations */
+  --brand-primary-50: #f0f9ff;
+  --brand-primary-600: #0369a1;
+  
+  /* Pillar colors */
   --pillar-schlaf: #36a8a2;
   --pillar-ernaehrung: #7cb342;
   --pillar-bewegung: #f6a623;
   --pillar-achtsamkeit: #7e57c2;
+  
+  /* Gradients */
+  --gradient-teal: linear-gradient(135deg, #36a8a2 0%, #2b837e 100%);
+  --gradient-primary: linear-gradient(135deg, #0b1220 0%, #1f2937 100%);
+  --gradient-hero: radial-gradient(120% 120% at 20% 20%, rgba(54, 168, 162, 0.25), transparent);
+  
+  /* Shadows */
+  --shadow-soft: 0 4px 16px rgba(11, 18, 32, 0.08);
+  --shadow-medium: 0 8px 24px rgba(11, 18, 32, 0.12);
+  --shadow-strong: 0 16px 48px rgba(11, 18, 32, 0.16);
+  
+  /* Animation */
+  --animation-fast: 150ms;
+  --animation-normal: 250ms;
+  --animation-slow: 350ms;
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
   color-scheme: light;
 }
 
