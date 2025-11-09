@@ -14,7 +14,7 @@ type ClientLayoutProps = {
 
 export function ClientLayout({locale, messages, children}: ClientLayoutProps) {
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
+    <NextIntlClientProvider locale={locale} messages={messages} timeZone="Europe/Berlin">
       <Header />
       {children}
       <Footer />
