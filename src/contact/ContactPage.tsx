@@ -13,8 +13,8 @@ export function ContactPage() {
   const channels = [t('channels.0'), t('channels.1'), t('channels.2')];
 
   return (
-    <div className="bg-brand-bg pb-20">
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-pillar-achtsamkeit/40 via-brand-accent/30 to-brand-primary/35 pt-20">
+    <div className="bg-gradient-to-br from-pillar-achtsamkeit/40 via-brand-accent/30 to-brand-primary/35">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         
         {/* HUGE Animated gradient blobs */}
         <motion.div

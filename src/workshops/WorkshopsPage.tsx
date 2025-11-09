@@ -18,8 +18,8 @@ export function WorkshopsPage() {
   const workshopDeliverables = offers.raw('bundles.0.deliverables') as string[];
 
   return (
-    <div className="bg-brand-bg pb-20">
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-pillar-schlaf/40 via-pillar-ernaehrung/30 to-brand-accent/40 pt-20">
+    <div className="bg-gradient-to-br from-pillar-schlaf/40 via-pillar-ernaehrung/30 to-brand-accent/40">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         
         {/* HUGE Animated gradient blobs */}
         <motion.div
