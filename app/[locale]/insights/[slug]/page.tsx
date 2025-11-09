@@ -6,7 +6,19 @@ import {getArticleBySlug, getArticleSlugs} from '@/lib/content';
 import {getArticleJsonLd} from '@/lib/structured-data';
 import type {AppLocale} from '@/i18n/routing';
 
-export const runtime = 'edge';
+export async function generateStaticParams() {
+  const {articlesFrontmatters} = await import('@/generated/articles-data');
+  const params: {locale: string; slug: string}[] = [];
+  
+  (['de', 'en'] as const).forEach(locale => {
+    const localeArticles = articlesFrontmatters[locale] || [];
+    localeArticles.forEach(article => {
+      params.push({locale, slug: article.slug});
+    });
+  });
+  
+  return params;
+}
 
 export async function generateMetadata({
   params

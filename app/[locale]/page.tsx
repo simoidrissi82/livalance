@@ -26,7 +26,9 @@ export async function generateMetadata({
   };
 }
 
-export const runtime = 'edge';
+export async function generateStaticParams() {
+  return [{locale: 'de'}, {locale: 'en'}];
+}
 
 export default async function Page() {
   return <HomePage />;

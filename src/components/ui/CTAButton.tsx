@@ -39,8 +39,26 @@ type CTAButtonProps = VariantProps<typeof buttonStyles> &
     | {onClick?: () => void; children: ReactNode; type?: 'button' | 'submit'; showIcon?: boolean}
   );
 
-const isInternalPath = (href: string) =>
-  href.startsWith('/') && !href.startsWith('//');
+/**
+ * Checks if a URL is an internal pathname that can be handled by next-intl Link.
+ * Returns false for external URLs, protocol URLs (mailto:, tel:, etc.), and fragments.
+ */
+const isInternalPath = (href: string): boolean => {
+  // External URLs (http://, https://)
+  if (href.startsWith('http://') || href.startsWith('https://')) {
+    return false;
+  }
+  // Protocol URLs (mailto:, tel:, etc.)
+  if (href.includes(':')) {
+    return false;
+  }
+  // Fragment identifiers (starting with #)
+  if (href.startsWith('#')) {
+    return false;
+  }
+  // Internal pathnames (starting with / but not //)
+  return href.startsWith('/') && !href.startsWith('//');
+};
 
 export function CTAButton(props: CTAButtonProps) {
   const {variant, width, children, showIcon = false} = props;
@@ -61,13 +79,26 @@ export function CTAButton(props: CTAButtonProps) {
   );
 
   if ('href' in props) {
-    const href =
-      typeof props.href === 'string' && isInternalPath(props.href)
-        ? {pathname: props.href}
-        : props.href;
-
+    // Handle string hrefs
+    if (typeof props.href === 'string') {
+      // For internal paths, use next-intl Link
+      if (isInternalPath(props.href)) {
+        return (
+          <Link href={{pathname: props.href as any}} className={buttonStyles({variant, width})}>
+            {content}
+          </Link>
+        );
+      }
+      // For external URLs, mailto:, tel:, fragments, etc., use regular anchor tag
+      return (
+        <a href={props.href} className={buttonStyles({variant, width})}>
+          {content}
+        </a>
+      );
+    }
+    // Handle object hrefs (pathname objects) - these are always internal
     return (
-      <Link href={href as any} className={buttonStyles({variant, width})}>
+      <Link href={props.href as any} className={buttonStyles({variant, width})}>
         {content}
       </Link>
     );

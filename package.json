@@ -8,7 +8,6 @@
     "dev": "next dev",
     "build": "npm run generate:articles && next build",
     "generate:articles": "node scripts/generate-articles.mjs",
-    "build:cloudflare": "npx @cloudflare/next-on-pages build",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
@@ -16,10 +15,7 @@
     "format": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,json}\"",
     "format:write": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,json}\"",
     "typecheck": "tsc --noEmit",
-    "generate:sitemap": "cross-env SITEMAP_LOCALE=de next-sitemap && cross-env SITEMAP_LOCALE=en next-sitemap",
-    "pages:build": "npx @cloudflare/next-on-pages build",
-    "preview": "npm run pages:build && wrangler pages dev",
-    "deploy": "npm run pages:build && wrangler pages deploy"
+    "generate:sitemap": "cross-env SITEMAP_LOCALE=de next-sitemap && cross-env SITEMAP_LOCALE=en next-sitemap"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",

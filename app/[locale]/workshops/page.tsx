@@ -12,7 +12,9 @@ const messages = {
   en: enMessages
 };
 
-export const runtime = 'edge';
+export async function generateStaticParams() {
+  return [{locale: 'de'}, {locale: 'en'}];
+}
 
 export async function generateMetadata({
   params

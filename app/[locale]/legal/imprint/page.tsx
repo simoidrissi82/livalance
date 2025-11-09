@@ -1,3 +1,6 @@
+export async function generateStaticParams() {
+  return [{locale: 'de'}, {locale: 'en'}];
+}
 export default async function Page({params}: {params: Promise<{locale: 'de' | 'en'}>}) {
   const {locale} = await params;
   if (locale === 'de') {

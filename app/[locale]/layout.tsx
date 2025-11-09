@@ -12,8 +12,6 @@ const messages = {
   en: enMessages
 };
 
-export const runtime = 'edge';
-
 export default async function LocaleLayout({
   children,
   params

@@ -5,7 +5,9 @@ import {buildPageMetadata} from '@/lib/metadata';
 import {getArticles} from '@/lib/content';
 import type {AppLocale} from '@/i18n/routing';
 
-export const runtime = 'edge';
+export async function generateStaticParams() {
+  return [{locale: 'de'}, {locale: 'en'}];
+}
 
 import deMessages from '@/messages/de.json';
 import enMessages from '@/messages/en.json';

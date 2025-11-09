@@ -23,15 +23,21 @@ export function NewsletterForm() {
 
     setStatus('loading');
     try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({email})
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed');
-      }
+      // TODO: Replace with direct Brevo/Mailerlite API call
+      // For static export, call external API directly from browser
+      // Example:
+      // const response = await fetch('https://api.brevo.com/v3/contacts', {
+      //   method: 'POST',
+      //   headers: {
+      //     'accept': 'application/json',
+      //     'api-key': process.env.NEXT_PUBLIC_BREVO_API_KEY,
+      //     'content-type': 'application/json'
+      //   },
+      //   body: JSON.stringify({ email, listIds: [2] })
+      // });
+      
+      // Simulated success for now
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
       setEmail('');
       setConsent(false);

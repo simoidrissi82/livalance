@@ -52,11 +52,9 @@ export const viewport: Viewport = {
 const organizationJsonLd = JSON.stringify(getOrganizationJsonLd());
 const websiteJsonLd = JSON.stringify(getWebsiteJsonLd());
 
-export const runtime = 'edge';
-
 export default async function RootLayout({children}: {children: ReactNode}) {
-  const headersList = await headers();
-  const locale = headersList.get('x-next-intl-locale') ?? 'de';
+  // For static export, use default locale
+  const locale = 'de';
 
   return (
     <html lang={locale} suppressHydrationWarning>
