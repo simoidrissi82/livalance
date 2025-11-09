@@ -1,15 +1,13 @@
-import {getTranslations} from 'next-intl/server';
+'use client';
 
-import {ArticleList} from '@/components/ArticleList';
-import {getArticles} from '@/lib/content';
-import type {AppLocale} from '@/i18n/routing';
+import {useTranslations} from 'next-intl';
 
-export async function ArticlesPage({locale}: {locale: AppLocale}) {
-  const [articles, labels, articlePage] = await Promise.all([
-    getArticles(locale),
-    getTranslations({locale, namespace: 'articles'}),
-    getTranslations({locale, namespace: 'articlesPage'})
-  ]);
+import {ArticleList} from '@/components/content/ArticleList';
+import type {ArticleFrontmatter} from '@/lib/content-types';
+
+export function ArticlesPage({articles}: {articles: ArticleFrontmatter[]}) {
+  const labels = useTranslations('articles');
+  const articlePage = useTranslations('articlesPage');
 
   return (
     <ArticleList

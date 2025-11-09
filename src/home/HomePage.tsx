@@ -1,45 +1,29 @@
-import {getTranslations} from 'next-intl/server';
+'use client';
 
-import {FAQ} from '@/components/FAQ';
-import {FinalCTA} from '@/components/FinalCTA';
-import {Hero} from '@/components/Hero';
-import {SocialProof} from '@/components/SocialProof';
-import {Testimonials} from '@/components/Testimonials';
-import {CgmKickstart} from '@/components/CgmKickstart';
-import {ProgramOverview} from '@/components/ProgramOverview';
-import {ToolkitSection} from '@/components/ToolkitSection';
-import {ValuePropsSection} from '@/components/ValueProps';
-import {PillarsGrid} from '@/components/PillarsGrid';
-import type {AppLocale} from '@/i18n/routing';
+import {useTranslations} from 'next-intl';
 
-type HomePageProps = {
-  locale: AppLocale;
-};
+import {FAQ} from '@/components/content/FAQ';
+import {FinalCTA} from '@/components/content/FinalCTA';
+import {Hero} from '@/components/content/Hero';
+import {SocialProof} from '@/components/content/SocialProof';
+import {Testimonials} from '@/components/content/Testimonials';
+import {CgmKickstart} from '@/components/content/CgmKickstart';
+import {ProgramOverview} from '@/components/content/ProgramOverview';
+import {ToolkitSection} from '@/components/content/ToolkitSection';
+import {ValuePropsSection} from '@/components/content/ValueProps';
+import {PillarsGrid} from '@/components/content/PillarsGrid';
 
-export async function HomePage({locale}: HomePageProps) {
-  const [
-    hero,
-    pillars,
-    valueProps,
-    toolkit,
-    cgmKickstart,
-    offersTeaser,
-    socialProof,
-    testimonials,
-    faq,
-    finalCta
-  ] = await Promise.all([
-    getTranslations({locale, namespace: 'hero'}),
-    getTranslations({locale, namespace: 'pillars'}),
-    getTranslations({locale, namespace: 'valueProps'}),
-    getTranslations({locale, namespace: 'toolkit'}),
-    getTranslations({locale, namespace: 'cgmKickstart'}),
-    getTranslations({locale, namespace: 'offersTeaser'}),
-    getTranslations({locale, namespace: 'socialProof'}),
-    getTranslations({locale, namespace: 'testimonials'}),
-    getTranslations({locale, namespace: 'faq'}),
-    getTranslations({locale, namespace: 'finalCta'})
-  ]);
+export function HomePage() {
+  const hero = useTranslations('hero');
+  const pillars = useTranslations('pillars');
+  const valueProps = useTranslations('valueProps');
+  const toolkit = useTranslations('toolkit');
+  const cgmKickstart = useTranslations('cgmKickstart');
+  const offersTeaser = useTranslations('offersTeaser');
+  const socialProof = useTranslations('socialProof');
+  const testimonials = useTranslations('testimonials');
+  const faq = useTranslations('faq');
+  const finalCta = useTranslations('finalCta');
 
   return (
     <>

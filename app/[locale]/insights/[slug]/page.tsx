@@ -7,22 +7,26 @@ import {getArticleJsonLd} from '@/lib/structured-data';
 import type {AppLocale} from '@/i18n/routing';
 
 export async function generateStaticParams() {
-  const locales: AppLocale[] = ['de', 'en'];
-  const params = await Promise.all(
-    locales.map(async (locale) => {
-      const slugs = await getArticleSlugs(locale);
-      return slugs.map((slug) => ({locale, slug}));
-    })
-  );
-  return params.flat();
+  const {articlesFrontmatters} = await import('@/generated/articles-data');
+  const params: {locale: string; slug: string}[] = [];
+  
+  (['de', 'en'] as const).forEach(locale => {
+    const localeArticles = articlesFrontmatters[locale] || [];
+    localeArticles.forEach(article => {
+      params.push({locale, slug: article.slug});
+    });
+  });
+  
+  return params;
 }
 
 export async function generateMetadata({
   params
 }: {
-  params: {locale: AppLocale; slug: string};
+  params: Promise<{locale: AppLocale; slug: string}>;
 }): Promise<Metadata> {
-  const article = await getArticleBySlug(params.locale, params.slug);
+  const {locale, slug} = await params;
+  const article = await getArticleBySlug(locale, slug);
 
   if (!article) {
     return {};
@@ -32,7 +36,7 @@ export async function generateMetadata({
   const title = frontmatter.seoTitle ?? frontmatter.title;
   const description = frontmatter.seoDescription ?? frontmatter.excerpt;
 
-  const localePath = params.locale === 'de' ? '/wissen' : '/en/insights';
+  const localePath = locale === 'de' ? '/wissen' : '/en/insights';
 
   return {
     title,
@@ -42,7 +46,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: 'article',
-      locale: params.locale === 'de' ? 'de_DE' : 'en',
+      locale: locale === 'de' ? 'de_DE' : 'en',
       title,
       description,
       url: `${localePath}/${frontmatter.slug}`,
@@ -56,15 +60,16 @@ export async function generateMetadata({
 export default async function Page({
   params
 }: {
-  params: {locale: AppLocale; slug: string};
+  params: Promise<{locale: AppLocale; slug: string}>;
 }) {
-  const article = await getArticleBySlug(params.locale, params.slug);
+  const {locale, slug} = await params;
+  const article = await getArticleBySlug(locale, slug);
 
   if (!article) {
     notFound();
   }
 
-  const jsonLd = JSON.stringify(getArticleJsonLd(article.frontmatter, params.locale));
+  const jsonLd = JSON.stringify(getArticleJsonLd(article.frontmatter, locale));
 
   return (
     <>

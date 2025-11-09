@@ -1,21 +1,35 @@
 import type {Metadata} from 'next';
-import {getTranslations} from 'next-intl/server';
 
 import {buildPageMetadata} from '@/lib/metadata';
 import {WorkshopsPage} from '@/workshops';
 import type {AppLocale} from '@/i18n/routing';
 
+import deMessages from '@/messages/de.json';
+import enMessages from '@/messages/en.json';
+
+const messages = {
+  de: deMessages,
+  en: enMessages
+};
+
+export async function generateStaticParams() {
+  return [{locale: 'de'}, {locale: 'en'}];
+}
+
 export async function generateMetadata({
   params
 }: {
-  params: {locale: AppLocale};
+  params: Promise<{locale: AppLocale}>;
 }): Promise<Metadata> {
-  const t = await getTranslations({locale: params.locale, namespace: 'workshopsPage'});
+  const {locale} = await params;
+  const localeMessages = messages[locale] || messages.de;
+  const workshopsPage = localeMessages.workshopsPage as any;
+  
   return buildPageMetadata({
-    locale: params.locale,
-    path: params.locale === 'de' ? '/workshops' : `/en/workshops`,
-    title: t('heroTitle'),
-    description: t('heroSubtitle')
+    locale,
+    path: locale === 'de' ? '/workshops' : `/en/workshops`,
+    title: workshopsPage.heroTitle,
+    description: workshopsPage.heroSubtitle
   });
 }
 

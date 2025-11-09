@@ -1,6 +1,5 @@
 import type {AbstractIntlMessages} from 'next-intl';
 import {getRequestConfig} from 'next-intl/server';
-import {headers} from 'next/headers';
 import {notFound} from 'next/navigation';
 
 import {defaultLocale} from '@/i18n/routing';
@@ -16,9 +15,12 @@ const localeToFileMap: Record<string, () => Promise<AbstractIntlMessages>> = {
     )
 };
 
-export default getRequestConfig(async () => {
-  const headerLocale = headers().get('x-next-intl-locale');
-  const locale = headerLocale && headerLocale in localeToFileMap ? headerLocale : defaultLocale;
+export default getRequestConfig(async ({locale}) => {
+  // For static export, locale comes from the URL params, not headers
+  if (!locale || !(locale in localeToFileMap)) {
+    locale = defaultLocale;
+  }
+  
   const loader = localeToFileMap[locale];
 
   if (!loader) {
@@ -27,6 +29,7 @@ export default getRequestConfig(async () => {
 
   return {
     locale,
-    messages: await loader()
+    messages: await loader(),
+    timeZone: 'Europe/Berlin'
   };
 });

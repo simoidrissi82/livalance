@@ -1,24 +1,41 @@
 import type {Metadata} from 'next';
-import {getTranslations} from 'next-intl/server';
 
 import {ArticlesPage} from '@/articles';
 import {buildPageMetadata} from '@/lib/metadata';
+import {getArticles} from '@/lib/content';
 import type {AppLocale} from '@/i18n/routing';
+
+export async function generateStaticParams() {
+  return [{locale: 'de'}, {locale: 'en'}];
+}
+
+import deMessages from '@/messages/de.json';
+import enMessages from '@/messages/en.json';
+
+const messages = {
+  de: deMessages,
+  en: enMessages
+};
 
 export async function generateMetadata({
   params
 }: {
-  params: {locale: AppLocale};
+  params: Promise<{locale: AppLocale}>;
 }): Promise<Metadata> {
-  const t = await getTranslations({locale: params.locale, namespace: 'articles'});
+  const {locale} = await params;
+  const localeMessages = messages[locale] || messages.de;
+  const articles = localeMessages.articles as any;
+  
   return buildPageMetadata({
-    locale: params.locale,
-    path: params.locale === 'de' ? '/wissen' : '/en/insights',
-    title: t('title'),
-    description: t('intro')
+    locale,
+    path: locale === 'de' ? '/wissen' : '/en/insights',
+    title: articles.title,
+    description: articles.intro
   });
 }
 
-export default async function Page({params}: {params: {locale: AppLocale}}) {
-  return <ArticlesPage locale={params.locale} />;
+export default async function Page({params}: {params: Promise<{locale: AppLocale}>}) {
+  const {locale} = await params;
+  const articles = await getArticles(locale);
+  return <ArticlesPage articles={articles} />;
 }
