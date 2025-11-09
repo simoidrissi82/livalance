@@ -53,7 +53,7 @@ export function ContactPage() {
         
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16 md:py-24">
           <motion.div
-            className="rounded-[2.5rem] border-2 border-white/60 bg-white/95 p-12 md:p-16 shadow-medium backdrop-blur"
+            className="rounded-[2.5rem] border-2 border-white/60 bg-white/90 p-12 md:p-16 shadow-strong backdrop-blur-md"
             initial={{opacity: 0, scale: 0.95, y: 30}}
             animate={{opacity: 1, scale: 1, y: 0}}
             transition={{duration: 0.6}}

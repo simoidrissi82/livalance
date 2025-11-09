@@ -89,10 +89,11 @@ export function PillarsPage() {
         
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16 md:py-24">
           <motion.div
-            className="max-w-3xl space-y-6"
+            className="max-w-3xl space-y-6 rounded-3xl bg-white/60 backdrop-blur-md p-8 md:p-12 shadow-strong"
             initial={{opacity: 0, y: 30}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.6}}
+            whileHover={{scale: 1.01}}
           >
             <motion.h1
               className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight"
