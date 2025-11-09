@@ -396,5 +396,11 @@
         "rating": 4.9
       }
     ]
+  },
+  "notFound": {
+    "label": "404",
+    "title": "Seite nicht gefunden",
+    "description": "Diese Seite existiert nicht mehr oder der Link ist veraltet.",
+    "cta": "Zur Startseite"
   }
 }
