@@ -6,9 +6,8 @@
   "scripts": {
     "predev": "node scripts/generate-articles.mjs",
     "dev": "next dev",
-    "build": "npm run generate:articles && next build && npm run generate:redirects",
+    "build": "npm run generate:articles && next build",
     "generate:articles": "node scripts/generate-articles.mjs",
-    "generate:redirects": "node scripts/generate-redirects.mjs",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
