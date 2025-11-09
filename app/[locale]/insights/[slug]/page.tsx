@@ -6,18 +6,7 @@ import {getArticleBySlug, getArticleSlugs} from '@/lib/content';
 import {getArticleJsonLd} from '@/lib/structured-data';
 import type {AppLocale} from '@/i18n/routing';
 
-export const runtime = 'nodejs';
-
-export async function generateStaticParams() {
-  const locales: AppLocale[] = ['de', 'en'];
-  const params = await Promise.all(
-    locales.map(async (locale) => {
-      const slugs = await getArticleSlugs(locale);
-      return slugs.map((slug) => ({locale, slug}));
-    })
-  );
-  return params.flat();
-}
+export const runtime = 'edge';
 
 export async function generateMetadata({
   params

@@ -36,7 +36,9 @@ Produktionsreife, zweisprachige (DE/EN) Marketing-Plattform für Livalance auf B
 │   ├── config/              # Navigations-Config
 │   ├── i18n/                # next-intl routing + request config
 │   ├── lib/                 # Content-Lader, Typen, Slug-Mapping, Structured Data
+│   ├── generated/           # Build-Artefakte (MDX-Metadaten & Quellen) – auto-generiert
 │   └── styles/              # Tailwind Entry (globals.css)
+├── scripts/                 # Entwickler-Skripte (z. B. MDX-Generator)
 ├── tests/                   # Vitest-Spezifikationen (z. B. Slug-Mapping)
 ├── next.config.mjs          # Next.js Konfiguration inkl. next-intl Plugin
 ├── next-sitemap.config.js   # Sitemap-Generation (locale-aware)
@@ -68,8 +70,8 @@ npm start
 | Befehl                  | Zweck |
 |-------------------------|-------|
 | `npm run dev`           | Startet Next.js Dev-Server (mit Hot Reload & i18n-Routing).
-| `npm run build`         | Cloudflare Pages Build (mit `@cloudflare/next-on-pages`).
-| `npm run build:next`    | Standard Next.js Build.
+| `npm run build`         | Standard Next.js Build (inkl. MDX-Preprocessing).
+| `npm run generate:articles` | Extrahiert MDX-Frontmatter & -Quellen nach `src/generated/`.
 | `npm start`             | Startet den optimierten Server (`next start`).
 | `npm run lint`          | ESLint (Next + TypeScript + Tailwind).
 | `npm run test`          | Vitest (inkl. jsdom & Path-Aliases).
@@ -99,7 +101,8 @@ Die Variablen werden im Browser benötigt, deshalb `NEXT_PUBLIC_` Präfix.
 ## Inhalte & CMS-Flow (MDX)
 - Artikel leben unter `content/<locale>/<collection>/<slug>.mdx`.
 - Frontmatter wird mit Zod validiert (`src/lib/content-types.ts`).
-- `src/lib/content.ts` lädt Frontmatter, compiled MDX (mit remark-gfm, rehype-slug/-autolink) und stellt Hilfsfunktionen für Listen, Detailseiten & statische Pfade bereit.
+- `scripts/generate-articles.mjs` extrahiert Frontmatter + MDX-Quellen zur Build-Zeit nach `src/generated/articles-data.ts` (keine `fs`-Zugriffe zur Laufzeit auf Edge).
+- `src/lib/content.ts` lädt Daten aus `src/generated/…` und kompiliert MDX zur Laufzeit (Edge-kompatibel, ohne Node-APIs) für Listen- & Detailseiten.
 - Für sprachübergreifende Slugs bitte `content/slug-map.json` pflegen, damit der Language Switcher korrekt verlinkt.
 - Neue Artikel: MDX-Datei mit Frontmatter anlegen, optional Cover unter `public/images/...` ergänzen, Slug in `slug-map.json` pflegen, fertig.
 

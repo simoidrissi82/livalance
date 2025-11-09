@@ -4,8 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "node scripts/generate-articles.mjs",
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run generate:articles && next build",
+    "generate:articles": "node scripts/generate-articles.mjs",
     "build:cloudflare": "npx @cloudflare/next-on-pages build",
     "start": "next start",
     "lint": "next lint",
