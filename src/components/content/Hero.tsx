@@ -102,15 +102,17 @@ export function Hero({
             variants={motionVariants.stagger}
           >
             <motion.h1
-              className="max-w-3xl font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-brand-text"
+              className="max-w-3xl font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white drop-shadow-lg"
               variants={motionVariants.fadeIn}
+              style={{textShadow: '0 2px 10px rgba(0,0,0,0.3)'}}
             >
               {title}
             </motion.h1>
             
             <motion.p
-              className="max-w-2xl text-base sm:text-lg md:text-xl text-brand-muted"
+              className="max-w-2xl text-base sm:text-lg md:text-xl text-white/90 drop-shadow-md"
               variants={motionVariants.fadeIn}
+              style={{textShadow: '0 1px 6px rgba(0,0,0,0.25)'}}
             >
               {inlinePillars.length ? (
                 <>
@@ -148,43 +150,90 @@ export function Hero({
 
           <motion.div
             className="relative hidden lg:flex items-center justify-center"
-            initial={{opacity: 0, scale: 0.8}}
-            animate={{opacity: 1, scale: 1}}
-            transition={{duration: 0.8, delay: 0.3}}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: 1, delay: 0.4}}
           >
             <div className="relative h-96 w-96">
+              {/* Floating Pillar Icons */}
               <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-accent/30 via-brand-primary/20 to-transparent"
+                className="absolute top-8 left-12 flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md shadow-xl border border-white/20"
                 animate={{
-                  rotate: 360
+                  y: [0, -20, 0],
+                  rotate: [0, 5, 0]
                 }}
                 transition={{
-                  duration: 20,
+                  duration: 6,
                   repeat: Infinity,
-                  ease: 'linear'
+                  ease: 'easeInOut'
                 }}
-              />
+              >
+                <div className="text-4xl">🌙</div>
+              </motion.div>
+
               <motion.div
-                className="absolute inset-8 rounded-full bg-gradient-to-tr from-pillar-ernaehrung/30 via-pillar-schlaf/20 to-transparent"
+                className="absolute top-20 right-8 flex h-24 w-24 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md shadow-xl border border-white/20"
                 animate={{
-                  rotate: -360
+                  y: [0, -15, 0],
+                  rotate: [0, -5, 0]
                 }}
                 transition={{
-                  duration: 25,
+                  duration: 7,
                   repeat: Infinity,
-                  ease: 'linear'
+                  ease: 'easeInOut',
+                  delay: 0.5
                 }}
-              />
-              <div className="absolute inset-16 flex items-center justify-center rounded-full bg-brand-surface/90 backdrop-blur-sm shadow-strong">
-                <div className="text-center">
-                  <div className="font-display text-4xl font-bold text-brand-primary">
-                    Livalance
-                  </div>
-                  <div className="mt-2 text-sm text-brand-muted">
-                    Lebe vital. In Balance.
-                  </div>
-                </div>
-              </div>
+              >
+                <div className="text-5xl">🥗</div>
+              </motion.div>
+
+              <motion.div
+                className="absolute bottom-24 left-8 flex h-22 w-22 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md shadow-xl border border-white/20"
+                animate={{
+                  y: [0, -18, 0],
+                  rotate: [0, 8, 0]
+                }}
+                transition={{
+                  duration: 6.5,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                  delay: 1
+                }}
+              >
+                <div className="text-4xl">🏃</div>
+              </motion.div>
+
+              <motion.div
+                className="absolute bottom-8 right-16 flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md shadow-xl border border-white/20"
+                animate={{
+                  y: [0, -22, 0],
+                  rotate: [0, -8, 0]
+                }}
+                transition={{
+                  duration: 5.5,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                  delay: 1.5
+                }}
+              >
+                <div className="text-4xl">🧘</div>
+              </motion.div>
+
+              {/* Central Glow */}
+              <motion.div
+                className="absolute inset-0 flex items-center justify-center"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: 'easeInOut'
+                }}
+              >
+                <div className="h-48 w-48 rounded-full bg-white/5 blur-3xl" />
+              </motion.div>
             </div>
           </motion.div>
         </div>

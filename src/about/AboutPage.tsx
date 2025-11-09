@@ -53,7 +53,7 @@ export function AboutPage() {
             transition={{duration: 0.6}}
           >
             <motion.span
-              className="inline-flex rounded-full bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-brand-primary shadow-soft"
+              className="inline-flex rounded-full bg-white/20 backdrop-blur-md border border-white/30 px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-white shadow-lg"
               initial={{scale: 0.8, opacity: 0}}
               animate={{scale: 1, opacity: 1}}
               transition={{duration: 0.4, delay: 0.2}}
@@ -62,28 +62,31 @@ export function AboutPage() {
             </motion.span>
             
             <motion.h1
-              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg"
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.3}}
+              style={{textShadow: '0 2px 10px rgba(0,0,0,0.3)'}}
             >
               {t('heroTitle')}
             </motion.h1>
             
             <motion.p
-              className="text-xl md:text-2xl text-brand-text/80 leading-relaxed"
+              className="text-xl md:text-2xl text-white/90 leading-relaxed drop-shadow-md"
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.4}}
+              style={{textShadow: '0 1px 6px rgba(0,0,0,0.25)'}}
             >
               {t('heroSubtitle')}
             </motion.p>
             
             <motion.p
-              className="text-lg text-brand-text/70 leading-relaxed"
+              className="text-lg text-white/85 leading-relaxed drop-shadow-md"
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.5}}
+              style={{textShadow: '0 1px 6px rgba(0,0,0,0.25)'}}
             >
               {t('mission')}
             </motion.p>
