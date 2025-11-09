@@ -6,6 +6,8 @@ import {Footer} from '@/components/Footer';
 import {Header} from '@/components/Header';
 import type {AppLocale} from '@/i18n/routing';
 
+export const runtime = 'edge';
+
 export default async function LocaleLayout({
   children,
   params
