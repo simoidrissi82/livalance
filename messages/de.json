@@ -396,5 +396,16 @@
         "rating": 4.9
       }
     ]
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Die Seite, die Sie suchen, existiert nicht oder wurde verschoben.",
+    "goBack": "Zurück",
+    "goHome": "Zur Startseite",
+    "suggestions": "Oder besuchen Sie eine dieser Seiten:",
+    "workshops": "Workshops",
+    "pillars": "Säulen",
+    "insights": "Wissen",
+    "contact": "Kontakt"
   }
 }
