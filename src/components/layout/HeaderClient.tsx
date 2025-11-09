@@ -37,7 +37,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
     <header className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
       scrolled 
         ? 'border-slate-200 bg-white/95 backdrop-blur-md shadow-sm' 
-        : 'border-white/10 bg-brand-bg/70 backdrop-blur-md'
+        : 'border-white/20 bg-black/20 backdrop-blur-md'
     }`}>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <div className="flex items-center gap-3">
@@ -49,12 +49,12 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
             aria-label="Livalance"
           >
             <Image
-              src="/images/brand/livalance-mark.svg"
+              src="/images/brand/logo.svg"
               alt="Livalance"
               width={220}
               height={48}
               className={`h-12 w-auto transition-all duration-300 ${
-                scrolled ? 'brightness-100' : 'brightness-100 drop-shadow-md'
+                scrolled ? 'brightness-100' : 'brightness-100 drop-shadow-lg'
               }`}
               priority
             />
@@ -70,7 +70,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
               className={`rounded-xl px-3 py-2 text-sm font-medium transition ${
                 scrolled
                   ? 'text-brand-text hover:bg-brand-primary-tint hover:text-brand-primary'
-                  : 'text-white/90 hover:bg-white/10 hover:text-white'
+                  : 'text-white drop-shadow-md hover:bg-white/20 hover:text-white'
               }`}
             >
               {item.label}
@@ -79,7 +79,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <LocaleSwitcher currentLocale={locale} />
+          <LocaleSwitcher currentLocale={locale} scrolled={scrolled} />
           <CTAButton href="/contact">{ctaLabel}</CTAButton>
         </div>
 
@@ -113,7 +113,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
             ))}
 
             <div className="mt-4 flex items-center gap-3">
-              <LocaleSwitcher currentLocale={locale} />
+              <LocaleSwitcher currentLocale={locale} scrolled={true} />
               <CTAButton href="/contact" width="full">
                 {ctaLabel}
               </CTAButton>

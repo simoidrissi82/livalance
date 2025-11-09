@@ -11,7 +11,7 @@ export function FAQ({title, items}: {title: string; items: FAQItem[]}) {
   return (
     <section className="mx-auto max-w-4xl px-6 py-20">
       <motion.h2
-        className="text-center font-display text-3xl sm:text-4xl md:text-5xl font-bold text-brand-text"
+        className="text-center font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white"
         initial={{opacity: 0, y: 20}}
         whileInView={{opacity: 1, y: 0}}
         viewport={{once: true, margin: '-100px'}}

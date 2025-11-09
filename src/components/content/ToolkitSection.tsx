@@ -6,7 +6,7 @@ export function ToolkitSection({title, bullets}: {title: string; bullets: string
   return (
     <section className="mx-auto max-w-5xl px-6 py-16">
       <motion.h2
-        className="font-display text-4xl font-bold text-brand-text"
+        className="font-display text-4xl font-bold text-white"
         initial={{opacity: 0, y: 20}}
         whileInView={{opacity: 1, y: 0}}
         viewport={{once: true, margin: '-100px'}}
@@ -26,7 +26,7 @@ export function ToolkitSection({title, bullets}: {title: string; bullets: string
             whileHover={{scale: 1.02}}
           >
             <span className="mt-1 inline-block h-2 w-2 flex-none rounded-full bg-brand-accent transition-transform group-hover:scale-150" aria-hidden />
-            <span className="text-base text-brand-muted">{bullet}</span>
+            <span className="text-base text-brand-text/90">{bullet}</span>
           </motion.li>
         ))}
       </ul>

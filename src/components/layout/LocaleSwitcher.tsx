@@ -1,5 +1,6 @@
 "use client";
 
+import {useEffect, useRef} from 'react';
 import type {Route} from 'next';
 import {usePathname, useRouter} from 'next/navigation';
 
@@ -8,6 +9,7 @@ import type {AppLocale} from '@/i18n/routing';
 
 type LocaleSwitcherProps = {
   currentLocale: string;
+  scrolled?: boolean;
 };
 
 const locales: AppLocale[] = ['de', 'en'];
@@ -136,22 +138,57 @@ function arraysEqual(a: string[], b: string[]) {
   return a.every((value, index) => value === b[index]);
 }
 
-export function LocaleSwitcher({currentLocale}: LocaleSwitcherProps) {
+export function LocaleSwitcher({currentLocale, scrolled = false}: LocaleSwitcherProps) {
   const router = useRouter();
   const pathname = usePathname();
   const activeLocale = (currentLocale as AppLocale) ?? 'de';
+  const isLocaleChangingRef = useRef<boolean>(false);
+  const scrollPositionRef = useRef<number>(0);
+
+  // Restore scroll position after locale change
+  useEffect(() => {
+    if (isLocaleChangingRef.current && scrollPositionRef.current > 0) {
+      // Use requestAnimationFrame to ensure the page has rendered with new locale
+      let frameId1: number;
+      let frameId2: number;
+      
+      frameId1 = requestAnimationFrame(() => {
+        // Double RAF to ensure layout is complete
+        frameId2 = requestAnimationFrame(() => {
+          window.scrollTo({
+            top: scrollPositionRef.current,
+            behavior: 'instant'
+          });
+          isLocaleChangingRef.current = false;
+        });
+      });
+      
+      return () => {
+        if (frameId1) cancelAnimationFrame(frameId1);
+        if (frameId2) cancelAnimationFrame(frameId2);
+      };
+    }
+  }, [pathname]);
 
   const handleChange = (locale: AppLocale) => {
     if (locale === activeLocale) {
       return;
     }
 
+    // Save current scroll position and mark that we're changing locale
+    scrollPositionRef.current = window.scrollY;
+    isLocaleChangingRef.current = true;
+
     const targetPath = buildPath(activeLocale, locale, pathname ?? `/${activeLocale}`);
     router.replace(targetPath as Route);
   };
 
   return (
-    <div className="inline-flex items-center gap-2 rounded-xl bg-brand-surface px-3 py-2 text-xs font-semibold shadow-soft">
+    <div className={`inline-flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-semibold shadow-soft transition-colors ${
+      scrolled 
+        ? 'bg-brand-surface' 
+        : 'bg-white/20 backdrop-blur-sm border border-white/30'
+    }`}>
       {locales.map((locale) => {
         const isActive = locale === activeLocale;
         return (
@@ -160,7 +197,13 @@ export function LocaleSwitcher({currentLocale}: LocaleSwitcherProps) {
             type="button"
             onClick={() => handleChange(locale)}
             className={`uppercase transition ${
-              isActive ? 'text-brand-primary' : 'text-brand-muted'
+              scrolled
+                ? isActive 
+                  ? 'text-brand-primary' 
+                  : 'text-brand-muted'
+                : isActive
+                  ? 'text-white drop-shadow-md'
+                  : 'text-white/70 drop-shadow-md'
             }`}
             aria-pressed={isActive}
           >

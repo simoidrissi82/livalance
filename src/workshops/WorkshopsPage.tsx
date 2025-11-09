@@ -115,18 +115,48 @@ export function WorkshopsPage() {
         disclaimer={offers('supporting')}
       />
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-brand-surface via-white to-brand-surface py-12 sm:py-16 md:py-20">
-        <div className="absolute top-0 right-0 h-64 w-64 bg-brand-accent/5 rounded-full blur-3xl" aria-hidden />
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-accent/30 via-pillar-ernaehrung/20 to-brand-accent/35 py-12 sm:py-16 md:py-20">
+        {/* Animated gradient blobs */}
+        <motion.div
+          className="absolute top-0 right-0 h-96 w-96 bg-brand-accent/20 rounded-full blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.4, 0.2]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: 'easeInOut'
+          }}
+        />
+        <motion.div
+          className="absolute bottom-0 left-0 h-80 w-80 bg-brand-primary/15 rounded-full blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.35, 0.2]
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 1
+          }}
+        />
         
         <div className="relative mx-auto grid max-w-6xl gap-6 sm:gap-8 px-4 sm:px-6 md:grid-cols-2">
           <motion.div
-            className="group rounded-3xl border-2 border-white/60 bg-white/95 p-6 sm:p-8 md:p-10 shadow-soft backdrop-blur transition-all duration-300 hover:shadow-medium hover:-translate-y-1"
+            className="group relative rounded-3xl border-2 border-brand-primary/20 bg-gradient-to-br from-white via-brand-primary-tint/10 to-white p-6 sm:p-8 md:p-10 shadow-medium backdrop-blur transition-all duration-300 hover:shadow-strong hover:-translate-y-2 hover:border-brand-primary/40"
             initial={{opacity: 0, x: -30}}
             whileInView={{opacity: 1, x: 0}}
             viewport={{once: true, margin: '-100px'}}
             transition={{duration: 0.6}}
             whileHover={{scale: 1.02}}
           >
+            {/* Subtle gradient overlay on hover */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />
+            <div className="relative z-10">
             <h2 className="text-sm sm:text-base font-bold uppercase tracking-wide text-brand-primary mb-3 sm:mb-4">
               {t('flowTitle')}
             </h2>
@@ -146,16 +176,20 @@ export function WorkshopsPage() {
                 </motion.li>
               ))}
             </ol>
+            </div>
           </motion.div>
           
           <motion.div
-            className="group rounded-3xl border-2 border-white/60 bg-white/95 p-6 sm:p-8 md:p-10 shadow-soft backdrop-blur transition-all duration-300 hover:shadow-medium hover:-translate-y-1"
+            className="group relative rounded-3xl border-2 border-brand-accent/20 bg-gradient-to-br from-white via-brand-accent-tint/10 to-white p-6 sm:p-8 md:p-10 shadow-medium backdrop-blur transition-all duration-300 hover:shadow-strong hover:-translate-y-2 hover:border-brand-accent/40"
             initial={{opacity: 0, x: 30}}
             whileInView={{opacity: 1, x: 0}}
             viewport={{once: true, margin: '-100px'}}
             transition={{duration: 0.6, delay: 0.2}}
             whileHover={{scale: 1.02}}
           >
+            {/* Subtle gradient overlay on hover */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />
+            <div className="relative z-10">
             <h2 className="text-sm sm:text-base font-bold uppercase tracking-wide text-brand-accent mb-3 sm:mb-4">
               {t('formatsTitle')}
             </h2>
@@ -184,6 +218,7 @@ export function WorkshopsPage() {
             >
               {t('pricingNote')}
             </motion.p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -229,9 +264,10 @@ export function WorkshopsPage() {
         ctaHref="/contact"
       />
 
-      <section id="booking" className="relative overflow-hidden bg-gradient-to-br from-brand-bg via-brand-surface to-brand-bg py-20">
+      <section id="booking" className="relative overflow-hidden bg-gradient-to-br from-brand-accent/35 via-pillar-bewegung/25 to-brand-accent/40 py-20">
+        {/* Multiple animated gradient blobs */}
         <motion.div
-          className="absolute top-10 left-10 h-96 w-96 rounded-full bg-brand-primary/10 blur-3xl"
+          className="absolute top-10 left-10 h-96 w-96 rounded-full bg-brand-primary/20 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.2, 1],
@@ -243,14 +279,29 @@ export function WorkshopsPage() {
             ease: 'easeInOut'
           }}
         />
+        <motion.div
+          className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-brand-accent/15 blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.4, 0.2]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 2
+          }}
+        />
         
         <div className="relative mx-auto max-w-6xl px-6">
           <motion.div
-            className="rounded-3xl border-2 border-white/60 bg-white/95 p-12 shadow-medium backdrop-blur"
+            className="rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white via-brand-primary-tint/5 to-white p-12 shadow-strong backdrop-blur"
             initial={{opacity: 0, y: 30}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true, margin: '-100px'}}
             transition={{duration: 0.6}}
+            whileHover={{scale: 1.01}}
           >
             <motion.h2
               className="text-base font-bold uppercase tracking-wide text-brand-primary mb-3"

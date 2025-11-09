@@ -28,7 +28,7 @@ export function Hero({
   secondaryCta
 }: HeroProps) {
   return (
-    <section className="relative isolate min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Full-screen background image */}
       <div className="fixed inset-0 -z-10">
         <picture>
@@ -46,7 +46,7 @@ export function Hero({
       
       {/* Enhanced gradient blobs */}
       <motion.div
-        className="absolute -left-24 top-20 h-96 w-96 rounded-full bg-brand-primary/15 blur-3xl"
+        className="absolute -left-24 top-20 h-96 w-96 rounded-full bg-brand-primary/15 blur-3xl z-0"
         aria-hidden
         animate={{
           scale: [1, 1.2, 1],
@@ -62,7 +62,7 @@ export function Hero({
       />
       
       <motion.div
-        className="absolute bottom-[-4rem] right-[-6rem] h-[32rem] w-[32rem] rounded-full bg-brand-accent/15 blur-3xl"
+        className="absolute bottom-[-4rem] right-[-6rem] h-[32rem] w-[32rem] rounded-full bg-brand-accent/15 blur-3xl z-0"
         aria-hidden
         animate={{
           scale: [1, 1.3, 1],
@@ -79,7 +79,7 @@ export function Hero({
       />
       
       <motion.div
-        className="absolute top-1/2 left-1/2 h-72 w-72 rounded-full bg-brand-secondary/10 blur-3xl"
+        className="absolute top-1/2 left-1/2 h-72 w-72 rounded-full bg-brand-secondary/10 blur-3xl z-0"
         aria-hidden
         animate={{
           scale: [1, 1.15, 1],
@@ -93,10 +93,10 @@ export function Hero({
         }}
       />
 
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-12 md:py-16">
         <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
           <motion.div
-            className="flex flex-col gap-6 text-left"
+            className="flex flex-col gap-6 text-left relative z-10"
             initial="initial"
             animate="animate"
             variants={motionVariants.stagger}
@@ -104,7 +104,6 @@ export function Hero({
             <motion.h1
               className="max-w-3xl font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white"
               variants={motionVariants.fadeIn}
-              style={{textShadow: '0 3px 15px rgba(0,0,0,0.5), 0 0 40px rgba(255,255,255,0.1)'}}
             >
               {title}
             </motion.h1>
@@ -112,7 +111,6 @@ export function Hero({
             <motion.p
               className="max-w-2xl text-base sm:text-lg md:text-xl text-white/95"
               variants={motionVariants.fadeIn}
-              style={{textShadow: '0 2px 10px rgba(0,0,0,0.4)'}}
             >
               {inlinePillars.length ? (
                 <>
@@ -149,7 +147,7 @@ export function Hero({
           </motion.div>
 
           <motion.div
-            className="relative hidden lg:flex items-center justify-center"
+            className="relative z-10 hidden lg:flex items-center justify-center"
             initial={{opacity: 0, scale: 0.9}}
             animate={{opacity: 1, scale: 1}}
             transition={{duration: 0.8, delay: 0.3}}
@@ -181,10 +179,10 @@ export function Hero({
               />
               
               {/* Center content */}
-              <div className="absolute inset-16 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md shadow-2xl border border-white/20">
+              <div className="absolute inset-16 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20">
                 <div className="text-center">
                   <motion.div 
-                    className="font-display text-4xl font-bold text-white drop-shadow-lg mb-2"
+                    className="font-display text-4xl font-bold text-white mb-2"
                     animate={{
                       opacity: [0.9, 1, 0.9]
                     }}
@@ -196,7 +194,7 @@ export function Hero({
                   >
                     Livalance
                   </motion.div>
-                  <div className="text-sm text-white/80 drop-shadow-md">
+                  <div className="text-sm text-white/80">
                     Lebe vital. In Balance.
                   </div>
                 </div>

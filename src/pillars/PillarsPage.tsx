@@ -115,12 +115,53 @@ export function PillarsPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-brand-surface via-white to-brand-surface py-20">
-        <div className="absolute top-0 left-0 h-64 w-64 bg-brand-primary/5 rounded-full blur-3xl" aria-hidden />
+      <section className="relative overflow-hidden bg-gradient-to-br from-pillar-schlaf/30 via-pillar-ernaehrung/25 via-pillar-bewegung/30 to-pillar-achtsamkeit/30 py-20">
+        {/* Animated gradient blobs using pillar colors */}
+        <motion.div
+          className="absolute top-0 left-0 h-96 w-96 bg-pillar-schlaf/15 rounded-full blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.35, 0.2]
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: 'easeInOut'
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 right-0 h-80 w-80 bg-pillar-ernaehrung/12 rounded-full blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.15, 0.3, 0.15]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 1
+          }}
+        />
+        <motion.div
+          className="absolute bottom-0 left-1/3 h-72 w-72 bg-pillar-bewegung/15 rounded-full blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.25, 1],
+            opacity: [0.2, 0.35, 0.2]
+          }}
+          transition={{
+            duration: 11,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 2
+          }}
+        />
         
         <div className="relative mx-auto max-w-5xl px-6">
           <motion.div
-            className="rounded-3xl border-2 border-white/60 bg-white/95 p-12 shadow-medium backdrop-blur"
+            className="rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white via-brand-primary-tint/10 to-white p-12 shadow-strong backdrop-blur"
             initial={{opacity: 0, y: 30}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true, margin: '-100px'}}
@@ -168,8 +209,35 @@ export function PillarsPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-brand-surface/30 to-white py-20">
-        <div className="absolute bottom-0 right-0 h-64 w-64 bg-brand-accent/5 rounded-full blur-3xl" aria-hidden />
+      <section className="relative overflow-hidden bg-gradient-to-br from-pillar-achtsamkeit/30 via-white via-pillar-bewegung/30 to-pillar-schlaf/35 py-20">
+        {/* Animated gradient blobs for each pillar */}
+        <motion.div
+          className="absolute top-10 right-10 h-72 w-72 bg-pillar-achtsamkeit/12 rounded-full blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.35, 0.2]
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: 'easeInOut'
+          }}
+        />
+        <motion.div
+          className="absolute bottom-10 left-10 h-80 w-80 bg-pillar-schlaf/10 rounded-full blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.15, 0.3, 0.15]
+          }}
+          transition={{
+            duration: 11,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 1.5
+          }}
+        />
         
         <div className="relative mx-auto max-w-5xl px-6">
           <motion.div
@@ -182,18 +250,32 @@ export function PillarsPage() {
               visible: {opacity: 1, transition: {staggerChildren: 0.15}}
             }}
           >
-            {pillarKeys.map((key, index) => (
+            {pillarKeys.map((key, index) => {
+              const pillarColor = {
+                sleep: 'border-pillar-schlaf/40 bg-gradient-to-br from-white via-pillar-schlaf/15 to-white',
+                nutrition: 'border-pillar-ernaehrung/40 bg-gradient-to-br from-white via-pillar-ernaehrung/15 to-white',
+                activity: 'border-pillar-bewegung/40 bg-gradient-to-br from-white via-pillar-bewegung/15 to-white',
+                mindfulness: 'border-pillar-achtsamkeit/40 bg-gradient-to-br from-white via-pillar-achtsamkeit/15 to-white'
+              }[key];
+              
+              return (
               <motion.article
                 key={key}
-                className={`group rounded-3xl border-2 p-10 shadow-soft backdrop-blur transition-all duration-300 hover:shadow-medium hover:-translate-y-1 hover:scale-[1.02] ${cardAccentMap[key]}`}
+                className={`group relative rounded-3xl border-2 p-10 shadow-medium backdrop-blur transition-all duration-300 hover:shadow-strong hover:-translate-y-2 hover:scale-[1.02] ${pillarColor}`}
                 variants={{
                   hidden: {opacity: 0, y: 30},
                   visible: {opacity: 1, y: 0, transition: {duration: 0.5}}
                 }}
                 whileHover={{scale: 1.02}}
               >
+                {/* Gradient overlay on hover */}
+                {key === 'sleep' && <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-pillar-schlaf/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />}
+                {key === 'nutrition' && <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-pillar-ernaehrung/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />}
+                {key === 'activity' && <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-pillar-bewegung/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />}
+                {key === 'mindfulness' && <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-pillar-achtsamkeit/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />}
+                <div className="relative z-10">
                 <motion.span
-                  className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide shadow-soft ${badgeClassMap[key]}`}
+                  className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide shadow-medium ${badgeClassMap[key]}`}
                   initial={{scale: 0.8, opacity: 0}}
                   whileInView={{scale: 1, opacity: 1}}
                   viewport={{once: true}}
@@ -210,7 +292,15 @@ export function PillarsPage() {
                 <p className="mt-4 text-base leading-relaxed text-brand-text/80">{page(`items.${key}.body`)}</p>
                 
                 <ul className="mt-8 space-y-4">
-                  {[0, 1, 2].map((detailIndex) => (
+                  {[0, 1, 2].map((detailIndex) => {
+                    const dotColor = {
+                      sleep: 'bg-pillar-schlaf',
+                      nutrition: 'bg-pillar-ernaehrung',
+                      activity: 'bg-pillar-bewegung',
+                      mindfulness: 'bg-pillar-achtsamkeit'
+                    }[key];
+                    
+                    return (
                     <motion.li
                       key={detailIndex}
                       className="flex gap-3"
@@ -219,20 +309,22 @@ export function PillarsPage() {
                       viewport={{once: true}}
                       transition={{delay: detailIndex * 0.1}}
                     >
-                      <span className="mt-1.5 h-2 w-2 flex-none rounded-full bg-brand-primary/80" />
+                      <span className={`mt-1.5 h-2 w-2 flex-none rounded-full ${dotColor}`} />
                       <span className="text-base text-brand-text/80">{page(`items.${key}.details.${detailIndex}`)}</span>
                     </motion.li>
-                  ))}
+                  )})}
                 </ul>
+                </div>
               </motion.article>
-            ))}
+            )})}
           </motion.div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-bg via-brand-surface to-brand-bg py-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-accent/35 via-pillar-achtsamkeit/25 to-brand-accent/40 py-20">
+        {/* Multiple animated gradient blobs */}
         <motion.div
-          className="absolute top-10 right-10 h-96 w-96 rounded-full bg-brand-accent/10 blur-3xl"
+          className="absolute top-10 right-10 h-96 w-96 rounded-full bg-brand-accent/20 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.2, 1],
@@ -244,10 +336,24 @@ export function PillarsPage() {
             ease: 'easeInOut'
           }}
         />
+        <motion.div
+          className="absolute bottom-10 left-10 h-80 w-80 rounded-full bg-brand-primary/15 blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.4, 0.2]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 2
+          }}
+        />
         
         <div className="relative mx-auto max-w-4xl px-6">
           <motion.div
-            className="rounded-3xl border-2 border-brand-primary/20 bg-gradient-to-br from-brand-surface to-white p-12 md:p-16 text-center shadow-medium"
+            className="rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white via-brand-primary-tint/10 to-brand-accent-tint/10 p-12 md:p-16 text-center shadow-strong"
             initial={{opacity: 0, scale: 0.95, y: 30}}
             whileInView={{opacity: 1, scale: 1, y: 0}}
             viewport={{once: true, margin: '-100px'}}

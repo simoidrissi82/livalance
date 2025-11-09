@@ -15,9 +15,9 @@ const buttonStyles = cva(
         primary:
           'bg-brand-primary text-white shadow-medium hover:shadow-strong hover:scale-[1.02]',
         secondary:
-          'border-2 border-white/30 bg-white/10 backdrop-blur-md text-white shadow-lg hover:bg-white/20 hover:border-white/50 hover:scale-[1.02]',
+          'border-2 border-brand-primary/30 bg-brand-primary-tint/50 backdrop-blur-md text-brand-text shadow-lg hover:bg-brand-primary-tint hover:border-brand-primary hover:scale-[1.02]',
         ghost:
-          'bg-transparent text-brand-text hover:text-brand-primary hover:bg-brand-primary-tint/60'
+          'bg-transparent text-brand-text border border-brand-gray-200 hover:text-brand-primary hover:bg-brand-primary-tint/60 hover:border-brand-primary/30'
       },
       width: {
         auto: 'w-auto',
