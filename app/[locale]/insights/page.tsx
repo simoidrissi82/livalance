@@ -5,6 +5,8 @@ import {buildPageMetadata} from '@/lib/metadata';
 import {getArticles} from '@/lib/content';
 import type {AppLocale} from '@/i18n/routing';
 
+export const runtime = 'nodejs';
+
 import deMessages from '@/messages/de.json';
 import enMessages from '@/messages/en.json';
 
