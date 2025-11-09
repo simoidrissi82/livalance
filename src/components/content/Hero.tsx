@@ -28,20 +28,20 @@ export function Hero({
   secondaryCta
 }: HeroProps) {
   return (
-    <section className="relative isolate min-h-[70vh] sm:min-h-[75vh] md:min-h-[85vh] flex items-center overflow-hidden bg-brand-bg">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0">
+    <section className="relative isolate min-h-screen flex items-center overflow-hidden">
+      {/* Full-screen background image */}
+      <div className="fixed inset-0 -z-10">
         <picture>
-          <source srcSet="/images/brand/background.webp" type="image/webp" />
+          <source srcSet="/images/brand/background2.webp" type="image/webp" />
           <img
-            src="/images/brand/background.png"
+            src="/images/brand/background2.png"
             alt=""
-            className="absolute inset-0 h-full w-full object-cover opacity-40"
+            className="absolute inset-0 h-full w-full object-cover"
             loading="eager"
             aria-hidden="true"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-bg/95 via-brand-bg/90 to-brand-bg/85" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-bg/60 via-brand-bg/40 to-brand-bg/60" aria-hidden />
       </div>
       
       {/* Enhanced gradient blobs */}

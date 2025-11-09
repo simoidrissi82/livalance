@@ -24,7 +24,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
   const close = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-100 bg-brand-bg/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-bg/70 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <div className="flex items-center gap-3">
           <Link
