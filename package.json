@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "npx @cloudflare/next-on-pages build",
+    "build": "cross-env VERCEL_BUILD_COMMAND=\"npm run build:next\" npx @cloudflare/next-on-pages",
     "build:next": "next build",
     "start": "next start",
     "lint": "next lint",
