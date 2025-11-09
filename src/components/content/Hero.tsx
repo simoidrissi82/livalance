@@ -102,17 +102,17 @@ export function Hero({
             variants={motionVariants.stagger}
           >
             <motion.h1
-              className="max-w-3xl font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white drop-shadow-lg"
+              className="max-w-3xl font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white"
               variants={motionVariants.fadeIn}
-              style={{textShadow: '0 2px 10px rgba(0,0,0,0.3)'}}
+              style={{textShadow: '0 3px 15px rgba(0,0,0,0.5), 0 0 40px rgba(255,255,255,0.1)'}}
             >
               {title}
             </motion.h1>
             
             <motion.p
-              className="max-w-2xl text-base sm:text-lg md:text-xl text-white/90 drop-shadow-md"
+              className="max-w-2xl text-base sm:text-lg md:text-xl text-white/95"
               variants={motionVariants.fadeIn}
-              style={{textShadow: '0 1px 6px rgba(0,0,0,0.25)'}}
+              style={{textShadow: '0 2px 10px rgba(0,0,0,0.4)'}}
             >
               {inlinePillars.length ? (
                 <>
@@ -150,90 +150,57 @@ export function Hero({
 
           <motion.div
             className="relative hidden lg:flex items-center justify-center"
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{duration: 1, delay: 0.4}}
+            initial={{opacity: 0, scale: 0.9}}
+            animate={{opacity: 1, scale: 1}}
+            transition={{duration: 0.8, delay: 0.3}}
           >
             <div className="relative h-96 w-96">
-              {/* Floating Pillar Icons */}
+              {/* Outer rotating ring */}
               <motion.div
-                className="absolute top-8 left-12 flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md shadow-xl border border-white/20"
-                animate={{
-                  y: [0, -20, 0],
-                  rotate: [0, 5, 0]
-                }}
+                className="absolute inset-0 rounded-full border-2 border-white/20"
+                animate={{rotate: 360}}
                 transition={{
-                  duration: 6,
+                  duration: 30,
                   repeat: Infinity,
-                  ease: 'easeInOut'
+                  ease: 'linear'
                 }}
-              >
-                <div className="text-4xl">🌙</div>
-              </motion.div>
-
+              />
+              
+              {/* Inner glow */}
               <motion.div
-                className="absolute top-20 right-8 flex h-24 w-24 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md shadow-xl border border-white/20"
+                className="absolute inset-8 rounded-full bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-sm"
                 animate={{
-                  y: [0, -15, 0],
-                  rotate: [0, -5, 0]
-                }}
-                transition={{
-                  duration: 7,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: 0.5
-                }}
-              >
-                <div className="text-5xl">🥗</div>
-              </motion.div>
-
-              <motion.div
-                className="absolute bottom-24 left-8 flex h-22 w-22 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md shadow-xl border border-white/20"
-                animate={{
-                  y: [0, -18, 0],
-                  rotate: [0, 8, 0]
-                }}
-                transition={{
-                  duration: 6.5,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: 1
-                }}
-              >
-                <div className="text-4xl">🏃</div>
-              </motion.div>
-
-              <motion.div
-                className="absolute bottom-8 right-16 flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md shadow-xl border border-white/20"
-                animate={{
-                  y: [0, -22, 0],
-                  rotate: [0, -8, 0]
-                }}
-                transition={{
-                  duration: 5.5,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: 1.5
-                }}
-              >
-                <div className="text-4xl">🧘</div>
-              </motion.div>
-
-              {/* Central Glow */}
-              <motion.div
-                className="absolute inset-0 flex items-center justify-center"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.3, 0.5, 0.3]
+                  scale: [1, 1.05, 1],
+                  opacity: [0.6, 0.8, 0.6]
                 }}
                 transition={{
                   duration: 4,
                   repeat: Infinity,
                   ease: 'easeInOut'
                 }}
-              >
-                <div className="h-48 w-48 rounded-full bg-white/5 blur-3xl" />
-              </motion.div>
+              />
+              
+              {/* Center content */}
+              <div className="absolute inset-16 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md shadow-2xl border border-white/20">
+                <div className="text-center">
+                  <motion.div 
+                    className="font-display text-4xl font-bold text-white drop-shadow-lg mb-2"
+                    animate={{
+                      opacity: [0.9, 1, 0.9]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: 'easeInOut'
+                    }}
+                  >
+                    Livalance
+                  </motion.div>
+                  <div className="text-sm text-white/80 drop-shadow-md">
+                    Lebe vital. In Balance.
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

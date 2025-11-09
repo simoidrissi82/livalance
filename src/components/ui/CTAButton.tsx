@@ -15,7 +15,7 @@ const buttonStyles = cva(
         primary:
           'bg-brand-primary text-white shadow-medium hover:shadow-strong hover:scale-[1.02]',
         secondary:
-          'border-2 border-brand-primary bg-brand-primary-tint text-brand-text shadow-soft hover:bg-brand-primary hover:text-white hover:scale-[1.02]',
+          'border-2 border-white/30 bg-white/10 backdrop-blur-md text-white shadow-lg hover:bg-white/20 hover:border-white/50 hover:scale-[1.02]',
         ghost:
           'bg-transparent text-brand-text hover:text-brand-primary hover:bg-brand-primary-tint/60'
       },
