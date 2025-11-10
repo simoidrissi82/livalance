@@ -32,8 +32,7 @@ export function WorkshopHighlight({
   const hasOutcomes = Boolean(outcomes?.length);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-surface via-white to-brand-primary-tint/30">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/10 via-transparent to-brand-accent/15" aria-hidden />
+    <section className="relative overflow-hidden">
       
       {/* Animated gradient accents */}
       <motion.div

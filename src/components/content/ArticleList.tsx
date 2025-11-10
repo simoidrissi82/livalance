@@ -73,53 +73,103 @@ export function ArticleList({articles, labels}: ArticleListProps) {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-brand-surface via-white to-brand-surface py-20">
-      <div className="absolute top-0 left-0 h-64 w-64 bg-brand-primary/5 rounded-full blur-3xl" aria-hidden />
-      <div className="absolute bottom-0 right-0 h-64 w-64 bg-brand-accent/5 rounded-full blur-3xl" aria-hidden />
-      
-      <div className="relative mx-auto max-w-6xl px-6">
+    <div className="relative min-h-screen">
+      {/* Single unified background for entire page */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-bg via-pillar-schlaf/15 to-pillar-ernaehrung/10" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-br from-pillar-schlaf/25 via-pillar-ernaehrung/20 to-brand-accent/30" aria-hidden />
+        
+        {/* Enhanced animated gradient blobs */}
         <motion.div
-          className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between"
-          initial={{opacity: 0, y: 20}}
-          animate={{opacity: 1, y: 0}}
-          transition={{duration: 0.6}}
-        >
-          <div className="max-w-3xl space-y-4">
+          className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-pillar-schlaf/20 blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.4, 0.6, 0.4],
+            rotate: [0, 90, 180]
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: 'easeInOut'
+          }}
+        />
+        
+        <motion.div
+          className="absolute -right-32 -bottom-32 h-[520px] w-[520px] rounded-full bg-brand-accent/30 blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.3, 0.5, 0.3],
+            x: [0, -30, 0],
+            y: [0, -40, 0]
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 1
+          }}
+        />
+        
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-pillar-ernaehrung/15 blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.25, 0.4, 0.25]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 0.5
+          }}
+        />
+      </div>
+      
+      {/* Hero section */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-12 sm:py-16 md:py-24">
+          <motion.div
+            className="max-w-3xl space-y-6"
+            initial={{opacity: 0, y: 30}}
+            animate={{opacity: 1, y: 0}}
+            transition={{duration: 0.6}}
+          >
             <motion.h2
-              className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-brand-text"
-              initial={{opacity: 0, y: -10}}
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight"
+              initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.2}}
             >
               {labels.title}
             </motion.h2>
             <motion.p
-              className="text-lg leading-relaxed text-brand-muted"
-              initial={{opacity: 0}}
-              animate={{opacity: 1}}
+              className="text-xl md:text-2xl text-brand-text/80 leading-relaxed"
+              initial={{opacity: 0, y: 20}}
+              animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.3}}
             >
               {labels.intro}
             </motion.p>
-          </div>
-          <motion.div
-            initial={{opacity: 0, scale: 0.9}}
-            animate={{opacity: 1, scale: 1}}
-            transition={{duration: 0.6, delay: 0.4}}
-          >
-            <CTAButton href="/insights" variant="ghost">
-              {labels.cta}
-            </CTAButton>
           </motion.div>
-        </motion.div>
+        </div>
+      </section>
 
-        <motion.div
-          className="mt-12 flex flex-wrap items-end gap-6 rounded-3xl border-2 border-white/60 bg-white/95 p-8 shadow-medium backdrop-blur"
-          initial={{opacity: 0, y: 20}}
-          whileInView={{opacity: 1, y: 0}}
-          viewport={{once: true}}
-          transition={{duration: 0.6, delay: 0.5}}
-        >
+      {/* Articles section */}
+      <section className="relative overflow-hidden py-20">
+        <div className="relative mx-auto max-w-6xl px-6">
+
+          <motion.div
+            className="mt-12 flex flex-wrap items-end gap-6 rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white/95 via-brand-primary-tint/15 to-white/95 p-8 shadow-medium backdrop-blur-sm"
+            initial={{opacity: 0, y: 20}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true}}
+            transition={{duration: 0.6, delay: 0.5}}
+            whileHover={{scale: 1.01}}
+          >
           <div className="flex flex-col text-sm font-bold text-brand-primary">
             <span className="mb-2">{labels.category}</span>
             <select
@@ -171,16 +221,18 @@ export function ArticleList({articles, labels}: ArticleListProps) {
           {currentItems.map((article) => (
             <motion.article
               key={article.slug}
-              className="group flex h-full flex-col gap-6 overflow-hidden rounded-3xl border-2 border-white/60 bg-white/95 p-8 shadow-soft backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:shadow-medium hover:border-brand-primary/40"
+              className="group relative flex h-full flex-col gap-6 overflow-hidden rounded-3xl border-2 border-brand-primary/20 bg-gradient-to-br from-white via-brand-primary-tint/10 to-white p-8 shadow-medium backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:shadow-strong hover:border-brand-primary/40"
               variants={{
                 hidden: {opacity: 0, y: 30},
                 visible: {opacity: 1, y: 0, transition: {duration: 0.5}}
               }}
               whileHover={{scale: 1.02}}
             >
-              <div className="space-y-4">
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />
+              <div className="relative z-10 space-y-4">
                 <motion.span
-                  className="inline-flex items-center rounded-full bg-brand-primary-tint px-4 py-2 text-xs font-bold uppercase tracking-wide text-brand-primary shadow-soft"
+                  className="inline-flex items-center rounded-full bg-brand-primary-tint px-4 py-2 text-xs font-bold uppercase tracking-wide text-brand-primary shadow-medium"
                   whileHover={{scale: 1.05}}
                 >
                   {article.category} · {article.readingTime} min
@@ -188,11 +240,11 @@ export function ArticleList({articles, labels}: ArticleListProps) {
                 <h3 className="font-display text-2xl font-bold text-brand-text leading-tight group-hover:text-brand-primary transition-colors">
                   {article.title}
                 </h3>
-                <p className="text-base leading-relaxed text-brand-muted">{article.excerpt}</p>
+                <p className="text-base leading-relaxed text-brand-text/80">{article.excerpt}</p>
               </div>
               <Link
                 href={`/insights/${article.slug}` as any}
-                className="flex items-center gap-2 text-base font-bold text-brand-primary transition-all group-hover:gap-3"
+                className="relative z-10 flex items-center gap-2 text-base font-bold text-brand-primary transition-all group-hover:gap-3"
               >
                 {labels.readMore}
                 <motion.span
@@ -238,7 +290,8 @@ export function ArticleList({articles, labels}: ArticleListProps) {
           })}
         </motion.div>
       ) : null}
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   );
 }

@@ -41,14 +41,14 @@ export function ProgramOverview({
   ctaHref = '/contact'
 }: ProgramOverviewProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-bl from-brand-surface via-white to-brand-accent-tint/20 py-20">
-      <div className="relative mx-auto max-w-6xl px-6">
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-primary-tint/50 via-white to-brand-accent/10" aria-hidden />
+    <section className="relative z-10 overflow-hidden py-20">
+      
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
       <motion.div
-        className="relative rounded-[2.5rem] border border-white/60 bg-white/80 p-12 shadow-medium backdrop-blur"
+        className="relative z-10 rounded-[2.5rem] border border-white/60 bg-white/80 p-8 sm:p-12 shadow-medium backdrop-blur"
         initial={{opacity: 0, scale: 0.95}}
         whileInView={{opacity: 1, scale: 1}}
-        viewport={{once: true, margin: '-100px'}}
+        viewport={{once: true, margin: '-50px'}}
         transition={{duration: 0.6}}
       >
         <motion.div
@@ -63,9 +63,11 @@ export function ProgramOverview({
             <p className="text-lg leading-relaxed text-brand-muted">{description}</p>
             {supporting ? <p className="text-base text-brand-text/80">{supporting}</p> : null}
           </div>
-          <CTAButton href={ctaHref} variant="secondary" showIcon>
-            {ctaLabel}
-          </CTAButton>
+          <div className="flex-shrink-0">
+            <CTAButton href={ctaHref} variant="primary" showIcon>
+              {ctaLabel}
+            </CTAButton>
+          </div>
         </motion.div>
 
         <motion.div
@@ -73,7 +75,7 @@ export function ProgramOverview({
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{once: true, margin: '-100px'}}
+          viewport={{once: true, margin: '-50px'}}
         >
           {bundles.map((bundle, index) => (
             <motion.article
@@ -83,15 +85,9 @@ export function ProgramOverview({
               whileHover={{scale: 1.02}}
             >
               <div className="space-y-4">
-                <motion.span
-                  className="inline-flex rounded-full bg-brand-primary-tint px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-primary"
-                  initial={{scale: 0, opacity: 0}}
-                  whileInView={{scale: 1, opacity: 1}}
-                  viewport={{once: true}}
-                  transition={{delay: index * 0.1 + 0.3}}
-                >
+                <span className="inline-flex rounded-full bg-brand-primary-tint px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-primary opacity-100">
                   {bundle.duration}
-                </motion.span>
+                </span>
                 <div>
                   <h3 className="font-display text-2xl font-bold text-brand-text">
                     {bundle.name}
@@ -100,17 +96,13 @@ export function ProgramOverview({
                 </div>
                 <ul className="space-y-3 text-base text-brand-text/80">
                   {bundle.deliverables.map((deliverable, dIndex) => (
-                    <motion.li
+                    <li
                       key={deliverable}
-                      className="flex gap-3"
-                      initial={{opacity: 0, x: -10}}
-                      whileInView={{opacity: 1, x: 0}}
-                      viewport={{once: true}}
-                      transition={{delay: dIndex * 0.1}}
+                      className="flex gap-3 opacity-100"
                     >
                       <span className="mt-2 h-2 w-2 flex-none rounded-full bg-brand-accent" />
                       <span>{deliverable}</span>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -124,15 +116,9 @@ export function ProgramOverview({
         </motion.div>
 
         {note ? (
-          <motion.p
-            className="mt-10 text-base text-brand-muted"
-            initial={{opacity: 0}}
-            whileInView={{opacity: 1}}
-            viewport={{once: true}}
-            transition={{delay: 0.5}}
-          >
+          <p className="mt-10 text-base text-brand-muted opacity-100">
             {note}
-          </motion.p>
+          </p>
         ) : null}
       </motion.div>
       </div>

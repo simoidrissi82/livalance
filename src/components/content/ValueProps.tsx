@@ -42,24 +42,24 @@ const itemVariants = {
 
 export function ValuePropsSection({title, items, ctaLabel, ctaHref}: ValuePropsSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-brand-surface via-white to-brand-surface py-20">
+    <section className="relative z-10 overflow-hidden bg-gradient-to-b from-brand-bg via-white to-brand-surface py-20">
       {/* Subtle gradient accents */}
-      <div className="absolute top-0 left-0 h-64 w-64 bg-brand-primary/5 rounded-full blur-3xl" aria-hidden />
-      <div className="absolute bottom-0 right-0 h-64 w-64 bg-brand-accent/5 rounded-full blur-3xl" aria-hidden />
+      <div className="absolute top-0 left-0 h-64 w-64 bg-brand-primary/5 rounded-full blur-3xl z-0" aria-hidden />
+      <div className="absolute bottom-0 right-0 h-64 w-64 bg-brand-accent/5 rounded-full blur-3xl z-0" aria-hidden />
       
-      <div className="relative mx-auto max-w-6xl px-6">
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
       <motion.div
         className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
         initial={{opacity: 0, y: 20}}
         whileInView={{opacity: 1, y: 0}}
-        viewport={{once: true, margin: '-100px'}}
+        viewport={{once: true, margin: '-50px'}}
         transition={{duration: 0.6}}
       >
         <div className="max-w-3xl">
           <h2 className="font-display text-4xl font-bold text-brand-text">{title}</h2>
         </div>
         {ctaLabel && ctaHref ? (
-          <CTAButton href={ctaHref} variant="secondary">
+          <CTAButton href={ctaHref} variant="primary">
             {ctaLabel}
           </CTAButton>
         ) : null}
@@ -70,7 +70,7 @@ export function ValuePropsSection({title, items, ctaLabel, ctaHref}: ValuePropsS
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{once: true, margin: '-100px'}}
+        viewport={{once: true, margin: '-50px'}}
       >
         {items.map((item, index) => (
           <motion.article
@@ -81,7 +81,7 @@ export function ValuePropsSection({title, items, ctaLabel, ctaHref}: ValuePropsS
             <div className="absolute inset-0 bg-gradient-to-br from-brand-accent/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             
             <div className="relative">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-accent/10">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-accent/15">
                 <CheckCircleIcon className="h-6 w-6 text-brand-accent" />
               </div>
               

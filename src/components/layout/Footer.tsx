@@ -1,24 +1,55 @@
 'use client';
 
 import {motion} from 'framer-motion';
-import {useTranslations, useLocale} from 'next-intl';
-import {HeartIcon, SparklesIcon, EnvelopeIcon} from '@heroicons/react/24/outline';
+import Image from 'next/image';
+import {useTranslations} from 'next-intl';
+import {
+  HeartIcon,
+  SparklesIcon,
+  EnvelopeIcon,
+  ChatBubbleLeftRightIcon,
+  DocumentTextIcon,
+  ShieldCheckIcon,
+  DocumentDuplicateIcon,
+  ArrowPathIcon,
+  MoonIcon,
+  BoltIcon
+} from '@heroicons/react/24/outline';
 
 import {Link} from '@/i18n/routing';
 
 import {NewsletterForm} from '../forms/NewsletterForm';
 
 const pillarIcons = [
-  {color: 'text-pillar-schlaf', icon: SparklesIcon},
+  {color: 'text-pillar-schlaf', icon: MoonIcon},
   {color: 'text-pillar-ernaehrung', icon: SparklesIcon},
-  {color: 'text-pillar-bewegung', icon: SparklesIcon},
+  {color: 'text-pillar-bewegung', icon: BoltIcon},
   {color: 'text-pillar-achtsamkeit', icon: HeartIcon}
 ];
+
+const legalIcons = [
+  {key: 'imprint', icon: DocumentTextIcon},
+  {key: 'privacy', icon: ShieldCheckIcon},
+  {key: 'terms', icon: DocumentDuplicateIcon},
+  {key: 'cancellation', icon: ArrowPathIcon}
+];
+
+// Simple SVG icons for social media
+const LinkedinIcon = ({className}: {className?: string}) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </svg>
+);
+
+const InstagramIcon = ({className}: {className?: string}) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd"/>
+  </svg>
+);
 
 export function Footer() {
   const tFooter = useTranslations('footer');
   const tLegal = useTranslations('legal');
-  const locale = useLocale();
   const year = new Date().getFullYear();
 
   return (
@@ -53,8 +84,8 @@ export function Footer() {
       </div>
 
       {/* Main content */}
-      <div className="relative mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr]">
+      <div className="relative mx-auto max-w-6xl px-6 py-16">
+        <div className="grid gap-12 lg:grid-cols-[2fr_1.5fr_1fr]">
           {/* Brand section */}
           <motion.div
             initial={{opacity: 0, y: 20}}
@@ -63,12 +94,19 @@ export function Footer() {
             transition={{duration: 0.6}}
           >
             <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-accent/20">
-                <HeartIcon className="h-6 w-6 text-brand-accent" />
-              </div>
-              <h2 className="font-display text-2xl font-bold text-white">
-                Livalance
-              </h2>
+              <Link href="/" className="flex items-center gap-3" aria-label="Livalance">
+                <Image
+                  src="/images/brand/logo_new.png"
+                  alt="Livalance"
+                  width={48}
+                  height={48}
+                  className="h-12 w-auto"
+                  priority
+                />
+                <h2 className="font-display text-2xl font-bold text-white">
+                  Livalance
+                </h2>
+              </Link>
             </div>
             
             <p className="mb-6 max-w-md text-base leading-relaxed text-white/80">
@@ -80,11 +118,11 @@ export function Footer() {
               {pillarIcons.map((item, index) => (
                 <motion.div
                   key={index}
-                  className={`flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 ${item.color}`}
+                  className={`flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 ${item.color}`}
                   whileHover={{scale: 1.1, rotate: 5}}
                   transition={{type: 'spring', stiffness: 300}}
                 >
-                  <item.icon className="h-4 w-4" />
+                  <item.icon className="h-5 w-5" />
                 </motion.div>
               ))}
             </div>
@@ -94,44 +132,45 @@ export function Footer() {
             </p>
           </motion.div>
 
-          {/* Newsletter section */}
+          {/* Newsletter section - expanded */}
           <motion.div
             initial={{opacity: 0, y: 20}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true}}
             transition={{duration: 0.6, delay: 0.1}}
           >
-            <div className="mb-4 flex items-center gap-2">
+            <h3 className="mb-4 flex items-center gap-2 font-display text-lg font-semibold text-white">
               <EnvelopeIcon className="h-5 w-5 text-brand-accent" />
-              <h3 className="font-display text-lg font-semibold text-white">
-                {tFooter('newsletterLabel')}
-              </h3>
-            </div>
-            <div className="rounded-2xl bg-white/10 p-4 backdrop-blur-sm border border-white/20 shadow-medium">
+              {tFooter('newsletterLabel')}
+            </h3>
+            <div className="rounded-2xl bg-white/10 p-6 backdrop-blur-sm border border-white/20 shadow-medium">
               <NewsletterForm />
             </div>
           </motion.div>
 
-          {/* Social & Links section */}
+          {/* Social & Legal section */}
           <motion.div
             initial={{opacity: 0, y: 20}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true}}
             transition={{duration: 0.6, delay: 0.2}}
           >
-            <h3 className="mb-4 font-display text-lg font-semibold text-white">
+            <h3 className="mb-4 flex items-center gap-2 font-display text-lg font-semibold text-white">
+              <ChatBubbleLeftRightIcon className="h-5 w-5 text-brand-accent" />
               {tFooter('follow')}
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 mb-8">
               <li>
                 <a
                   href="https://www.linkedin.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-2 text-white/80 transition-colors hover:text-brand-accent"
+                  className="group inline-flex items-center gap-3 text-white/80 transition-all hover:text-brand-accent hover:translate-x-1"
                 >
-                  <span className="h-1 w-1 rounded-full bg-brand-accent transition-transform group-hover:scale-150" />
-                  LinkedIn
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 transition-transform group-hover:scale-110">
+                    <LinkedinIcon className="h-5 w-5" />
+                  </div>
+                  <span>LinkedIn</span>
                 </a>
               </li>
               <li>
@@ -139,10 +178,12 @@ export function Footer() {
                   href="https://www.instagram.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-2 text-white/80 transition-colors hover:text-brand-accent"
+                  className="group inline-flex items-center gap-3 text-white/80 transition-all hover:text-brand-accent hover:translate-x-1"
                 >
-                  <span className="h-1 w-1 rounded-full bg-brand-accent transition-transform group-hover:scale-150" />
-                  Instagram
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 transition-transform group-hover:scale-110">
+                    <InstagramIcon className="h-5 w-5" />
+                  </div>
+                  <span>Instagram</span>
                 </a>
               </li>
             </ul>
@@ -151,41 +192,35 @@ export function Footer() {
 
         {/* Legal links */}
         <motion.div
-          className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-white/20 pt-8"
+          className="mt-12 flex flex-col sm:flex-row flex-wrap items-center justify-between gap-6 border-t border-white/20 pt-6"
           initial={{opacity: 0}}
           whileInView={{opacity: 1}}
           viewport={{once: true}}
           transition={{duration: 0.6, delay: 0.3}}
         >
-          <div className="flex flex-wrap gap-6 text-sm">
-            <Link
-              href="/legal/imprint"
-              className="text-white/60 transition-colors hover:text-white"
-            >
-              {tLegal('imprint')}
-            </Link>
-            <Link
-              href="/legal/privacy"
-              className="text-white/60 transition-colors hover:text-white"
-            >
-              {tLegal('privacy')}
-            </Link>
-            <Link
-              href="/legal/terms"
-              className="text-white/60 transition-colors hover:text-white"
-            >
-              {tLegal('terms')}
-            </Link>
-            <Link
-              href="/legal/cancellation"
-              className="text-white/60 transition-colors hover:text-white"
-            >
-              {tLegal('cancellation')}
-            </Link>
+          <div className="flex flex-wrap items-center gap-4 text-sm">
+            {legalIcons.map(({key, icon: Icon}) => (
+              <Link
+                key={key}
+                href={`/legal/${key}` as any}
+                className="group inline-flex items-center gap-2 text-white/60 transition-all hover:text-white"
+              >
+                <Icon className="h-4 w-4 transition-transform group-hover:scale-110" />
+                <span>{tLegal(key)}</span>
+              </Link>
+            ))}
           </div>
           
-          <div className="text-sm text-white/60">
-            Made with <span className="text-red-400">♥</span> for your wellbeing
+          <div className="flex items-center gap-2 text-sm text-white/60">
+            <span>Made with</span>
+            <motion.span
+              className="text-red-400"
+              animate={{scale: [1, 1.2, 1]}}
+              transition={{duration: 1.5, repeat: Infinity, ease: 'easeInOut'}}
+            >
+              ♥
+            </motion.span>
+            <span>for your wellbeing</span>
           </div>
         </motion.div>
       </div>

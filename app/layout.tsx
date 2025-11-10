@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   },
   description:
     'Bilingual wellness coaching & workshops across sleep, nutrition, activity, and mindfulness with science-backed guidance.',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/images/brand/logo_new-512.png',
+  },
   alternates: {
     canonical: baseUrl
   },
@@ -31,17 +35,18 @@ export const metadata: Metadata = {
       'Ganzheitliches Coaching und Workshops für Schlaf, Ernährung, Aktivität und Mindfulness.',
     images: [
       {
-        url: '/images/og-default.svg',
-        width: 1200,
-        height: 630,
-        alt: 'Livalance – Lebe vital. In Balance.'
+        url: '/images/brand/logo_new-512.png',
+        width: 512,
+        height: 512,
+        alt: 'Livalance Logo'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
     site: '@livalance',
-    creator: '@livalance'
+    creator: '@livalance',
+    images: ['/images/brand/logo_new-512.png']
   }
 };
 

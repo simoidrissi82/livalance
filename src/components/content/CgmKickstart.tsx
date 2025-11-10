@@ -43,8 +43,8 @@ export function CgmKickstart({title, bullets, disclaimer, ctaLabel}: CgmKickstar
                   viewport={{once: true}}
                   transition={{delay: index * 0.1 + 0.3}}
                 >
-                  <span className="mt-1.5 inline-block h-2 w-2 rounded-full bg-brand-primary" aria-hidden />
-                  <span>{bullet}</span>
+                  <span className="mt-1.5 inline-block h-2 w-2 rounded-full bg-brand-accent" aria-hidden />
+                  <span className="text-brand-text/90">{bullet}</span>
                 </motion.li>
               ))}
             </ul>
