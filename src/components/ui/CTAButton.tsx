@@ -4,6 +4,7 @@ import {ReactNode} from 'react';
 import {motion} from 'framer-motion';
 import {cva, type VariantProps} from 'class-variance-authority';
 import {ArrowRightIcon} from '@heroicons/react/24/outline';
+import {clsx} from 'clsx';
 
 import {Link} from '@/i18n/routing';
 
@@ -36,8 +37,8 @@ type LinkHref = string | {pathname: string};
 
 type CTAButtonProps = VariantProps<typeof buttonStyles> &
   (
-    | {href: LinkHref; children: ReactNode; type?: never; showIcon?: boolean; disabled?: never}
-    | {onClick?: () => void; children: ReactNode; type?: 'button' | 'submit'; showIcon?: boolean; disabled?: boolean}
+    | {href: LinkHref; children: ReactNode; type?: never; showIcon?: boolean; disabled?: never; className?: string}
+    | {onClick?: () => void; children: ReactNode; type?: 'button' | 'submit'; showIcon?: boolean; disabled?: boolean; className?: string}
   );
 
 /**
@@ -62,7 +63,7 @@ const isInternalPath = (href: string): boolean => {
 };
 
 export function CTAButton(props: CTAButtonProps) {
-  const {variant, width, children, showIcon = false} = props;
+  const {variant, width, children, showIcon = false, className} = props;
 
   const content = (
     <>
@@ -85,21 +86,21 @@ export function CTAButton(props: CTAButtonProps) {
       // For internal paths, use next-intl Link
       if (isInternalPath(props.href)) {
         return (
-          <Link href={{pathname: props.href as any}} className={buttonStyles({variant, width})}>
+          <Link href={{pathname: props.href as any}} className={clsx(buttonStyles({variant, width}), className)}>
             {content}
           </Link>
         );
       }
       // For external URLs, mailto:, tel:, fragments, etc., use regular anchor tag
       return (
-        <a href={props.href} className={buttonStyles({variant, width})}>
+        <a href={props.href} className={clsx(buttonStyles({variant, width}), className)}>
           {content}
         </a>
       );
     }
     // Handle object hrefs (pathname objects) - these are always internal
     return (
-      <Link href={props.href as any} className={buttonStyles({variant, width})}>
+      <Link href={props.href as any} className={clsx(buttonStyles({variant, width}), className)}>
         {content}
       </Link>
     );
@@ -110,7 +111,7 @@ export function CTAButton(props: CTAButtonProps) {
       type={props.type ?? 'button'}
       onClick={props.onClick}
       disabled={props.disabled}
-      className={buttonStyles({variant, width})}
+      className={clsx(buttonStyles({variant, width}), className)}
     >
       {content}
     </button>

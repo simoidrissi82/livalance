@@ -41,7 +41,7 @@ export function ProgramOverview({
   ctaHref = '/contact'
 }: ProgramOverviewProps) {
   return (
-    <section className="relative z-10 overflow-hidden bg-gradient-to-bl from-brand-surface via-white to-brand-accent-tint/20 py-20">
+    <section className="relative z-10 overflow-hidden py-20">
       
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
       <motion.div

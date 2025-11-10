@@ -7,46 +7,69 @@ export function AboutPage() {
   const t = useTranslations('aboutPage');
 
   return (
-    <div className="bg-gradient-to-br from-brand-accent/40 via-pillar-ernaehrung/30 to-brand-primary/35">
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <div className="relative min-h-screen">
+      {/* Single unified background for entire page */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-bg via-pillar-schlaf/15 to-pillar-ernaehrung/10" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-br from-pillar-schlaf/25 via-pillar-ernaehrung/20 to-brand-accent/30" aria-hidden />
         
-        {/* HUGE Animated gradient blobs */}
+        {/* Enhanced animated gradient blobs */}
         <motion.div
-          className="absolute -top-32 -left-32 h-[550px] w-[550px] rounded-full bg-brand-primary/30 blur-3xl"
+          className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-pillar-schlaf/20 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3]
+            opacity: [0.4, 0.6, 0.4],
+            rotate: [0, 90, 180]
           }}
           transition={{
-            duration: 12,
+            duration: 18,
             repeat: Infinity,
             ease: 'easeInOut'
           }}
         />
         
         <motion.div
-          className="absolute -bottom-24 -right-24 h-[480px] w-[480px] rounded-full bg-brand-accent/25 blur-3xl"
+          className="absolute -right-32 -bottom-32 h-[520px] w-[520px] rounded-full bg-brand-accent/30 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.25, 0.4, 0.25]
+            opacity: [0.3, 0.5, 0.3],
+            x: [0, -30, 0],
+            y: [0, -40, 0]
           }}
           transition={{
-            duration: 14,
+            duration: 15,
             repeat: Infinity,
             ease: 'easeInOut',
             delay: 1
           }}
         />
         
-        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-pillar-ernaehrung/15 blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.25, 0.4, 0.25]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 0.5
+          }}
+        />
+      </div>
+      
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16 md:py-24">
           <motion.div
-            className="max-w-3xl space-y-6 rounded-3xl bg-white/60 backdrop-blur-md p-8 md:p-12 shadow-strong"
+            className="max-w-3xl space-y-6"
             initial={{opacity: 0, y: 30}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.6}}
-            whileHover={{scale: 1.01}}
           >
             <motion.span
               className="inline-flex rounded-full bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-brand-primary shadow-soft"
@@ -87,7 +110,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-accent/40 via-pillar-ernaehrung/30 to-brand-primary/35 py-20">
+      <section className="relative overflow-hidden py-20">
         {/* Enhanced animated gradient blobs - BIGGER & MORE SATURATED */}
         <motion.div
           className="absolute -top-20 -left-20 h-[600px] w-[600px] bg-brand-primary/30 rounded-full blur-3xl"
@@ -135,7 +158,7 @@ export function AboutPage() {
         
         <div className="relative mx-auto grid max-w-5xl gap-8 px-6 md:grid-cols-[1.5fr_1fr]">
           <motion.article
-            className="group relative rounded-3xl border-2 border-brand-primary/20 bg-gradient-to-br from-white via-brand-primary-tint/10 to-white p-10 shadow-medium backdrop-blur transition-all duration-300 hover:shadow-strong hover:-translate-y-2 hover:border-brand-primary/40"
+            className="group relative rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white via-brand-primary-tint/15 to-white p-10 shadow-medium backdrop-blur-sm transition-all duration-300 hover:shadow-strong hover:-translate-y-2 hover:border-brand-primary/50"
             initial={{opacity: 0, x: -30}}
             whileInView={{opacity: 1, x: 0}}
             viewport={{once: true, margin: '-100px'}}
@@ -206,7 +229,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-pillar-bewegung/35 via-white to-brand-accent/40 py-20">
+      <section className="relative overflow-hidden py-20">
         {/* Enhanced animated gradient blobs */}
         <motion.div
           className="absolute -bottom-32 -right-32 h-[550px] w-[550px] bg-brand-accent/30 rounded-full blur-3xl"
@@ -238,7 +261,7 @@ export function AboutPage() {
         
         <div className="relative mx-auto max-w-5xl px-6">
           <motion.div
-            className="rounded-3xl border-2 border-brand-accent/30 bg-gradient-to-br from-white via-brand-accent-tint/10 to-white p-12 shadow-strong backdrop-blur"
+            className="rounded-3xl border-2 border-brand-accent/30 bg-gradient-to-br from-white/95 via-brand-accent-tint/15 to-white/95 p-12 shadow-strong backdrop-blur-sm"
             initial={{opacity: 0, y: 30}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true, margin: '-100px'}}

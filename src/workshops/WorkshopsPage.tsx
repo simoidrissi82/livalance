@@ -18,16 +18,19 @@ export function WorkshopsPage() {
   const workshopDeliverables = offers.raw('bundles.0.deliverables') as string[];
 
   return (
-    <div className="bg-gradient-to-br from-pillar-schlaf/40 via-pillar-ernaehrung/30 to-brand-accent/40">
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <div className="relative min-h-screen">
+      {/* Single unified background for entire page */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-bg via-pillar-schlaf/15 to-pillar-ernaehrung/10" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-br from-pillar-schlaf/25 via-pillar-ernaehrung/20 to-brand-accent/30" aria-hidden />
         
-        {/* HUGE Animated gradient blobs */}
+        {/* Enhanced animated gradient blobs */}
         <motion.div
-          className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-brand-primary/30 blur-3xl"
+          className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-pillar-schlaf/20 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
+            opacity: [0.4, 0.6, 0.4],
             rotate: [0, 90, 180]
           }}
           transition={{
@@ -38,11 +41,11 @@ export function WorkshopsPage() {
         />
         
         <motion.div
-          className="absolute -right-32 -bottom-32 h-[520px] w-[520px] rounded-full bg-brand-accent/25 blur-3xl"
+          className="absolute -right-32 -bottom-32 h-[520px] w-[520px] rounded-full bg-brand-accent/30 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.25, 0.45, 0.25],
+            opacity: [0.3, 0.5, 0.3],
             x: [0, -30, 0],
             y: [0, -40, 0]
           }}
@@ -54,13 +57,30 @@ export function WorkshopsPage() {
           }}
         />
         
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-pillar-ernaehrung/15 blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.25, 0.4, 0.25]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 0.5
+          }}
+        />
+      </div>
+      
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-16 md:py-24">
           <motion.div
-            className="max-w-3xl space-y-4 sm:space-y-6 rounded-3xl bg-white/60 backdrop-blur-md p-8 md:p-12 shadow-strong"
+            className="max-w-3xl space-y-4 sm:space-y-6"
             initial={{opacity: 0, y: 30}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.6}}
-            whileHover={{scale: 1.01}}
           >
             <motion.span
               className="inline-flex rounded-full bg-white/70 px-3 py-1.5 sm:px-4 sm:py-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-brand-primary shadow-soft"
@@ -114,10 +134,10 @@ export function WorkshopsPage() {
         disclaimer={offers('supporting')}
       />
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-pillar-schlaf/40 via-pillar-ernaehrung/30 to-brand-accent/40 py-20">
-        {/* Enhanced animated gradient blobs - BIGGER & MORE SATURATED */}
+      <section className="relative overflow-hidden py-20">
+        {/* Enhanced animated gradient blobs */}
         <motion.div
-          className="absolute -top-32 -right-32 h-[650px] w-[650px] bg-brand-accent/30 rounded-full blur-3xl"
+          className="absolute -top-32 -right-32 h-[650px] w-[650px] bg-brand-accent/25 rounded-full blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.3, 1],
@@ -131,7 +151,7 @@ export function WorkshopsPage() {
           }}
         />
         <motion.div
-          className="absolute -bottom-24 -left-24 h-[500px] w-[500px] bg-brand-primary/25 rounded-full blur-3xl"
+          className="absolute -bottom-24 -left-24 h-[500px] w-[500px] bg-pillar-schlaf/20 rounded-full blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.2, 1],
@@ -145,7 +165,7 @@ export function WorkshopsPage() {
           }}
         />
         <motion.div
-          className="absolute top-1/3 right-1/4 h-[450px] w-[450px] bg-pillar-ernaehrung/20 rounded-full blur-3xl"
+          className="absolute top-1/3 right-1/4 h-[450px] w-[450px] bg-pillar-ernaehrung/18 rounded-full blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.25, 1],
@@ -162,15 +182,15 @@ export function WorkshopsPage() {
         
         <div className="relative mx-auto grid max-w-6xl gap-6 sm:gap-8 px-4 sm:px-6 md:grid-cols-2">
           <motion.div
-            className="group relative rounded-3xl border-2 border-brand-primary/20 bg-gradient-to-br from-white via-brand-primary-tint/10 to-white p-6 sm:p-8 md:p-10 shadow-medium backdrop-blur transition-all duration-300 hover:shadow-strong hover:-translate-y-2 hover:border-brand-primary/40"
+            className="group relative rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white via-brand-primary-tint/15 to-white p-6 sm:p-8 md:p-10 shadow-medium backdrop-blur-sm transition-all duration-300 hover:shadow-strong hover:-translate-y-2 hover:border-brand-primary/50"
             initial={{opacity: 0, x: -30}}
             whileInView={{opacity: 1, x: 0}}
             viewport={{once: true, margin: '-100px'}}
             transition={{duration: 0.6}}
             whileHover={{scale: 1.02}}
           >
-            {/* Subtle gradient overlay on hover */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />
+            {/* Enhanced gradient overlay on hover */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-primary/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />
             <div className="relative z-10">
             <h2 className="text-sm sm:text-base font-bold uppercase tracking-wide text-brand-primary mb-3 sm:mb-4">
               {t('flowTitle')}
@@ -195,15 +215,15 @@ export function WorkshopsPage() {
           </motion.div>
           
           <motion.div
-            className="group relative rounded-3xl border-2 border-brand-accent/20 bg-gradient-to-br from-white via-brand-accent-tint/10 to-white p-6 sm:p-8 md:p-10 shadow-medium backdrop-blur transition-all duration-300 hover:shadow-strong hover:-translate-y-2 hover:border-brand-accent/40"
+            className="group relative rounded-3xl border-2 border-brand-accent/30 bg-gradient-to-br from-white via-brand-accent-tint/15 to-white p-6 sm:p-8 md:p-10 shadow-medium backdrop-blur-sm transition-all duration-300 hover:shadow-strong hover:-translate-y-2 hover:border-brand-accent/50"
             initial={{opacity: 0, x: 30}}
             whileInView={{opacity: 1, x: 0}}
             viewport={{once: true, margin: '-100px'}}
             transition={{duration: 0.6, delay: 0.2}}
             whileHover={{scale: 1.02}}
           >
-            {/* Subtle gradient overlay on hover */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />
+            {/* Enhanced gradient overlay on hover */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-accent/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden />
             <div className="relative z-10">
             <h2 className="text-sm sm:text-base font-bold uppercase tracking-wide text-brand-accent mb-3 sm:mb-4">
               {t('formatsTitle')}
@@ -279,10 +299,10 @@ export function WorkshopsPage() {
         ctaHref="/contact"
       />
 
-      <section id="booking" className="relative overflow-hidden bg-gradient-to-br from-brand-accent/35 via-pillar-bewegung/25 to-brand-accent/40 py-20">
+      <section id="booking" className="relative overflow-hidden py-20">
         {/* Multiple animated gradient blobs */}
         <motion.div
-          className="absolute top-10 left-10 h-96 w-96 rounded-full bg-brand-primary/20 blur-3xl"
+          className="absolute top-10 left-10 h-96 w-96 rounded-full bg-pillar-schlaf/15 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.2, 1],
@@ -295,11 +315,11 @@ export function WorkshopsPage() {
           }}
         />
         <motion.div
-          className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-brand-accent/15 blur-3xl"
+          className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-brand-accent/20 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.2, 0.4, 0.2]
+            opacity: [0.25, 0.45, 0.25]
           }}
           transition={{
             duration: 12,
@@ -308,10 +328,24 @@ export function WorkshopsPage() {
             delay: 2
           }}
         />
+        <motion.div
+          className="absolute top-1/2 right-1/4 h-72 w-72 rounded-full bg-pillar-bewegung/12 blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.2, 0.35, 0.2]
+          }}
+          transition={{
+            duration: 14,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 1
+          }}
+        />
         
-        <div className="relative mx-auto max-w-6xl px-6">
+        <div className="relative z-10 mx-auto max-w-6xl px-6">
           <motion.div
-            className="rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white via-brand-primary-tint/5 to-white p-12 shadow-strong backdrop-blur"
+            className="rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white/95 via-brand-primary-tint/10 to-white/95 p-12 shadow-strong backdrop-blur-xl"
             initial={{opacity: 0, y: 30}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true, margin: '-100px'}}

@@ -33,6 +33,7 @@ export function HomePage() {
         subtitleSuffix={hero('subtitleSuffix')}
         primaryCta={{label: hero('primaryCta'), href: '/contact'}}
         secondaryCta={{label: hero('secondaryCta'), href: '/workshops'}}
+        tagline={hero('tagline')}
       />
 
       <ValuePropsSection

@@ -34,36 +34,39 @@ export function PillarsPage() {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-brand-accent/40 via-pillar-ernaehrung/30 to-brand-primary/35">
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <div className="relative min-h-screen">
+      {/* Single unified background for entire page */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-bg via-pillar-schlaf/15 to-pillar-ernaehrung/10" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-br from-pillar-schlaf/25 via-pillar-ernaehrung/20 to-brand-accent/30" aria-hidden />
         
-        {/* HUGE Animated gradient blobs */}
+        {/* Enhanced animated gradient blobs */}
         <motion.div
-          className="absolute -top-36 -left-36 h-[560px] w-[560px] rounded-full bg-brand-primary/30 blur-3xl"
+          className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-pillar-schlaf/20 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-            rotate: [0, 180, 360]
+            opacity: [0.4, 0.6, 0.4],
+            rotate: [0, 90, 180]
           }}
           transition={{
-            duration: 20,
+            duration: 18,
             repeat: Infinity,
             ease: 'easeInOut'
           }}
         />
         
         <motion.div
-          className="absolute -right-28 -bottom-28 h-[490px] w-[490px] rounded-full bg-brand-accent/25 blur-3xl"
+          className="absolute -right-32 -bottom-32 h-[520px] w-[520px] rounded-full bg-brand-accent/30 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.3, 0.5, 0.3],
-            x: [0, 20, 0],
-            y: [0, -20, 0]
+            x: [0, -30, 0],
+            y: [0, -40, 0]
           }}
           transition={{
-            duration: 12,
+            duration: 15,
             repeat: Infinity,
             ease: 'easeInOut',
             delay: 1
@@ -71,27 +74,29 @@ export function PillarsPage() {
         />
         
         <motion.div
-          className="absolute top-1/2 left-1/2 h-72 w-72 rounded-full bg-brand-secondary/10 blur-3xl"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-pillar-ernaehrung/15 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.15, 1],
-            opacity: [0.3, 0.5, 0.3]
+            opacity: [0.25, 0.4, 0.25]
           }}
           transition={{
-            duration: 9,
+            duration: 12,
             repeat: Infinity,
             ease: 'easeInOut',
-            delay: 2
+            delay: 0.5
           }}
         />
+      </div>
+      
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         
-        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16 md:py-24">
           <motion.div
-            className="max-w-3xl space-y-6 rounded-3xl bg-white/60 backdrop-blur-md p-8 md:p-12 shadow-strong"
+            className="max-w-3xl space-y-6"
             initial={{opacity: 0, y: 30}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.6}}
-            whileHover={{scale: 1.01}}
           >
             <motion.h1
               className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight"
@@ -114,7 +119,7 @@ export function PillarsPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-accent/40 via-pillar-ernaehrung/30 to-brand-primary/40 py-20">
+      <section className="relative overflow-hidden py-20">
         {/* Enhanced animated gradient blobs - BIGGER & MORE SATURATED */}
         <motion.div
           className="absolute -top-24 -left-24 h-[580px] w-[580px] bg-brand-primary/30 rounded-full blur-3xl"
@@ -162,7 +167,7 @@ export function PillarsPage() {
         
         <div className="relative mx-auto max-w-5xl px-6">
           <motion.div
-            className="rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white via-brand-primary-tint/10 to-white p-12 shadow-strong backdrop-blur"
+            className="rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white/95 via-brand-primary-tint/15 to-white/95 p-12 shadow-strong backdrop-blur-sm"
             initial={{opacity: 0, y: 30}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true, margin: '-100px'}}
@@ -210,7 +215,7 @@ export function PillarsPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-pillar-achtsamkeit/30 via-white via-pillar-bewegung/30 to-pillar-schlaf/35 py-20">
+      <section className="relative overflow-hidden py-20">
         {/* Animated gradient blobs for each pillar */}
         <motion.div
           className="absolute top-10 right-10 h-72 w-72 bg-pillar-achtsamkeit/12 rounded-full blur-3xl"
@@ -322,7 +327,7 @@ export function PillarsPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-accent/35 via-pillar-achtsamkeit/25 to-brand-accent/40 py-20">
+      <section className="relative overflow-hidden py-20">
         {/* Multiple animated gradient blobs */}
         <motion.div
           className="absolute top-10 right-10 h-96 w-96 rounded-full bg-brand-accent/20 blur-3xl"
@@ -354,7 +359,7 @@ export function PillarsPage() {
         
         <div className="relative mx-auto max-w-4xl px-6">
           <motion.div
-            className="rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white via-brand-primary-tint/10 to-brand-accent-tint/10 p-12 md:p-16 text-center shadow-strong"
+            className="rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white/95 via-brand-primary-tint/15 to-brand-accent-tint/15 p-12 md:p-16 text-center shadow-strong backdrop-blur-sm"
             initial={{opacity: 0, scale: 0.95, y: 30}}
             whileInView={{opacity: 1, scale: 1, y: 0}}
             viewport={{once: true, margin: '-100px'}}

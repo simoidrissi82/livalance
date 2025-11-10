@@ -1,6 +1,7 @@
 'use client';
 
 import {motion} from 'framer-motion';
+import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 import {
   HeartIcon,
@@ -93,12 +94,19 @@ export function Footer() {
             transition={{duration: 0.6}}
           >
             <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-accent/20 backdrop-blur-sm">
-                <HeartIcon className="h-6 w-6 text-brand-accent" />
-              </div>
-              <h2 className="font-display text-2xl font-bold text-white">
-                Livalance
-              </h2>
+              <Link href="/" className="flex items-center gap-3" aria-label="Livalance">
+                <Image
+                  src="/images/brand/logo_new.png"
+                  alt="Livalance"
+                  width={48}
+                  height={48}
+                  className="h-12 w-auto"
+                  priority
+                />
+                <h2 className="font-display text-2xl font-bold text-white">
+                  Livalance
+                </h2>
+              </Link>
             </div>
             
             <p className="mb-6 max-w-md text-base leading-relaxed text-white/80">

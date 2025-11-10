@@ -39,7 +39,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
         ? 'border-slate-200 bg-white/95 backdrop-blur-md shadow-sm' 
         : 'border-white/20 bg-black/20 backdrop-blur-md'
     }`}>
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <div className="flex items-center gap-3">
           <Link
             href="/"
@@ -53,9 +53,11 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
               alt="Livalance"
               width={220}
               height={48}
-              className={`h-12 w-auto transition-all duration-300 ${
-                scrolled ? 'brightness-100' : 'brightness-100 drop-shadow-lg'
-              }`}
+              className={`h-12 md:h-14 w-auto transition-all duration-300 ${
+                scrolled 
+                  ? 'brightness-100' 
+                  : 'brightness-100 drop-shadow-lg'
+              } ${scrolled ? '' : 'logo-no-bg'}`}
               priority
             />
             <span className="sr-only">Livalance</span>

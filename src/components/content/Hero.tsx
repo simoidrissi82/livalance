@@ -11,6 +11,7 @@ type HeroProps = {
   inlinePillars?: string[];
   primaryCta: {label: string; href: string};
   secondaryCta: {label: string; href: string};
+  tagline?: string;
 };
 
 const pillarColorClasses = [
@@ -20,12 +21,20 @@ const pillarColorClasses = [
   'text-pillar-achtsamkeit'
 ];
 
+const pillarColors = [
+  '#7CB342', // ernaehrung - green
+  '#36A8A2', // schlaf - teal
+  '#F6A623', // bewegung - orange
+  '#7E57C2'  // achtsamkeit - purple
+];
+
 export function Hero({
   title,
   subtitleSuffix,
   inlinePillars = [],
   primaryCta,
-  secondaryCta
+  secondaryCta,
+  tagline = 'Live vital. In balance.'
 }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -41,7 +50,7 @@ export function Hero({
             aria-hidden="true"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-bg/60 via-brand-bg/40 to-brand-bg/60" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-bg/50 via-brand-bg/30 to-brand-bg/50" aria-hidden />
       </div>
       
       {/* Enhanced gradient blobs */}
@@ -93,54 +102,35 @@ export function Hero({
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-12 md:py-16">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24">
+        <div className="grid items-center gap-20 lg:gap-24 xl:gap-28 lg:grid-cols-[1.3fr_1fr]">
           <motion.div
-            className="flex flex-col gap-6 text-left relative z-10"
+            className="flex flex-col gap-10 sm:gap-12 text-left relative z-10"
             initial="initial"
             animate="animate"
             variants={motionVariants.stagger}
           >
             <motion.h1
-              className="max-w-3xl font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white"
+              className="max-w-4xl font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[1.1] tracking-tight text-white"
               variants={motionVariants.fadeIn}
             >
-              {title}
+              <span className="block">{title.split('.')[0]}</span>
+              {title.includes('.') && (
+                <span className="block bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
+                  {title.split('.').slice(1).join('.')}
+                </span>
+              )}
             </motion.h1>
             
-            <motion.p
-              className="max-w-2xl text-base sm:text-lg md:text-xl text-white/95"
-              variants={motionVariants.fadeIn}
-            >
-              {inlinePillars.length ? (
-                <>
-                  {inlinePillars.map((pillar, index) => (
-                    <span key={pillar} className="mr-2">
-                      <span
-                        className={`font-semibold ${
-                          pillarColorClasses[index] ?? 'text-brand-primary'
-                        }`}
-                      >
-                        {pillar}
-                      </span>
-                      .
-                    </span>
-                  ))}
-                  <span>{subtitleSuffix}</span>
-                </>
-              ) : (
-                subtitleSuffix
-              )}
-            </motion.p>
             
             <motion.div
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-5 pt-4"
               variants={motionVariants.fadeIn}
             >
-              <CTAButton href={primaryCta.href} variant="primary" width="full-mobile">
+              <CTAButton href={primaryCta.href} variant="primary" width="full-mobile" showIcon>
                 {primaryCta.label}
               </CTAButton>
-              <CTAButton href={secondaryCta.href} variant="secondary" width="full-mobile">
+              <CTAButton href={secondaryCta.href} variant="secondary" width="full-mobile" className="text-white border-white/30 hover:bg-white/10">
                 {secondaryCta.label}
               </CTAButton>
             </motion.div>
@@ -153,18 +143,14 @@ export function Hero({
             transition={{duration: 0.8, delay: 0.3}}
           >
             <div className="relative h-96 w-96">
-              {/* Outer rotating ring */}
-              <motion.div
+              {/* Simple outer ring without colors - cards provide the color */}
+              <div
                 className="absolute inset-0 rounded-full border-2 border-white/20"
-                animate={{rotate: 360}}
-                transition={{
-                  duration: 30,
-                  repeat: Infinity,
-                  ease: 'linear'
-                }}
-              />
+              >
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-brand-bg/80 via-brand-bg/60 to-brand-bg/80 backdrop-blur-sm" />
+              </div>
               
-              {/* Inner glow */}
+              {/* Inner glow ring */}
               <motion.div
                 className="absolute inset-8 rounded-full bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-sm"
                 animate={{
@@ -178,25 +164,89 @@ export function Hero({
                 }}
               />
               
-              {/* Center content */}
-              <div className="absolute inset-16 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-                <div className="text-center">
-                  <motion.div 
-                    className="font-display text-4xl font-bold text-white mb-2"
-                    animate={{
-                      opacity: [0.9, 1, 0.9]
+              {/* Pillar names in corners as glass cards */}
+              {inlinePillars.map((pillar, index) => {
+                // Position at corners: top-left, top-right, bottom-right, bottom-left
+                const positions = [
+                  { top: '12px', left: '12px', alignItems: 'flex-start', justifyContent: 'flex-start' }, // top-left
+                  { top: '12px', right: '12px', alignItems: 'flex-start', justifyContent: 'flex-end' }, // top-right
+                  { bottom: '12px', right: '12px', alignItems: 'flex-end', justifyContent: 'flex-end' }, // bottom-right
+                  { bottom: '12px', left: '12px', alignItems: 'flex-end', justifyContent: 'flex-start' } // bottom-left
+                ];
+                const pos = positions[index];
+                
+                return (
+                  <motion.div
+                    key={pillar}
+                    className="absolute"
+                    style={{
+                      ...pos,
+                      alignItems: pos.alignItems,
+                      justifyContent: pos.justifyContent
                     }}
+                    initial={{opacity: 0, scale: 0.8, y: index < 2 ? -10 : 10}}
+                    animate={{opacity: 1, scale: 1, y: 0}}
                     transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: 'easeInOut'
+                      delay: 0.5 + index * 0.1,
+                      duration: 0.5,
+                      ease: 'easeOut'
                     }}
                   >
-                    Livalance
+                    <div
+                      className="px-4 py-2.5 rounded-xl backdrop-blur-md border flex items-center gap-2.5 shadow-lg"
+                      style={{
+                        backgroundColor: `${pillarColors[index]}30`,
+                        borderColor: `${pillarColors[index]}70`,
+                        boxShadow: `
+                          0 8px 32px rgba(0, 0, 0, 0.3),
+                          0 0 30px ${pillarColors[index]}50,
+                          0 0 50px ${pillarColors[index]}30,
+                          inset 0 1px 0 rgba(255, 255, 255, 0.3)
+                        `
+                      }}
+                    >
+                      <div
+                        className="w-3 h-3 rounded-full flex-shrink-0"
+                        style={{
+                          backgroundColor: pillarColors[index],
+                          boxShadow: `0 0 18px ${pillarColors[index]}100, 0 0 28px ${pillarColors[index]}70, 0 2px 4px rgba(0, 0, 0, 0.3)`
+                        }}
+                      />
+                      <span
+                        className="text-sm font-semibold whitespace-nowrap"
+                        style={{
+                          color: index === 3 // Mindfulness - use lighter purple for better readability
+                            ? '#a78bfa'
+                            : pillarColors[index],
+                          textShadow: index === 3 // Mindfulness - stronger shadows for contrast
+                            ? `0 2px 6px rgba(0, 0, 0, 0.8), 0 0 16px ${pillarColors[index]}80, 0 0 24px ${pillarColors[index]}60, 0 0 35px ${pillarColors[index]}40`
+                            : `0 2px 4px rgba(0, 0, 0, 0.6), 0 0 12px ${pillarColors[index]}70, 0 0 20px ${pillarColors[index]}50, 0 0 30px ${pillarColors[index]}30`
+                        }}
+                      >
+                        {pillar}
+                      </span>
+                    </div>
                   </motion.div>
-                  <div className="text-sm text-white/80">
-                    Lebe vital. In Balance.
-                  </div>
+                );
+              })}
+              
+              {/* Center content */}
+              <div className="absolute inset-16 flex flex-col items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20">
+                <motion.div 
+                  className="font-display text-4xl font-bold text-white mb-2"
+                  animate={{
+                    opacity: [0.9, 1, 0.9]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: 'easeInOut'
+                  }}
+                >
+                  Livalance
+                </motion.div>
+                <div className="text-sm text-white/80">
+                  {tagline}
                 </div>
               </div>
             </div>

@@ -22,6 +22,7 @@ const config: Config = {
           primaryTint: 'var(--brand-primary-tint)',
           accent: 'var(--brand-accent)',
           accentHover: 'var(--brand-accent-hover)',
+          accentTint: 'var(--brand-accent-tint)',
           gray: {
             50: 'var(--brand-gray-50)',
             100: 'var(--brand-gray-100)',

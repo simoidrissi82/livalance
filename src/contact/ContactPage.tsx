@@ -13,52 +13,73 @@ export function ContactPage() {
   const channels = [t('channels.0'), t('channels.1'), t('channels.2')];
 
   return (
-    <div className="bg-gradient-to-br from-pillar-achtsamkeit/40 via-brand-accent/30 to-brand-primary/35">
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <div className="relative min-h-screen">
+      {/* Single unified background for entire page */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-bg via-pillar-schlaf/15 to-pillar-ernaehrung/10" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-br from-pillar-schlaf/25 via-pillar-ernaehrung/20 to-brand-accent/30" aria-hidden />
         
-        {/* HUGE Animated gradient blobs */}
+        {/* Enhanced animated gradient blobs */}
         <motion.div
-          className="absolute -top-40 -left-40 h-[580px] w-[580px] rounded-full bg-brand-primary/30 blur-3xl"
+          className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-pillar-schlaf/20 blur-3xl"
           aria-hidden
           animate={{
-            scale: [1, 1.25, 1],
-            opacity: [0.3, 0.5, 0.3],
-            y: [0, -40, 0]
+            scale: [1, 1.2, 1],
+            opacity: [0.4, 0.6, 0.4],
+            rotate: [0, 90, 180]
           }}
           transition={{
-            duration: 16,
+            duration: 18,
             repeat: Infinity,
             ease: 'easeInOut'
           }}
         />
         
         <motion.div
-          className="absolute -right-32 -bottom-32 h-[500px] w-[500px] rounded-full bg-brand-accent/25 blur-3xl"
+          className="absolute -right-32 -bottom-32 h-[520px] w-[520px] rounded-full bg-brand-accent/30 blur-3xl"
           aria-hidden
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.25, 0.4, 0.25],
-            x: [0, -30, 0]
+            opacity: [0.3, 0.5, 0.3],
+            x: [0, -30, 0],
+            y: [0, -40, 0]
           }}
           transition={{
-            duration: 14,
+            duration: 15,
             repeat: Infinity,
             ease: 'easeInOut',
             delay: 1
           }}
         />
         
-        <div className="relative mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-pillar-ernaehrung/15 blur-3xl"
+          aria-hidden
+          animate={{
+            scale: [1, 1.15, 1],
+            opacity: [0.25, 0.4, 0.25]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 0.5
+          }}
+        />
+      </div>
+      
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16 md:py-24">
           <motion.div
-            className="rounded-[2.5rem] border-2 border-white/60 bg-white/90 p-12 md:p-16 shadow-strong backdrop-blur-md"
-            initial={{opacity: 0, scale: 0.95, y: 30}}
-            animate={{opacity: 1, scale: 1, y: 0}}
+            className="max-w-3xl space-y-6"
+            initial={{opacity: 0, y: 30}}
+            animate={{opacity: 1, y: 0}}
             transition={{duration: 0.6}}
-            whileHover={{scale: 1.01}}
           >
             <motion.h1
               className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-tight"
-              initial={{opacity: 0, y: -10}}
+              initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.2}}
             >
@@ -66,26 +87,26 @@ export function ContactPage() {
             </motion.h1>
             
             <motion.p
-              className="mt-6 text-xl md:text-2xl text-brand-text/80 leading-relaxed"
-              initial={{opacity: 0}}
-              animate={{opacity: 1}}
+              className="text-xl md:text-2xl text-brand-text/80 leading-relaxed"
+              initial={{opacity: 0, y: 20}}
+              animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.3}}
             >
               {t('intro')}
             </motion.p>
             
             <motion.p
-              className="mt-4 text-base text-brand-text/70 leading-relaxed"
-              initial={{opacity: 0}}
-              animate={{opacity: 1}}
+              className="text-base text-brand-text/70 leading-relaxed"
+              initial={{opacity: 0, y: 20}}
+              animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.4}}
             >
               {t('supporting')}
             </motion.p>
             
             <motion.div
-              className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4"
-              initial={{opacity: 0, y: 10}}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2"
+              initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
               transition={{duration: 0.6, delay: 0.5}}
             >
@@ -98,7 +119,7 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-br from-pillar-achtsamkeit/40 via-brand-accent/30 to-brand-primary/35 py-20">
+      <section className="relative overflow-hidden py-20">
         {/* Enhanced animated gradient blobs - BIGGER & MORE SATURATED */}
         <motion.div
           className="absolute -top-40 -right-40 h-[700px] w-[700px] bg-brand-accent/35 rounded-full blur-3xl"
@@ -146,7 +167,7 @@ export function ContactPage() {
         
         <div className="relative mx-auto grid max-w-5xl gap-10 px-6 md:grid-cols-[1.2fr_0.8fr]">
           <motion.div
-            className="group relative rounded-3xl border-2 border-brand-accent/20 bg-gradient-to-br from-white via-brand-accent-tint/10 to-white p-10 shadow-medium backdrop-blur transition-all duration-300 hover:shadow-strong hover:-translate-y-1 hover:border-brand-accent/40"
+            className="group relative rounded-3xl border-2 border-brand-accent/30 bg-gradient-to-br from-white via-brand-accent-tint/15 to-white p-10 shadow-medium backdrop-blur-sm transition-all duration-300 hover:shadow-strong hover:-translate-y-1 hover:border-brand-accent/50"
             initial={{opacity: 0, x: -30}}
             whileInView={{opacity: 1, x: 0}}
             viewport={{once: true, margin: '-100px'}}
@@ -250,7 +271,7 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section id="booking" className="relative overflow-hidden bg-gradient-to-br from-brand-accent/40 via-pillar-bewegung/30 to-brand-accent/45 py-20">
+      <section id="booking" className="relative overflow-hidden py-20">
         {/* Multiple animated gradient blobs */}
         <motion.div
           className="absolute bottom-10 left-10 h-96 w-96 rounded-full bg-brand-accent/20 blur-3xl"
@@ -282,7 +303,7 @@ export function ContactPage() {
         
         <div className="relative mx-auto max-w-5xl px-6">
           <motion.div
-            className="rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white via-brand-primary-tint/10 to-white p-12 shadow-strong backdrop-blur"
+            className="rounded-3xl border-2 border-brand-primary/30 bg-gradient-to-br from-white/95 via-brand-primary-tint/15 to-white/95 p-12 shadow-strong backdrop-blur-sm"
             initial={{opacity: 0, y: 30}}
             whileInView={{opacity: 1, y: 0}}
             viewport={{once: true, margin: '-100px'}}
