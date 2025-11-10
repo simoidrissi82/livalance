@@ -9,7 +9,7 @@ import {clsx} from 'clsx';
 import {Link} from '@/i18n/routing';
 
 const buttonStyles = cva(
-  'group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-2xl px-8 py-4 text-base font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2',
+  'group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-2xl px-6 py-3 text-sm md:text-base font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 whitespace-nowrap',
   {
     variants: {
       variant: {

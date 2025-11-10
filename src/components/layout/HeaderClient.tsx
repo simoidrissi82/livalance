@@ -39,7 +39,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
         ? 'border-slate-200 bg-white/95 backdrop-blur-md shadow-sm' 
         : 'border-white/20 bg-black/20 backdrop-blur-md'
     }`}>
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <div className="flex items-center gap-3">
           <Link
             href="/"
@@ -48,7 +48,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
             }`}
             aria-label="Livalance"
           >
-            <div className="relative h-12 md:h-14" style={{aspectRatio: '220/48', minWidth: '176px'}}>
+            <div className="relative h-12 md:h-14" style={{aspectRatio: '220/48'}}>
               <Image
                 src="/images/brand/logo_new.png"
                 alt="Livalance"
@@ -73,7 +73,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
             <Link
               key={item.key}
               href={item.href as any}
-              className={`rounded-xl px-3 py-2 text-sm font-medium transition ${
+              className={`rounded-xl px-3 py-2 text-sm font-medium transition whitespace-nowrap ${
                 scrolled
                   ? 'text-brand-text hover:bg-brand-primary-tint hover:text-brand-primary'
                   : 'text-white drop-shadow-md hover:bg-white/20 hover:text-white'
@@ -84,7 +84,7 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-4 md:flex md:ml-8">
           <LocaleSwitcher currentLocale={locale} scrolled={scrolled} />
           <CTAButton href="/contact">{ctaLabel}</CTAButton>
         </div>
