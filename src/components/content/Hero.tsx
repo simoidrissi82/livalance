@@ -111,13 +111,13 @@ export function Hero({
             variants={motionVariants.stagger}
           >
             <motion.h1
-              className="max-w-4xl font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[1.1] tracking-tight text-white"
+              className="max-w-4xl font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold leading-[1.1] tracking-tight text-white"
               variants={motionVariants.fadeIn}
             >
-              <span className="block">{title.split('.')[0]}</span>
+              <span className="block whitespace-nowrap">{title.split('.')[0]}.</span>
               {title.includes('.') && (
-                <span className="block bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
-                  {title.split('.').slice(1).join('.')}
+                <span className="block whitespace-nowrap bg-gradient-to-r from-white via-white to-white/80 bg-clip-text text-transparent">
+                  {title.split('.').slice(1).join('.').trim()}
                 </span>
               )}
             </motion.h1>
@@ -138,9 +138,9 @@ export function Hero({
 
           <motion.div
             className="relative z-10 hidden lg:flex items-center justify-center"
-            initial={{opacity: 0, scale: 0.9}}
+            initial={{opacity: 0, scale: 0.95}}
             animate={{opacity: 1, scale: 1}}
-            transition={{duration: 0.8, delay: 0.3}}
+            transition={{duration: 1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94]}}
           >
             <div className="relative h-96 w-96">
               {/* Simple outer ring without colors - cards provide the color */}
@@ -184,12 +184,12 @@ export function Hero({
                       alignItems: pos.alignItems,
                       justifyContent: pos.justifyContent
                     }}
-                    initial={{opacity: 0, scale: 0.8, y: index < 2 ? -10 : 10}}
+                    initial={{opacity: 0, scale: 0.9, y: index < 2 ? -5 : 5}}
                     animate={{opacity: 1, scale: 1, y: 0}}
                     transition={{
-                      delay: 0.5 + index * 0.1,
-                      duration: 0.5,
-                      ease: 'easeOut'
+                      delay: 0.6 + index * 0.12,
+                      duration: 0.7,
+                      ease: [0.25, 0.46, 0.45, 0.94]
                     }}
                   >
                     <div
@@ -238,9 +238,9 @@ export function Hero({
                     opacity: [0.9, 1, 0.9]
                   }}
                   transition={{
-                    duration: 3,
+                    duration: 4,
                     repeat: Infinity,
-                    ease: 'easeInOut'
+                    ease: [0.25, 0.46, 0.45, 0.94]
                   }}
                 >
                   Livalance
