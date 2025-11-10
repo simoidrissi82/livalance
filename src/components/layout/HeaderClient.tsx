@@ -40,30 +40,27 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
         : 'border-white/20 bg-black/20 backdrop-blur-md'
     }`}>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center">
           <Link
             href="/"
-            className={`inline-flex items-center gap-2 transition-opacity duration-300 ${
+            className={`inline-flex items-center transition-opacity duration-300 ${
               scrolled ? 'opacity-100' : 'opacity-95'
             }`}
             aria-label="Livalance"
           >
-            <div className="relative h-12 md:h-14" style={{aspectRatio: '220/48'}}>
-              <Image
-                src="/images/brand/logo_new.png"
-                alt="Livalance"
-                width={220}
-                height={48}
-                className={`h-full w-full transition-all duration-300 ${
-                  scrolled 
-                    ? 'brightness-100' 
-                    : 'brightness-100 drop-shadow-lg'
-                } ${scrolled ? '' : 'logo-no-bg'}`}
-                style={{objectFit: 'contain'}}
-                priority
-                sizes="(max-width: 768px) 176px, 220px"
-              />
-            </div>
+            <Image
+              src="/images/brand/logo_new.png"
+              alt="Livalance"
+              width={220}
+              height={48}
+              className={`h-12 md:h-14 w-auto transition-all duration-300 ${
+                scrolled 
+                  ? 'brightness-100' 
+                  : 'brightness-100 drop-shadow-lg'
+              } ${scrolled ? '' : 'logo-no-bg'}`}
+              priority
+              sizes="(max-width: 768px) 176px, 220px"
+            />
             <span className="sr-only">Livalance</span>
           </Link>
         </div>
