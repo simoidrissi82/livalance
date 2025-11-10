@@ -157,7 +157,7 @@ export function LocaleSwitcher({currentLocale, scrolled = false}: LocaleSwitcher
         frameId2 = requestAnimationFrame(() => {
           window.scrollTo({
             top: scrollPositionRef.current,
-            behavior: 'instant'
+            behavior: 'auto'
           });
           isLocaleChangingRef.current = false;
         });

@@ -48,18 +48,22 @@ export function HeaderClient({locale, navItems, ctaLabel}: HeaderClientProps) {
             }`}
             aria-label="Livalance"
           >
-            <Image
-              src="/images/brand/logo_new.png"
-              alt="Livalance"
-              width={220}
-              height={48}
-              className={`h-12 md:h-14 w-auto transition-all duration-300 ${
-                scrolled 
-                  ? 'brightness-100' 
-                  : 'brightness-100 drop-shadow-lg'
-              } ${scrolled ? '' : 'logo-no-bg'}`}
-              priority
-            />
+            <div className="relative h-12 md:h-14" style={{aspectRatio: '220/48', minWidth: '176px'}}>
+              <Image
+                src="/images/brand/logo_new.png"
+                alt="Livalance"
+                width={220}
+                height={48}
+                className={`h-full w-full transition-all duration-300 ${
+                  scrolled 
+                    ? 'brightness-100' 
+                    : 'brightness-100 drop-shadow-lg'
+                } ${scrolled ? '' : 'logo-no-bg'}`}
+                style={{objectFit: 'contain'}}
+                priority
+                sizes="(max-width: 768px) 176px, 220px"
+              />
+            </div>
             <span className="sr-only">Livalance</span>
           </Link>
         </div>
